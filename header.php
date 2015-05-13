@@ -79,17 +79,17 @@ if (is_single() || is_page()) { echo "article"; } else { echo "website";} ?>"
 	
 	foreach ($main_navigation as $post) { // foreach gateway page... 
 	
-		if (is_page($post->ID)) { // get list item with classes of...
+		if (is_page($post->ID)) { // if is current page...  
 			 
-			echo '<li class="main page-item-'.$post->ID.' current-page-item">'; // ... current page item
+			echo '<li class="main page-item-'.$post->ID.' current-page-item">'; // ... add list item with class of current page item
 			 
-		} elseif ($parent_ID == ($post->ID)) {
+		} elseif ($parent_ID == ($post->ID)) { // if is current page parent...
 			
-			echo '<li class="main page-item-'.$post->ID.' current-page-parent">'; // ... current page parent
+			echo '<li class="main page-item-'.$post->ID.' current-page-parent">'; // ... add list item with class of current page parent
 				
-		} else {
+		} else { // not current page or current page parent...
 			
-			echo '<li class="main page-item-'.$post->ID.'">'; // ... none
+			echo '<li class="main page-item-'.$post->ID.'">'; // ... add list item with no class
 		}
 		
 		echo '<a href="'.get_permalink($post->ID).'">'.$post->post_title.'</a>'; // get the title with permalink
@@ -117,7 +117,7 @@ if (is_single() || is_page()) { echo "article"; } else { echo "website";} ?>"
 				
 				echo '<li class="current-page-item"><a href="'.get_permalink($post->post_parent).'">Syllabus</a></li>'; // add link to syllabus with class of current page item
 				
-			} else { // not current page
+			} else { // not current parent page
 				
 				echo '<li><a href="'.get_permalink($post->post_parent).'">Syllabus</a></li>';// add link to syllabus with no class
 				
