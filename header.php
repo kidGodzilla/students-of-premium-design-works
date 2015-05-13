@@ -22,20 +22,18 @@ if (is_single() || is_page()) { echo "article"; } else { echo "website";} ?>"
 <meta property="og:site_name" content="<?php bloginfo('name'); ?>"/>
 <!-- End Open Graph Meta -->
 
-
-<meta name="generator" content="WordPress <?php bloginfo('version'); ?>" />
+<!-- Begin Links -->
 <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="all" />
-<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 <link rel="shortcut icon" href="<?php bloginfo('template_directory'); ?>/images/ico-flame.ico" />
-<link rel="image_src" href="<?php bloginfo('template_directory'); ?>/images/thumbnail-flame.png" />
+<!-- End Links -->
   
-<!-- BEGIN WP HEAD -->  
+<!-- Begin WP Head -->  
 <?php wp_head(); ?>  
-<!-- END WP HEAD -->   
+<!-- End WP Head -->   
 
 </head>
 
-<body>
+<body <?php body_class(); ?>>
 
 <!-- START HOME LINK -->
 <div id="homelink">
