@@ -99,7 +99,7 @@ if (is_single() || is_page()) { echo "article"; } else { echo "website";} ?>"
 						
 			echo '<li class="pagenav" >Class';
 			echo '<ul>';
-			echo '<li><a href="'.get_permalink($post->post_parent).'">Syllabus</a></li>'; // stick in the link to syllabus with no class
+			echo '<li><a href="'.get_permalink($post->post_parent).'">Syllabus</a></li>'; // add link to syllabus with no class
 			wp_list_pages(array('child_of' => $post->post_parent, 'title_li' => '', 'meta_key' => 'navigation', 'meta_value' => 'class',)); 
 			echo '</ul>';
 			wp_list_pages(array('child_of' => $post->post_parent, 'title_li' => 'Lectures:', 'meta_key' => 'navigation', 'meta_value' => 'lecture',));
@@ -113,13 +113,13 @@ if (is_single() || is_page()) { echo "article"; } else { echo "website";} ?>"
 			echo '<li class="pagenav">Class';
 			echo '<ul>';
 			
-			if (is_page($post->ID)) { // stick in the link to syllabus with class
+			if (is_page($post->ID)) { // if is the current parent page
 				
-				echo '<li class="current-page-item"><a href="'.get_permalink($post->post_parent).'">Syllabus</a></li>';
+				echo '<li class="current-page-item"><a href="'.get_permalink($post->post_parent).'">Syllabus</a></li>'; // add link to syllabus with class of current page item
 				
-			} else {
+			} else { // not current page
 				
-				echo '<li><a href="'.get_permalink($post->post_parent).'">Syllabus</a></li>';
+				echo '<li><a href="'.get_permalink($post->post_parent).'">Syllabus</a></li>';// add link to syllabus with no class
 				
 			}
 			
