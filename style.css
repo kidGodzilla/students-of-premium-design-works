@@ -1,7 +1,7 @@
 /*  
 Theme Name: Students of Premium Design Works
 Description: This is a theme your mom would finally respond to.
-Version: 2
+Version: 3
 Author: Premium Design Works
 Author URI: http://www.premiumdw.com/
 */
@@ -27,7 +27,7 @@ body {
 	background-repeat: no-repeat;*/
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 100%;
-	line-height: 100%;
+	/*line-height: 150%;*/
 	background-color: #fff;
  	}
 	
@@ -41,38 +41,48 @@ a:hover {
 	text-decoration: none; 
 	}
 	
-	
 h1, h2, h3, h4 {
 	font-family: "FeltTipRomanRegular", Arial, Helvetica, sans-serif;
 	font-weight:normal;
-	padding-bottom:4px;
+	/*line-height: 125% !important;*/
 	}
 	
-input, select {
-	font-size: 1em;
-	border: 2px solid #DDD;
-	padding: 2px;
- 	}
+p, dd {
+	line-height: 150%;
+}
 	
-	input#s {
-		padding: 3px;
-		}
-		
-	input#s2email {
-		width: 195px;
-		}
-		
+img, iframe {
+	box-sizing: border-box;
+}
 	
-textarea {
+input, select, textarea {
 	font-size: 1em;
-	width: 100%;
 	border: 2px solid #DDD;
 	padding: 4px;
+	border-radius: 4px;
  	}
+	
+	input.submit {
+		cursor: pointer;
+		padding: 4px;
+		border-radius: 4px;
+		background-color: #fff;
+		background: linear-gradient(#fff, #ddd);
+	}
+	
+	input.submit:hover {
+		color:#fff;
+		border: 2px solid #000;
+		background-color: #000;
+		background: linear-gradient(#000, #000);
+	}
+	
+
 
 th, td {
 	padding: 4px!important;
 	}
+	
 	
 #homelink {
 	width: 920px;
@@ -83,23 +93,21 @@ th, td {
 	
 /* HEADER */
 #header {
-	height: 100px;
-	width: 980px;
+	width: 940px;
+	padding: 10px 20px;
 	margin: 0px auto;
 	border: 2px solid #DDD;
 	}
-	
 
 	#logo {
 		float: left;
-		padding: 20px;
 		text-align: left;
 		font: 48px "FeltTipRomanRegular", Arial, Helvetica, sans-serif;
 		}
 		
 	#utility {
-		padding: 8px 20px 0 0;
 		text-align: right;
+		margin-bottom: 10px;
 		}
 	
 	#utility li {
@@ -116,33 +124,22 @@ th, td {
 			border-bottom: none;
 			}
 			
-	div#header form.searchform {
+	#header form.searchform {
 		text-align: right;
-		padding: 8px 20px;
+		margin-bottom: 10px;
 		}
-		
-	div#content form.searchform {
-		text-align: left;
-		padding: 8px 0px;
-		}
-		
-		div.search label, div.search br  {
-			display: none;
-			height:0;
-			}
 		
 	#date {
 		font: 18px "FeltTipRomanRegular", Arial, Helvetica, sans-serif;
 		text-align: right;
-		padding: 0px 20px 0 0;
 		color: #000;
 		}
 	
 /* NAVIGATION */
 #nav {
-	width: 940px;
+	width: 960px;
 	margin: 10px auto;
-	padding: 5px 20px;
+	padding: 5px 10px;
 	border: 2px solid #ddd;
 	}
 	
@@ -151,7 +148,6 @@ th, td {
 		margin: 0px auto;
 		position: relative;
 		list-style: none
-		/*padding: 7px 0;*/
 		}
 	
 	#nav ul li.main {
@@ -161,28 +157,54 @@ th, td {
 		text-align: center;
 		}
 	
-		#nav ul li a {
+		#nav > ul li > a {
 			color: #000;
 			display: block;
-			padding: 2px 11px;
-			}
-		
-		#nav li a:hover, #nav li.current_page_item a, #nav li.current_page_item a:hover, #nav li.current_page_parent a, #nav li.current_page_parent a:hover {
-			background: url(images/bg-nav-hover-left.png) no-repeat top left, url(images/bg-nav-hover-right.png) no-repeat top right;
+			padding: 0 8px;
 			}
 			
+			#nav > ul li > a:before {
+				font-family: 'FeltTipRomanRegular', Helvetica, sans-serif;
+				color: #FFF;
+				content: "{";
+				position: relative;
+				top: -2px;
+				left: -8px;
+			}
+			
+			#nav > ul li > a:after {
+				font-family: 'FeltTipRomanRegular', Helvetica, sans-serif;
+				color: #FFF;
+				content: "}";
+				position: relative;
+				top: -2px;
+				right: -8px;	
+			}
+		
+		#nav > ul li > a:hover {
+			color: #000;
+			}
+			
+			#nav > ul li > a:hover:before, #nav > ul li.current-page-item > a:before, #nav > ul li.current-page-parent > a:before {
+				color: #DDD;
+				}
+				
+			#nav > ul li > a:hover:after, #nav > ul li.current-page-item > a:after, #nav > ul li.current-page-parent > a:after {
+				color: #DDD;
+			}
+		
 		#nav ul li ul.sub-menu { 
 			display: none;
 			}
 			
-		#nav ul li:hover ul.sub-menu { 
+		/* #nav ul li:hover ul.sub-menu { 
 			display: block;
 			position: absolute;
 			text-align: left;
 			background-color: #fff;
 			padding: 10px;
 			border: 2px solid #ddd;
-			}
+			}*/
 			
 		#nav ul li ul.sub-menu li {
 			display: block;
@@ -195,7 +217,6 @@ th, td {
 		}
 		
 
-
 /* MIDDLE */
 #middle {
 	width: 940px;
@@ -205,7 +226,6 @@ th, td {
 	border: 2px dashed #ddd;
 	}
 
-
 	/* SIDEBAR */
 	#sidebar {
 		float: right;
@@ -213,40 +233,58 @@ th, td {
 		}
 		
 	#sidebar p, #sidebar ol, #sidebar ul {
-		font: 10px/16px "Verdana", sans-serif;
-		margin: 0px 0px 10px 0px;
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 12px;
+		margin-bottom: 10px;
 		}
 	
 	#sidebar p.s2_error {
 		color: red;
-		/*border: 1px solid red;*/
 		}
 		
 	#sidebar p.s2_message {
-		/*border: 1px solid green;
-		padding: 4px;*/
+
 		}
-		
-		
 		
 	#sidebar h3, #sidebar h2 {
 		color: #000;
-		font: 18px "FeltTipRomanRegular", Arial, Helvetica, sans-serif;
-		margin: 5px 0 5px 0;
+		font: 18px "FeltTipRomanRegular", Arial, sans-serif;
+		margin-bottom: 4px;
 		text-align: left;
 		}
 	
 	#sidebar li {
-		background: url(images/bg-listitem-side.png) no-repeat -2px 3px;
 		list-style: none;
-		padding: 0 0 0 14px; 
-		margin-bottom: 4px;
+		padding-left: 10px;
+		text-indent: -10px;
 		}
 		
-	#sidebar li.cat-item {
+	#sidebar li:before {
+		font-family: 'FeltTipRomanRegular', Arial, sans-serif;
+		font-size: 1.5em;
 		color: #DDD;
-		
+		content: "+";
+		position: relative;
+		top: 2px;
+		left: -8px;
 		}
+		
+	#sidebar ul > li.pagenav {
+		font-family: 'FeltTipRomanRegular', Arial, sans-serif;
+		list-style-type: none;
+		font-size: 18px;
+	}
+	
+	#sidebar ul > li.pagenav ul {
+		padding-top: 0px;	
+	}
+	
+	#sidebar ul > li.pagenav:before {
+		content: none;
+		padding-left: 0;
+		
+	}
+		
 		
 	#sidebar li a {
 		border-bottom: none;
@@ -269,6 +307,18 @@ th, td {
 		border-bottom: 2px dotted #DDD;
 		font-weight: bold;
 		}
+		
+	#sidebar div.widget {
+		overflow: hidden;
+	}
+	
+	#sidebar div.widget li {
+		text-indent: 0px;
+		}
+		
+	#sidebar li.cat-item {
+		color: #ddd;
+	}
 				
 	#sidebar p a {
 		border-bottom: 2px dotted #DDD;
@@ -280,46 +330,67 @@ th, td {
 		border-bottom: 2px dotted #FFF;
 		}
 		
-	/*#sidebar img, #sidebar iframe {
+	#sidebar img, #sidebar iframe {
 		padding: 5px;
-		margin: 5px 0;
-		border: 1px solid #ddd;
-		background: #fff
-		}*/
-		
-	select#cat, select#month {
-		margin: 0 0 10px 0;
+		border: 2px solid #ddd;
+		background: #fff;
 		}
 		
+		#sidebar a img, #sidebar iframe {
+			background: #fff;
+		}
 		
+		#sidebar a:hover img, #sidebar iframe:hover {
+			background: #ddd;
+		}
+	
+	
+	#sidebar div.sub-nav, #sidebar div.widgets {
+		padding-bottom: 6px;
+		border-bottom: 2px solid #ddd;
+		margin-bottom: 14px;
+	}
+	
 	#sidebar div.affiliates {
-		width: 205px;
-		margin:10px 0;
-		text-align: center;
-		
+		margin: 10px 0;	
+		margin-right: -20px;	
 		}
 		
 		#sidebar div.affiliates img, #sidebar div.affiliates iframe {
-			margin: 5px 0;
+			box-sizing: border-box;
+			width: 140px;
+			height: 140px;
+			margin: 0 20px 20px 0;
+			float: left;
 			}
 			
-		#sidebar p.affiliates-text {
-			font: 14px "FeltTipRomanRegular", Arial, Helvetica, sans-serif;
-			letter-spacing: .1em;
-			color: #DDD;
-			margin: 2px 0;
-			}
-		
 	#sidebar img {
 		text-align: left;
 		}
 		
-	#subscribe-email {
-		width: 192px;
-		}
-	/* SIDEBAR */
-
+	#sidebar div.tubepress-thumb {
+		margin-right: 20px !important;
+		margin-bottom: 10px !important;
+		float: left !important;
+	}
+	
+	#sidebar div.tubepress-thumbs  {
+		margin-right: -20px !important;
+		padding-top: 4px !important;
+		overflow: hidden;
+	}
 		
+	#sidebar img.tubepress-thumbnail-image {
+		margin-bottom: 4px !important;	
+	}
+		
+	#sidebar div.widget_categories ul, 
+	#sidebar div.widget_links ul {
+		-webkit-column-count: 2; /* Chrome, Safari, Opera */
+		-moz-column-count: 2; /* Firefox */
+		column-count: 2;	
+	}
+	
 				
 	/* CONTENT */
 	#content {
@@ -349,6 +420,10 @@ th, td {
 			margin-right: 10px;
 			}
 			
+		.clear {
+			clear: both;
+		}
+			
 	#content h3	{
 		clear: both;
 		color: #000;
@@ -364,7 +439,6 @@ th, td {
 			}
 		
 		#content h3 a:hover {
-			/*border-bottom: 2px dotted #DDD;*/
 			color: #000;
 			}		
 			
@@ -382,32 +456,22 @@ th, td {
 			}
 		
 		#content h4 a:hover {
-			/*border-bottom: 2px dotted #DDD;*/
 			color: #000;
 			}
 			
-	#content p{
+	#content p {
 			color: #000;
 			font: 16px/24px "Arial", sans-serif;
 			margin: 0 0 12px 0;
 			}
 			
 	#content td {
-			/*color: #000;
-			font: 16px/24px "Arial", sans-serif;
-			margin: 0 0 12px 0;*/
+			 
 			}
-			
-		
-			
-			.edit {
-				margin-bottom: 20px;
-				}
 				
 		#content p a {
 			border-bottom: 2px dotted #DDD;
 			color: #000;
-			/*font-weight: bold;*/
 			}
 		
 		#content img {
@@ -422,27 +486,10 @@ th, td {
 		#content p a:hover {
 			color: #000;
 			border-bottom: 2px dotted #FFF;
-			/*font-weight: bold;*/
 			}			
-		
-			
-		#content p small.full-post, #content p small.edit-link {
-			font-family: "FeltTipRomanRegular", Arial, Helvetica, sans-serif;
-			}
-			
-		#content p small.full-post a, #content p small.edit-link a {
-			font-weight: normal;
-			border-bottom: none;
-			}
-			
-		#content p small.full-post a:hover, #content p small.edit-link a:hover {
-			font-weight: normal;
-			/*border-bottom: 2px dotted #DDD;*/
-			}
 			
 		#content p.wp-caption-text  {
 				text-align: center;
-				/*padding-left: 25px;*/
 				}
 	
 	#content th {
@@ -461,27 +508,34 @@ th, td {
 		}
 		
 	#content ul li	{
-		background: url(images/bg-listitem-content.png) no-repeat 0px 4px;
+
 		list-style: none;
-		padding: 0 20px;
-		margin: 0 0px 2px 0px;
+		padding-left: 10px;
+		text-indent: -10px;
+		}
+		
+	#content ul li:before {
+		font-family: 'FeltTipRomanRegular', Arial, sans-serif;
+		font-size: 1.5em;
+		color: #DDD;
+		content: "+";
+		position: relative;
+		top: 2px;
+		left: -8px;
 		}
 				
 		#content ul li a {
 			border-bottom: 2px dotted #DDD;
 			color: #000;
-			/*font-weight: bold;*/
 			}
 			
 		#content ul li a:hover {
 			border-bottom: 2px dotted #FFF;
 			color: #000;
-			/*font-weight: bold;*/
 			}
 			
 	#content ol {
 		color: #000;
-		font: 16px/24px "Arial", sans-serif;
 		margin: 0 0 10px 0;
 		padding: 0 15px;
 		}
@@ -497,17 +551,14 @@ th, td {
 		#content ol li a {
 			border-bottom: 2px dotted #DDD;
 			color: #000;
-			/*font-weight: bold;*/
 			}
 			
 		#content ol li a:hover {
 			border-bottom: 2px dotted #FFF;
 			color: #000;
-			/*font-weight: bold;*/
 			}
 
 	#content blockquote {
-		
 		padding: 0px 20px;
 		border-left: 3px solid #DDD;
 		margin: 0 0 10px 0px;
@@ -543,16 +594,20 @@ th, td {
 		font: 21px/21px "FeltTipRomanRegular", Arial, Helvetica, sans-serif;
 		}
 		
-	/*#content iframe {
-		padding: 5px;
+	#content textarea {
+		width: 100%;
 		border: 2px solid #DDD;
-		background: #fff;
-		margin: 0 0 10px 0;
-		}*/	
-			
-	#content img {
-		/*border-left: 2px solid #DDD;
-		padding-left: 25px;*/
+		padding: 4px;
+		}
+		
+	#content input, #content select, #content textarea {
+
+		}
+	
+	#content img, #content iframe  {
+		box-sizing: border-box;
+		border: 2px solid #DDD;
+		padding: 5px;
 		background: #FFF;
 		}
 		
@@ -561,24 +616,6 @@ th, td {
 		padding-left: 10px;
 		padding: 10px;
 		background: #FFF;
-		}
-		
-		#content span.social-icons img {
-			border-left: none;
-			position: relative;
-			top: 5px;
-			padding-left: 10px;
-			background: #FFF;
-			
-			}
-		
-		#content span.social-icons a {
-			border-bottom: none;
-			}
-		
-		
-	.border-bottom-none {
-		border-bottom: none;
 		}
 		
 	#content img.avatar, #content img.size-thumbnail {
@@ -596,11 +633,11 @@ th, td {
 			background: #FFF;
 			}
 			
-	#content a img.myface {
+	#content a img.myface, #content a img.avatar {
 			background: #FFF;
 			}
 			
-	#content a:hover img.myface {
+	#content a:hover img.myface, #content a:hover img.avatar {
 			background: #DDD;
 			}
 					
@@ -641,11 +678,6 @@ th, td {
 	#content div.twocolumns {
 		width: 250px;
 		float: left;
-		}
-		
-	.clear {
-		clear:both;
-		height: 0px;
 		}
 	
 	#pwbox-156 {
@@ -705,24 +737,22 @@ th, td {
 	#dedication {
 		clear: both;
 		padding-top: 10px;
-		margin-top: 20px;
 		border-top: 2px solid #DDD;
 		border-bottom: 2px solid #DDD;
 		overflow: hidden;
 		}
 		
+		#dedication img {
+			position: relative;
+			top: 4px;
+		}
+		
+		#dedication p {
+			font-size: 14px;
+		}
+		
 		#author p {
 			margin-bottom: 0px;
-			}
-		
-		#author p span.social-icons a {
-			border-bottom: none;
-			}
-			
-		#author p span.social-icons a img {
-			border-left: none;
-			padding: 0;
-			margin-left: 10px;
 			}
 		
 	#comments-box {
@@ -733,6 +763,10 @@ th, td {
 		padding: 0;
 		}
 		
+	#comments-box ul li:before {
+		content: none;
+	}
+	
 	#comments-box ol li.depth-1 {
 		list-style-type:none;
 		background: none;
@@ -781,7 +815,8 @@ th, td {
 		
 	.avatar {
 		float: left;
-		margin: 0 10px 10px 0;		
+		margin: 0 10px 10px 0;
+		width: 60px;		
 		}
 		
 	ul.trackbacklist span.says, ul.trackbacklist div.comment-meta, ul.trackbacklist p, ul.trackbacklist div.reply {
@@ -790,14 +825,6 @@ th, td {
 	}
 			
 /* CONTACT 7 */
-
-#content input, #content select, #content textarea {
-	font-size: 14px;
-	border: 2px solid #DDD;
-	padding: 4px;
-	max-width: 300px;
- 	}
-	
 	
 .wpcf7-list-item-label {
 	margin: 0 10px 0 0;
@@ -1081,13 +1108,11 @@ div.wp-dropbox input#submit_button {
 	
 /* FOOTER */
 #footer {
-	background: url(images/bg-footer.png) no-repeat top center;
 	clear: both;
-	height: 90px;
-	width: 882px;
-	margin: 0 auto;
-	padding: 35px 20px 0px 20px;
-	color: #000;
+	width: 940px;
+	margin: 10px auto;
+	padding: 10px 20px;
+	border: 2px solid #ddd;
 	}
 	
 	#footer p {

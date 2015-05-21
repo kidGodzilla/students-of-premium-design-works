@@ -16,7 +16,10 @@ $oddcomment = 'alt';
 ?>
 
 <!-- Begin Dedication -->
-<?php get_dedication(); ?>
+<div id="dedication">
+    <a href="http://www.mikesinkula.com/" target="_blank"><?php echo get_avatar(get_the_author_meta('ID'), 60); ?></a>
+    <p><?php echo get_the_author_meta('description'); ?></p>
+</div>
 <!-- End Dedication -->
 
 <!-- Begin Comment's Box -->
@@ -64,15 +67,15 @@ $oddcomment = 'alt';
 		<p>Logged in as <a href="<?php echo get_option('siteurl'); ?>/wp-admin/profile.php"><?php echo $user_identity; ?></a>. <a href="<?php echo wp_logout_url(get_permalink()); ?>" title="Log out of this account">Log out &raquo;</a></p>
 	<?php else : ?>
     	<p>Don't forget to get your <a href="http://en.gravatar.com/" target="_blank">Globally Recognized Avatar</a>.</p>
-    	<p><input type="text" name="author" id="author" value="<?php echo $comment_author; ?>" size="22" tabindex="1" <?php if ($req) echo "aria-required='true'"; ?> />
-    	<label for="author"><small>Name <?php if ($req) echo "(required)"; ?></small></label></p>
-    	<p><input type="text" name="email" id="email" value="<?php echo $comment_author_email; ?>" size="22" tabindex="2" <?php if ($req) echo "aria-required='true'"; ?> />
-    	<label for="email"><small>Mail (will not be published) <?php if ($req) echo "(required)"; ?></small></label></p>
+    	<input type="text" name="author" id="author" value="<?php echo $comment_author; ?>" size="22" tabindex="1" <?php if ($req) echo "aria-required='true'"; ?> />
+    	<label for="author">Name <?php if ($req) echo "(required)"; ?></label>
+    	<input type="text" name="email" id="email" value="<?php echo $comment_author_email; ?>" size="22" tabindex="2" <?php if ($req) echo "aria-required='true'"; ?> />
+    	<label for="email">Mail<?php if ($req) echo "(required)"; ?></label>
     	<p><input type="text" name="url" id="url" value="<?php echo $comment_author_url; ?>" size="22" tabindex="3" />
-    	<label for="url"><small>Website</small></label></p>
+    	<label for="url">Website</small></label>
 	<?php endif; ?>
-	<p><textarea name="comment" id="comment" cols="50" rows="10" tabindex="4"></textarea></p>
-	<p><input name="submit" type="submit" id="submit" tabindex="5" value="Submit Comment" /><?php comment_id_fields(); ?></p>
+	<textarea name="comment" class="comment" cols="50" rows="10" tabindex="4"></textarea>
+	<input name="submit" type="submit" class="submit" tabindex="5" value="Submit Comment" /><?php comment_id_fields(); ?>
 	<?php do_action('comment_form', $post->ID); ?>
 	</form>
 	<?php endif; // If registration required and not logged in ?>

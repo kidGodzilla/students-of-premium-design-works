@@ -1,66 +1,196 @@
 <?php 
 
 /*  
-Theme Name: sccc_premiumdw
-Description: This is a theme your mom would love.
-Version: 1
+Theme Name: Students of Premium Design Works
+Description: This is a theme your mom would finally respond to.
+Version: 3
 Author: Premium Design Works
 Author URI: http://www.premiumdw.com/
 */
 
 // Add Editor Styles
 add_editor_style( 'admin.css' );
+//
 
 // Begin Register Sidebars
-	if ( function_exists('register_sidebar') )
-	register_sidebars(4,array(
-		'before_widget' => '',
-		'after_widget' => '',
-		'before_title' => '<h2>',
-		'after_title' => '</h2>',
-	));
+register_sidebars(3,array(
+	'before_widget' => '<div id="%1$s" class="widget %2$s">',
+	'after_widget' => '</div>',
+	'before_title' => '<h2>',
+	'after_title' => '</h2>',
+));
 //
 	
 // Create Page Excerpts
 add_post_type_support( 'page', 'excerpt' );
+//
 
-/* Post Thumbnails (Featured Image) */
+// Enable Post Thumbnails (Featured Image)
 add_theme_support( 'post-thumbnails' ); 
 //
 
-// Begin Show Gravatars
-	function show_avatar($comment, $size) {				
-	$email=strtolower(trim($comment->comment_author_email));
-	$rating = "G"; // [G | PG | R | X]
-	 
-		if (function_exists('get_avatar')) {
-		echo get_avatar($email, $size);
-		} else {
-      
-      $grav_url = "http://www.gravatar.com/avatar.php?gravatar_id=
-         " . md5($emaill) . "&size=" . $size."&rating=".$rating;
-      echo "<img src='$grav_url'/>";
-   		}		
+// Get My Title Tag
+function get_my_title_tag() {
+	
+	global $post;
+	
+	if ( is_front_page() ) {  // for the site’s Front Page
+	
+		bloginfo('description'); // retrieve the site tagline
+	
+	} 
+	
+	elseif ( is_page() || is_single() ) { // for your site’s Pages or Postings
+	
+		the_title(); // retrieve the page or posting title 
+	
+	} 
+	
+	else { // for everything else
+		
+		bloginfo('description'); // retrieve the site tagline
+		
 	}
 	
+	if ( $post->post_parent ) { // for your site’s Parent Pages
+	
+		echo ' | '; // separator with spaces
+		echo get_the_title($post->post_parent);  // retrieve the parent page title
+		
+	}
+	echo ' | '; // separator with spaces
+	bloginfo('name'); // retrieve the site name
+	echo ' | '; // separator with spaces
+	echo 'Seattle, WA.'; // write in the location
+	
+}
+//
+
+// Get My Meta Description 
+function get_my_meta_description() {
+
+	if ( is_front_page() ) {  // for the site’s Front Page
+	
+		echo strip_tags(get_the_author_meta('description')); // retrieve my description
+	
+	} 
+	
+	elseif ( is_page() || is_single() ) { // for the site’s Pages or Postings
+	
+		echo strip_tags(get_the_excerpt($post->ID));  // retrieve the page or posting excerpt 
+	
+	} 
+	
+	else { // for everything else
+		
+		echo strip_tags(get_the_author_meta('description')); // retrieve my description
+		
+	}
+	
+}
+
+//
+
+// Get My Main Menu
+function get_my_main_menu() {
+	
+	echo '<ul id="nav-items">';
+	
+	$main_pages = get_pages(array('meta_key' => 'navigation', 'meta_value' => 'main', ));
+	$parent_ID = wp_get_post_parent_id($post_ID);
+	
+	foreach ($main_pages as $main) { // foreach main (gateway) page... 
+	
+		if (is_page($main->ID)) { // if is current page...  
+			 
+			echo '<li class="main page-item-'.$main->ID.' current-page-item">'; // ... add list item with class of current page item
+			 
+		} elseif ($parent_ID == ($main->ID)) { // if is current page parent...
+			
+			echo '<li class="main page-item-'.$main->ID.' current-page-parent">'; // ... add list item with class of current page parent
+				
+		} else { // not current page or current page parent...
+			
+			echo '<li class="main page-item-'.$main->ID.'">'; // ... add list item with no class
+		}
+		
+		echo '<a href="'.get_permalink($main->ID).'">'.$main->post_title.'</a>'; // get the title with permalink
+		echo '<ul class="sub-menu">'; // get the sub-menu items
+			
+		if ($post->post_parent) { // if the page has a parent...
+						
+			echo '<li class="pagenav" >Class';
+			echo '<ul>';
+			echo '<li><a href="'.get_permalink($post->post_parent).'">Syllabus</a></li>'; // add link to syllabus with no class
+			wp_list_pages(array('child_of' => $post->post_parent, 'title_li' => '', 'meta_key' => 'navigation', 'meta_value' => 'class',)); 
+			echo '</ul>';
+			wp_list_pages(array('child_of' => $post->post_parent, 'title_li' => 'Lectures:', 'meta_key' => 'navigation', 'meta_value' => 'lecture',));
+			wp_list_pages(array('child_of' => $post->post_parent, 'title_li' => 'Assignments:', 'meta_key' => 'navigation', 'meta_value' => 'assignment',)); 
+			wp_list_pages(array('child_of' => $post->post_parent, 'title_li' => 'Exercises:', 'meta_key' => 'navigation', 'meta_value' => 'exercise',));
+			wp_list_pages(array('child_of' => $post->post_parent, 'title_li' => 'Teams:', 'meta_key' => 'navigation', 'meta_value' => 'team',));
+			wp_list_pages(array('child_of' => $post->post_parent, 'title_li' => 'Students:', 'meta_key' => 'navigation', 'meta_value' => 'student',));
+			
+		} else { // if the page does not have a parent...
+		
+			echo '<li class="pagenav">Class';
+			echo '<ul>';
+			
+			if (is_page($post->ID)) { // if is the current parent page
+				
+				echo '<li class="current-page-item"><a href="'.get_permalink($post->post_parent).'">Syllabus</a></li>'; // add link to syllabus with class of current page item
+				
+			} else { // not current parent page
+				
+				echo '<li><a href="'.get_permalink($post->post_parent).'">Syllabus</a></li>';// add link to syllabus with no class
+				
+			}
+			
+			wp_list_pages(array('child_of' => $post->ID, 'title_li' => '', 'meta_key' => 'navigation', 'meta_value' => 'class',));
+			echo '</ul>';
+			wp_list_pages(array('child_of' => $post->ID, 'title_li' => 'Lectures:', 'meta_key' => 'navigation', 'meta_value' => 'lecture',));
+			wp_list_pages(array('child_of' => $post->ID, 'title_li' => 'Assignments:', 'meta_key' => 'navigation', 'meta_value' => 'assignment',));
+			wp_list_pages(array('child_of' => $post->ID, 'title_li' => 'Exercises:', 'meta_key' => 'navigation', 'meta_value' => 'exercise',));
+			wp_list_pages(array('child_of' => $post->ID, 'title_li' => 'Teams:', 'meta_key' => 'navigation', 'meta_value' => 'team',));
+			wp_list_pages(array('child_of' => $post->ID, 'title_li' => 'Students:', 'meta_key' => 'navigation', 'meta_value' => 'student',));
+			
+		}
+		
+		echo '</li>';
+		echo '</ul>';
+	 
+	}
+	
+	echo '</ul>';
+	
+	wp_reset_query(); // Don't forget this fucking reset query thing or shit will blow the fuck up, mother fucker.
+	
+}
+//
+
+// Begin Show Gravatars
+function show_avatar($comment, $size) {		
+		
+	$email=strtolower(trim($comment->comment_author_email));
+	$rating = "G"; // [G | PG | R | X]
+ 
+	if (function_exists('get_avatar')) {
+		
+		echo get_avatar($email, $size);
+		
+	} else {
+  
+  		$grav_url = "http://www.gravatar.com/avatar.php?gravatar_id=" . md5($emaill) . "&size=" . $size."&rating=".$rating;
+  	
+		echo "<img src='$grav_url'/>";
+	}
+			
+}
+//	
 	
 // Dedication Thingy
 function get_dedication() {
 	
-	echo '<div id="dedication"><a href="http://www.mikesinkula.com/" title="Link to: http://www.mikesinkula.com/" target="_blank"><img class="myface" src="';
-	bloginfo('template_directory'); 
-	echo '/images/img-myface.jpg" /></a>';
-	echo '<p>This portion of the <a href="http://www.premiumdw.com/" title="Link to: http://www.premiumdw.com/">Premium Design Works</a> website is written by <a href="http://www.mikesinkula.com/" title="Link to: http://www.mikesinkula.com/">Mike Sinkula</a> and dedicated to the <a href="http://seattlecentral.edu/~itprogs/">Web Design & Development</a> students at <a href="http://seattlecentral.edu/" title="Link to: http://seattlecentral.edu/">Seattle Central Community College</a> and the <a href="http://www.hcde.washington.edu/" target="_blank">Human Centered Design &amp; Engineering</a> students at the <a href="http://www.washington.edu/" target="_blank">University of Washington</a>.<span class="social-icons"><a title="Mike Sinkula\'s Twitter Feed" href="http://twitter.com/#!/mikesinkula"><img title="Mike Sinkula\'s Twitter Feed" src="';
-	bloginfo('template_directory'); 
-	echo '/images/ico-twitter.png" alt="Mike Sinkula\'s Twitter Feed"  /></a><a title="Mike Sinkula\'s FaceBook Page" href="http://www.facebook.com/msinkula?ref=profile" target="_blank"><img title="Mike Sinkula\'s FaceBook Page" src="';
-	bloginfo('template_directory');
-	echo '/images/ico-facebook.png" alt="Mike Sinkula\'s FaceBook Page"  /></a><a title="Mike Sinkula\'s LinkedIn Profile" href="http://www.linkedin.com/ppl/webprofile?action=vmi&amp;id=5408871&amp;pvs=pp&amp;authToken=C0zy&amp;authType=name&amp;trk=ppro_viewmore&amp;lnk=vw_pprofile" target="_blank"><img title="Mike Sinkula\'s LinkedIn Profile" src="';
-	bloginfo('template_directory');
-	echo '/images/ico-linkedin.png" alt="Mike Sinkula\'s LinkedIn Profile"  /></a><a title="Mike Sinkula\'s YouTube Channel" href="http://www.youtube.com/mikesinkula" target="_blank"><img title="Mike Sinkula\'s YouTube Channel" src="';
-	bloginfo('template_directory');
-	echo '/images/ico-youtube.png" alt="Mike Sinkula\'s YouTube Channel"  /></a><a title="Mike Sinkula\'s Flickr Photo Stream" href="http://www.flickr.com/photos/51088942@N05/" target="_blank"><img title="Mike Sinkula\'s Flickr Photo Stream" src="';
-	bloginfo('template_directory');
-	echo '/images/ico-flickr.png" alt="Mike Sinkula\'s Flickr Photo Stream"  /></a></span></p></div>';
+	echo 'Empty. :-(';
 	
 }
 //
@@ -68,6 +198,7 @@ function get_dedication() {
 // Remove Inline Styles from Captions
 add_shortcode('wp_caption', 'fixed_img_caption_shortcode');
 add_shortcode('caption', 'fixed_img_caption_shortcode');
+
 function fixed_img_caption_shortcode($attr, $content = null) {
 	
 	if ( ! isset( $attr['caption'] ) ) {
