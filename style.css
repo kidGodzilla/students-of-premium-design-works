@@ -56,28 +56,34 @@ img, iframe {
 }
 	
 input, select, textarea {
+	box-sizing: border-box;
 	font-size: 1em;
 	border: 2px solid #DDD;
 	padding: 4px;
 	border-radius: 4px;
- 	}
+	 	}
 	
-	input.submit {
+	input.submit, 
+	input.wpcf7-submit, 
+	input#searchsubmit, 
+	input[type="submit"] {
 		cursor: pointer;
+		width: auto !important;
 		padding: 4px;
 		border-radius: 4px;
 		background-color: #fff;
 		background: linear-gradient(#fff, #ddd);
 	}
 	
-	input.submit:hover {
+	input.submit:hover, 
+	input.wpcf7-submit:hover, 
+	input#searchsubmit:hover, 
+	input[type="submit"]:hover {
 		color:#fff;
 		border: 2px solid #000;
 		background-color: #000;
 		background: linear-gradient(#000, #000);
 	}
-	
-
 
 th, td {
 	padding: 4px!important;
@@ -128,6 +134,10 @@ th, td {
 		text-align: right;
 		margin-bottom: 10px;
 		}
+		
+	#header form.searchform label {
+		display: none;
+	}
 		
 	#date {
 		font: 18px "FeltTipRomanRegular", Arial, Helvetica, sans-serif;
@@ -356,7 +366,8 @@ th, td {
 		margin-right: -20px;	
 		}
 		
-		#sidebar div.affiliates img, #sidebar div.affiliates iframe {
+		#sidebar div.affiliates img, 
+		#sidebar div.affiliates iframe {
 			box-sizing: border-box;
 			width: 140px;
 			height: 140px;
@@ -368,19 +379,22 @@ th, td {
 		text-align: left;
 		}
 		
-	#sidebar div.tubepress-thumb {
+	#sidebar div.tubepress-thumb, 
+	#content div.tubepress-thumb {
 		margin-right: 20px !important;
 		margin-bottom: 10px !important;
 		float: left !important;
 	}
 	
-	#sidebar div.tubepress-thumbs  {
+	#sidebar div.tubepress-thumbs, 
+	#content div.tubepress-thumbs  {
 		margin-right: -20px !important;
 		padding-top: 4px !important;
 		overflow: hidden;
 	}
 		
-	#sidebar img.tubepress-thumbnail-image {
+	#sidebar img.tubepress-thumbnail-image,
+	#content img.tubepress-thumbnail-image {
 		margin-bottom: 4px !important;	
 	}
 		
@@ -501,7 +515,7 @@ th, td {
 			padding-right: 10px;
 			}
 	
-	#content ul {
+	#content ul, #content ol {
 		color: #000;
 		font: 16px/24px "Arial", sans-serif;
 		margin: 0 0 10px 0;
@@ -594,14 +608,9 @@ th, td {
 		font: 21px/21px "FeltTipRomanRegular", Arial, Helvetica, sans-serif;
 		}
 		
-	#content textarea {
-		width: 100%;
-		border: 2px solid #DDD;
-		padding: 4px;
-		}
-		
 	#content input, #content select, #content textarea {
-
+		width: 100%;
+		margin-bottom: 10px;
 		}
 	
 	#content img, #content iframe  {

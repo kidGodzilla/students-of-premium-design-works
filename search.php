@@ -1,4 +1,6 @@
+<!-- Begin Header -->
 <?php get_header(); ?>
+<!-- End Header -->
 
 <!-- START CONTENT -->
 <div id="content">
@@ -13,7 +15,7 @@
     <p><?php echo strip_tags(get_the_excerpt()); // page excerpts ?> <a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>">Read More &raquo;</a></p>
     </div>
     <?php endwhile; ?>
-    <?php if(function_exists('wp_pagenavi')) { wp_pagenavi(); } ?>  
+    <?php wp_pagenavi(); ?>  
    	<section class="search-again">
     <p>Still not satisfied... Try another search?</p>
     <?php get_search_form(); ?>
@@ -27,4 +29,6 @@
 </div>
 <!-- END CONTENT -->
 
+<!-- Begin Footer -->
 <?php get_footer(); ?>
+<!-- End Footer -->
