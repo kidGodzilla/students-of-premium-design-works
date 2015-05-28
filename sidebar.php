@@ -1,63 +1,11 @@
 <div id="sidebar">
 
 	<!-- Begin New Sub-Navigation -->
-	<?php 
-		
-	$main_page = get_post_meta($post->ID, 'navigation', true) == 'main';
-	$child_of_main_page = get_post_meta($post->post_parent, 'navigation', true) == 'main';
-
-	if ($main_page || $child_of_main_page) {
-			
-		echo '<div class="sub-nav">';
-		echo '<ul class="sub-nav-items">';
-			
-		if ($post->post_parent) { // if the page has a parent...
-							
-			echo '<li class="pagenav" >'.get_the_title($post->post_parent).' » Class'; // list "Class" sub-pages
-			echo '<ul>';
-			echo '<li><a href="'.get_permalink($post->post_parent).'">Syllabus</a></li>'; // stick in the link to syllabus with no class
-			wp_list_pages(array('child_of' => $post->post_parent, 'title_li' => '', 'meta_key' => 'navigation', 'meta_value' => 'class',)); 
-			echo '</ul>';
-			wp_list_pages(array('child_of' => $post->post_parent, 'title_li' => get_the_title($post->post_parent).' » Lectures:', 'meta_key' => 'navigation', 'meta_value' => 'lecture',)); // list "Lecture" sub-pages
-			wp_list_pages(array('child_of' => $post->post_parent, 'title_li' => get_the_title($post->post_parent).' » Assignments:', 'meta_key' => 'navigation', 'meta_value' => 'assignment',)); // list "Assignmnets" sub-pages
-			wp_list_pages(array('child_of' => $post->post_parent, 'title_li' => get_the_title($post->post_parent).' » Exercises:', 'meta_key' => 'navigation', 'meta_value' => 'exercise',)); // list "Exercises" sub-pages
-			wp_list_pages(array('child_of' => $post->post_parent, 'title_li' => get_the_title($post->post_parent).' » Teams:', 'meta_key' => 'navigation', 'meta_value' => 'team',)); // list "Teams" sub-pages
-			wp_list_pages(array('child_of' => $post->post_parent, 'title_li' => get_the_title($post->post_parent).' » Students:', 'meta_key' => 'navigation', 'meta_value' => 'student',)); // list "Students" sub-pages
-				
-		} else { // if the page does not have a parent...
-						
-			echo '<li class="pagenav">'.get_the_title($post->ID).' » Class';
-			echo '<ul>';
-			
-			if (is_page($post->ID)) { // stick in the link to syllabus with class
-				
-				echo '<li class="current-page-item"><a href="'.get_permalink($post->post_parent).'">Syllabus</a></li>';
-				
-			} else {
-				
-				echo '<li><a href="'.get_permalink($post->post_parent).'">Syllabus</a></li>';
-				
-			}
-			
-			wp_list_pages(array('child_of' => $post->ID, 'title_li' => '', 'meta_key' => 'navigation', 'meta_value' => 'class',));
-			echo '</ul>';
-			wp_list_pages(array('child_of' => $post->ID, 'title_li' => get_the_title($post->ID).' » Lectures:', 'meta_key' => 'navigation', 'meta_value' => 'lecture',));
-			wp_list_pages(array('child_of' => $post->ID, 'title_li' => get_the_title($post->ID).' » Assignments:', 'meta_key' => 'navigation', 'meta_value' => 'assignment',));
-			wp_list_pages(array('child_of' => $post->ID, 'title_li' => get_the_title($post->ID).' » Exercises:', 'meta_key' => 'navigation', 'meta_value' => 'exercise',));
-			wp_list_pages(array('child_of' => $post->ID, 'title_li' => get_the_title($post->ID).' » Teams:', 'meta_key' => 'navigation', 'meta_value' => 'team',));
-			wp_list_pages(array('child_of' => $post->ID, 'title_li' => get_the_title($post->ID).' » Students:', 'meta_key' => 'navigation', 'meta_value' => 'student',));
-			
-			}
-			
-		echo '</ul>';
-		echo '</div>';
-			
-	}
-	?>	
+	<?php get_my_sub_menu(); ?>	
 	<!-- End New Sub-Navigation --> 
 			
    	<!-- Begin Widgets -->
-	<div class="widgets">
+	<div id="dynamic-sidebar" class="widgets">
     <?php dynamic_sidebar(1); // subscribe & calendar  ?>
     <?php if (!( is_page() || is_search() || is_404() )) : ?>
     <?php dynamic_sidebar(2); // categories & links  ?>
@@ -65,6 +13,20 @@
     <?php dynamic_sidebar(3); // video  ?>
 	</div>
     <!-- End Wigets -->
+    
+    <!-- Begin Social Icons -->
+    <div id="social-icons" class="widgets">
+    	<h2>Social</h2>
+        <ul id="social-icons-items">
+        <li><a href="https://github.com/msinkula" class="flaticon-github12" target="_blank">GitHub</a></li>
+        <li><a href="https://www.facebook.com/premiumdw" class="flaticon-facebook29" target="_blank">Facebook</a></li>
+        <li><a href="https://twitter.com/premiumdw" class="flaticon-twitter2" target="_blank">Twitter</a></li>
+        <li><a href="https://plus.google.com/+PremiumDesignWorksSeattle/" class="flaticon-google2" target="_blank" rel="me">Google+</a></li>
+        <li><a href="https://www.youtube.com/channel/UCJkdeoIJ9lbsDOW0Ctiqsyw/" class="flaticon-video193" target="_blank">YouTube</a></li>
+        <li><a href="https://www.flickr.com/photos/132730337@N04/" class="flaticon-flickr16" target="_blank">Flickr</a></li>
+        </ul>
+    </div>
+    <!-- End Social Icons -->
     
     <!-- Begin Affiliates -->
     <div class="affiliates">

@@ -31,6 +31,8 @@ Author URI: http://www.premiumdw.com/
 
 <!-- Begin Links -->
 <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="all" />
+<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/calendar.css" type="text/css" media="all" />
+<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/flaticon.css" type="text/css" media="all" />
 <link rel="shortcut icon" href="<?php bloginfo('template_directory'); ?>/images/ico-flame.ico" />
 <!-- End Links -->
   
@@ -42,13 +44,25 @@ Author URI: http://www.premiumdw.com/
 
 <body <?php body_class(); ?>>
 
-<!-- START HOME LINK -->
-<div id="homelink">
-	<a href="http://www.premiumdw.com/" target="_blank" title="Premium Design Works Home"><img src="<?php bloginfo('template_directory'); ?>/images/img-homelink.png" alt="Premium Design Works Home" /></a>
+<!-- Begin Grid -->
+<div id="grid">
+    <div id="line"><span class="specification">980px</span></div>
+    <div id="homelink"><a href="http://www.premiumdw.com/" target="_blank" title="Premium Design Works Home"><img src="<?php bloginfo('template_directory'); ?>/images/thumbnail-flame.png" height="50" width="50" alt="Premium Design Works Home" /></a></div>
+    <ul id="columns">
+    <script>
+	
+	for (i = 1; i < 13; i++) {
+		
+		document.write('<li class="column">' + i +'</li>'); // create the twelve columns
+		
+	}
+	
+	</script>
+    </div>
 </div>
-<!-- END HOME LINK -->
+<!-- End Grid -->
 
-<!-- START HEADER -->
+<!-- Begin Header -->
 <div id="header">
 
 	<!-- Begin Logo -->

@@ -13,7 +13,7 @@ add_editor_style( 'admin.css' );
 //
 
 // Begin Register Sidebars
-register_sidebars(3,array(
+register_sidebars(3, array(
 	'before_widget' => '<div id="%1$s" class="widget %2$s">',
 	'after_widget' => '</div>',
 	'before_title' => '<h2>',
@@ -117,41 +117,41 @@ function get_my_main_menu() {
 		echo '<a href="'.get_permalink($main->ID).'">'.$main->post_title.'</a>'; // get the title with permalink
 		echo '<ul class="sub-menu">'; // get the sub-menu items
 			
-		if ($post->post_parent) { // if the page has a parent...
+		if ($main->post_parent) { // if the page has a parent...
 						
 			echo '<li class="pagenav" >Class';
 			echo '<ul>';
-			echo '<li><a href="'.get_permalink($post->post_parent).'">Syllabus</a></li>'; // add link to syllabus with no class
-			wp_list_pages(array('child_of' => $post->post_parent, 'title_li' => '', 'meta_key' => 'navigation', 'meta_value' => 'class',)); 
+			echo '<li><a href="'.get_permalink($main->post_parent).'">Syllabus</a></li>'; // add link to syllabus with no class
+			wp_list_pages(array('child_of' => $main->post_parent, 'title_li' => '', 'meta_key' => 'navigation', 'meta_value' => 'class',)); 
 			echo '</ul>';
-			wp_list_pages(array('child_of' => $post->post_parent, 'title_li' => 'Lectures:', 'meta_key' => 'navigation', 'meta_value' => 'lecture',));
-			wp_list_pages(array('child_of' => $post->post_parent, 'title_li' => 'Assignments:', 'meta_key' => 'navigation', 'meta_value' => 'assignment',)); 
-			wp_list_pages(array('child_of' => $post->post_parent, 'title_li' => 'Exercises:', 'meta_key' => 'navigation', 'meta_value' => 'exercise',));
-			wp_list_pages(array('child_of' => $post->post_parent, 'title_li' => 'Teams:', 'meta_key' => 'navigation', 'meta_value' => 'team',));
-			wp_list_pages(array('child_of' => $post->post_parent, 'title_li' => 'Students:', 'meta_key' => 'navigation', 'meta_value' => 'student',));
+			wp_list_pages(array('child_of' => $main->post_parent, 'title_li' => 'Lectures:', 'meta_key' => 'navigation', 'meta_value' => 'lecture',));
+			wp_list_pages(array('child_of' => $main->post_parent, 'title_li' => 'Assignments:', 'meta_key' => 'navigation', 'meta_value' => 'assignment',)); 
+			wp_list_pages(array('child_of' => $main->post_parent, 'title_li' => 'Exercises:', 'meta_key' => 'navigation', 'meta_value' => 'exercise',));
+			wp_list_pages(array('child_of' => $main->post_parent, 'title_li' => 'Teams:', 'meta_key' => 'navigation', 'meta_value' => 'team',));
+			wp_list_pages(array('child_of' => $main->post_parent, 'title_li' => 'Students:', 'meta_key' => 'navigation', 'meta_value' => 'student',));
 			
 		} else { // if the page does not have a parent...
 		
 			echo '<li class="pagenav">Class';
 			echo '<ul>';
 			
-			if (is_page($post->ID)) { // if is the current parent page
+			if (is_page($main->ID)) { // if is the current parent page
 				
-				echo '<li class="current-page-item"><a href="'.get_permalink($post->post_parent).'">Syllabus</a></li>'; // add link to syllabus with class of current page item
+				echo '<li class="current-page-item"><a href="'.get_permalink($main->post_parent).'">Syllabus</a></li>'; // add link to syllabus with class of current page item
 				
 			} else { // not current parent page
 				
-				echo '<li><a href="'.get_permalink($post->post_parent).'">Syllabus</a></li>';// add link to syllabus with no class
+				echo '<li><a href="'.get_permalink($main->post_parent).'">Syllabus</a></li>';// add link to syllabus with no class
 				
 			}
 			
-			wp_list_pages(array('child_of' => $post->ID, 'title_li' => '', 'meta_key' => 'navigation', 'meta_value' => 'class',));
+			wp_list_pages(array('child_of' => $main->ID, 'title_li' => '', 'meta_key' => 'navigation', 'meta_value' => 'class',));
 			echo '</ul>';
-			wp_list_pages(array('child_of' => $post->ID, 'title_li' => 'Lectures:', 'meta_key' => 'navigation', 'meta_value' => 'lecture',));
-			wp_list_pages(array('child_of' => $post->ID, 'title_li' => 'Assignments:', 'meta_key' => 'navigation', 'meta_value' => 'assignment',));
-			wp_list_pages(array('child_of' => $post->ID, 'title_li' => 'Exercises:', 'meta_key' => 'navigation', 'meta_value' => 'exercise',));
-			wp_list_pages(array('child_of' => $post->ID, 'title_li' => 'Teams:', 'meta_key' => 'navigation', 'meta_value' => 'team',));
-			wp_list_pages(array('child_of' => $post->ID, 'title_li' => 'Students:', 'meta_key' => 'navigation', 'meta_value' => 'student',));
+			wp_list_pages(array('child_of' => $main->ID, 'title_li' => 'Lectures:', 'meta_key' => 'navigation', 'meta_value' => 'lecture',));
+			wp_list_pages(array('child_of' => $main->ID, 'title_li' => 'Assignments:', 'meta_key' => 'navigation', 'meta_value' => 'assignment',));
+			wp_list_pages(array('child_of' => $main->ID, 'title_li' => 'Exercises:', 'meta_key' => 'navigation', 'meta_value' => 'exercise',));
+			wp_list_pages(array('child_of' => $main->ID, 'title_li' => 'Teams:', 'meta_key' => 'navigation', 'meta_value' => 'team',));
+			wp_list_pages(array('child_of' => $main->ID, 'title_li' => 'Students:', 'meta_key' => 'navigation', 'meta_value' => 'student',));
 			
 		}
 		
@@ -163,6 +163,65 @@ function get_my_main_menu() {
 	echo '</ul>';
 	
 	wp_reset_query(); // Don't forget this fucking reset query thing or shit will blow the fuck up, mother fucker.
+	
+}
+//
+
+// Get My Sub Menu
+function get_my_sub_menu() {
+	
+	global $post;
+	
+	$main_page = get_post_meta($post->ID, 'navigation', true) == 'main';
+	$child_of_main_page = get_post_meta($post->post_parent, 'navigation', true) == 'main';
+
+	if ($main_page || $child_of_main_page) {
+			
+		echo '<div id="sub-nav" class="widgets">';
+		echo '<ul id="sub-nav-items">';	
+		
+		if ($post->post_parent) { // if the page has a parent...
+							
+			echo '<li class="pagenav" >'.get_the_title($post->post_parent).' » Class'; // list "Class" sub-pages
+			echo '<ul>';
+			echo '<li><a href="'.get_permalink($post->post_parent).'">Syllabus</a></li>'; // stick in the link to syllabus with no class
+			wp_list_pages(array('child_of' => $post->post_parent, 'title_li' => '', 'meta_key' => 'navigation', 'meta_value' => 'class',)); 
+			echo '</ul>';
+			wp_list_pages(array('child_of' => $post->post_parent, 'title_li' => get_the_title($post->post_parent).' » Lectures:', 'meta_key' => 'navigation', 'meta_value' => 'lecture',)); // list "Lecture" sub-pages
+			wp_list_pages(array('child_of' => $post->post_parent, 'title_li' => get_the_title($post->post_parent).' » Assignments:', 'meta_key' => 'navigation', 'meta_value' => 'assignment',)); // list "Assignmnets" sub-pages
+			wp_list_pages(array('child_of' => $post->post_parent, 'title_li' => get_the_title($post->post_parent).' » Exercises:', 'meta_key' => 'navigation', 'meta_value' => 'exercise',)); // list "Exercises" sub-pages
+			wp_list_pages(array('child_of' => $post->post_parent, 'title_li' => get_the_title($post->post_parent).' » Teams:', 'meta_key' => 'navigation', 'meta_value' => 'team',)); // list "Teams" sub-pages
+			wp_list_pages(array('child_of' => $post->post_parent, 'title_li' => get_the_title($post->post_parent).' » Students:', 'meta_key' => 'navigation', 'meta_value' => 'student',)); // list "Students" sub-pages
+				
+		} else { // if the page does not have a parent...
+						
+			echo '<li class="pagenav">'.get_the_title($post->ID).' » Class';
+			echo '<ul>';
+			
+			if (is_page($post->ID)) { // stick in the link to syllabus with class
+				
+				echo '<li class="current-page-item"><a href="'.get_permalink($post->post_parent).'">Syllabus</a></li>';
+				
+			} else {
+				
+				echo '<li><a href="'.get_permalink($post->post_parent).'">Syllabus</a></li>';
+				
+			}
+			
+			wp_list_pages(array('child_of' => $post->ID, 'title_li' => '', 'meta_key' => 'navigation', 'meta_value' => 'class',));
+			echo '</ul>';
+			wp_list_pages(array('child_of' => $post->ID, 'title_li' => get_the_title($post->ID).' » Lectures:', 'meta_key' => 'navigation', 'meta_value' => 'lecture',));
+			wp_list_pages(array('child_of' => $post->ID, 'title_li' => get_the_title($post->ID).' » Assignments:', 'meta_key' => 'navigation', 'meta_value' => 'assignment',));
+			wp_list_pages(array('child_of' => $post->ID, 'title_li' => get_the_title($post->ID).' » Exercises:', 'meta_key' => 'navigation', 'meta_value' => 'exercise',));
+			wp_list_pages(array('child_of' => $post->ID, 'title_li' => get_the_title($post->ID).' » Teams:', 'meta_key' => 'navigation', 'meta_value' => 'team',));
+			wp_list_pages(array('child_of' => $post->ID, 'title_li' => get_the_title($post->ID).' » Students:', 'meta_key' => 'navigation', 'meta_value' => 'student',));
+			
+			}
+			
+		echo '</ul>';
+		echo '</div>';
+			
+	}
 	
 }
 //
@@ -228,7 +287,5 @@ function fixed_img_caption_shortcode($attr, $content = null) {
 	. do_shortcode( $content ) . '<p class="wp-caption-text">' . $caption . '</p></div>';
 }
 //
-
-
 	
 ?>
