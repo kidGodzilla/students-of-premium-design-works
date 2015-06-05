@@ -4,8 +4,8 @@
 <?php if (have_posts()) : ?>
 <div id="content">
 	<div id="dedication">
-    <a href="http://www.mikesinkula.com/" target="_blank"><?php echo get_avatar(get_the_author_meta('ID'), 60); ?></a>
-    <p><?php echo get_the_author_meta('description'); ?></p>
+    <a href="http://www.mikesinkula.com/" target="_blank"><?php echo get_avatar(get_the_author_meta('ID' , 6), 60); ?></a>
+    <p><?php echo get_the_author_meta('description' , 6); ?></p>
     </div>
     <?php while (have_posts()) : the_post(); ?>
     <div class="post-box">

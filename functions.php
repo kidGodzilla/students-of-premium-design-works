@@ -68,32 +68,35 @@ function get_my_title_tag() {
 
 // Get My Meta Description 
 function get_my_meta_description() {
-
-	if ( is_front_page() ) {  // for the site’s Front Page
 	
-		echo strip_tags(get_the_author_meta('description')); // retrieve my description
+	global $post;
+
+	if ( is_home() ) {  // for the site’s Front Page
+	
+		echo strip_tags(get_the_author_meta('description', 6 )); // retrieve my description
 	
 	} 
 	
 	elseif ( is_page() || is_single() ) { // for the site’s Pages or Postings
 	
-		echo strip_tags(get_the_excerpt($post->ID));  // retrieve the page or posting excerpt 
+		echo get_the_excerpt($post->ID);  // retrieve the page or posting excerpt 
 	
 	} 
 	
 	else { // for everything else
 		
-		echo strip_tags(get_the_author_meta('description')); // retrieve my description
+		echo strip_tags(get_the_author_meta('description', 6)); // retrieve my description
 		
 	}
 	
 }
-
 //
 
 // Get My Main Menu
 function get_my_main_menu() {
 	
+	echo '<div id="nav">';
+	echo '<h4 id="nav-title">Menu<span class="glyph">&#8801</span></h4>';
 	echo '<ul id="nav-items">';
 	
 	$main_pages = get_pages(array('meta_key' => 'navigation', 'meta_value' => 'main', ));
@@ -119,7 +122,7 @@ function get_my_main_menu() {
 			
 		if ($main->post_parent) { // if the page has a parent...
 						
-			echo '<li class="pagenav" >Class';
+			echo '<li class="pagenav" >Class:';
 			echo '<ul>';
 			echo '<li><a href="'.get_permalink($main->post_parent).'">Syllabus</a></li>'; // add link to syllabus with no class
 			wp_list_pages(array('child_of' => $main->post_parent, 'title_li' => '', 'meta_key' => 'navigation', 'meta_value' => 'class',)); 
@@ -132,16 +135,16 @@ function get_my_main_menu() {
 			
 		} else { // if the page does not have a parent...
 		
-			echo '<li class="pagenav">Class';
+			echo '<li class="pagenav">Class:';
 			echo '<ul>';
 			
 			if (is_page($main->ID)) { // if is the current parent page
 				
-				echo '<li class="current-page-item"><a href="'.get_permalink($main->post_parent).'">Syllabus</a></li>'; // add link to syllabus with class of current page item
+				echo '<li class="current-page-item"><a href="'.get_permalink($main->ID).'">Syllabus</a></li>'; // add link to syllabus with class of current page item
 				
 			} else { // not current parent page
 				
-				echo '<li><a href="'.get_permalink($main->post_parent).'">Syllabus</a></li>';// add link to syllabus with no class
+				echo '<li><a href="'.get_permalink($main->ID).'">Syllabus</a></li>';// add link to syllabus with no class
 				
 			}
 			
@@ -161,6 +164,7 @@ function get_my_main_menu() {
 	}
 	
 	echo '</ul>';
+	echo '</div>';
 	
 	wp_reset_query(); // Don't forget this fucking reset query thing or shit will blow the fuck up, mother fucker.
 	

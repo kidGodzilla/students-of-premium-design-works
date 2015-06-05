@@ -1,4 +1,6 @@
-<div class="clear">&nbsp;</div>
+<!-- Begin Sidebar -->
+<?php get_sidebar(); ?>
+<!-- End Sidebar -->
 
 </div>
 <!-- END MIDDLE -->

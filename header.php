@@ -35,6 +35,11 @@ Author URI: http://www.premiumdw.com/
 <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/flaticon.css" type="text/css" media="all" />
 <link rel="shortcut icon" href="<?php bloginfo('template_directory'); ?>/images/ico-flame.ico" />
 <!-- End Links -->
+
+<!-- Start Scripts -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+<script src="<?php bloginfo('template_directory'); ?>/scripts/nav.js"></script>
+<!-- End Scripts -->
   
 <!-- Begin WP Head -->  
 <?php wp_head(); ?>  
@@ -46,37 +51,26 @@ Author URI: http://www.premiumdw.com/
 
 <!-- Begin Grid -->
 <div id="grid">
-    <div id="line"><span class="specification">980px</span></div>
-    <div id="homelink"><a href="http://www.premiumdw.com/" target="_blank" title="Premium Design Works Home"><img src="<?php bloginfo('template_directory'); ?>/images/thumbnail-flame.png" height="50" width="50" alt="Premium Design Works Home" /></a></div>
-    <ul id="columns">
-    <script>
-	
-	for (i = 1; i < 13; i++) {
-		
-		document.write('<li class="column">' + i +'</li>'); // create the twelve columns
-		
-	}
-	
-	</script>
-    </div>
+    <div id="homelink"><a href="http://www.premiumdw.com/" target="_blank" title="Premium Design Works Home"><img src="<?php bloginfo('template_directory'); ?>/images/thumbnail-flame.png" height="40" width="40" alt="Premium Design Works Home" /></a></div>
+    <script src="<?php bloginfo('template_directory'); ?>/scripts/columns.js"></script>
 </div>
 <!-- End Grid -->
 
 <!-- Begin Header -->
 <div id="header">
 
-	<!-- Begin Logo -->
-    <h1 id="logo"><a href="<?php echo get_option('home'); ?>" title="<?php bloginfo('description'); ?>">sccc.premiumdw.com</a></h1>
-    <!-- End Logo -->
-    
-    <!-- Begin Utility -->
+	<!-- Begin Utility -->
     <div id="utility">
         <ul>
         <?php wp_list_pages(array('title_li' => '', 'meta_key' => 'navigation', 'meta_value' => 'utility')); ?>
         </ul>
     </div>
 	<!-- End Utility -->
-    
+
+	<!-- Begin Logo -->
+    <h1 id="logo"><a href="<?php echo get_option('home'); ?>" title="<?php bloginfo('description'); ?>">sccc.premiumdw.com</a></h1>
+    <!-- End Logo -->
+        
     <!-- Begin Search -->
     <?php get_search_form(); ?>
     <!-- End Search -->
@@ -91,14 +85,8 @@ Author URI: http://www.premiumdw.com/
 <!-- END HEADER -->
 
 <!-- Begin Navigation -->
-<div id="nav">
 <?php get_my_main_menu(); ?>
-</div>
 <!-- End Navigation -->
 
 <!-- Begin Middle -->
 <div id="middle">
-
-<!-- Begin Sidebar -->
-<?php get_sidebar(); ?>
-<!-- End Sidebar -->
