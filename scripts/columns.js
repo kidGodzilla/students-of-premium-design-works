@@ -2,7 +2,7 @@
 
 /* window.onresize = function() { */
 
-	if (window.innerWidth < 980) {
+	if (window.innerWidth < 981) {
 		
 		document.write('<div id="line"><span class="specification">' + window.innerWidth + 'px</span></div>');
 		
@@ -14,7 +14,7 @@
 		
 	document.write('<ul id="columns">');
 	
-	if (window.innerWidth < 400) {
+	if (window.innerWidth < 401) {
 		
 		for (i = 1; i < 3; i++) {
 			
@@ -22,7 +22,7 @@
 				
 		}
 			
-	} else if (window.innerWidth < 600) {
+	} else if (window.innerWidth < 601) {
 		
 		for (i = 1; i < 4; i++) {
 			
@@ -30,7 +30,7 @@
 				
 		}
 			
-	} else if (window.innerWidth < 800) {
+	} else if (window.innerWidth < 801) {
 		
 		for (i = 1; i < 5; i++) {
 			

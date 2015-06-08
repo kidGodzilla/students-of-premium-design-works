@@ -1,21 +1,20 @@
 <div id="sidebar">
 
 	<!-- Begin New Sub-Navigation -->
-	<?php get_my_sub_menu(); ?>	
+	<?php if (!(is_search())) { get_my_sub_menu(); } ?>	
 	<!-- End New Sub-Navigation --> 
 			
    	<!-- Begin Widgets -->
 	<div id="dynamic-sidebar" class="widgets">
-    <?php dynamic_sidebar(1); // subscribe & calendar  ?>
     <?php if (!( is_page() || is_search() || is_404() )) : ?>
-    <?php dynamic_sidebar(2); // categories & links  ?>
+    <?php dynamic_sidebar(1); // categories  ?>
     <?php endif; ?>
-    <?php dynamic_sidebar(3); // video  ?>
-	</div>
+    <?php dynamic_sidebar(2); // other  ?>
+   	</div>
     <!-- End Wigets -->
     
     <!-- Begin Social Icons -->
-    <div id="social-icons" class="widgets">
+    <div id="social-icons" class="widget">
     	<h2>Social</h2>
         <ul id="social-icons-items">
         <li><a href="https://github.com/msinkula" class="flaticon-github12" target="_blank">GitHub</a></li>

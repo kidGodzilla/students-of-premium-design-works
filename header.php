@@ -24,7 +24,7 @@ Author URI: http://www.premiumdw.com/
 <meta property="og:title" content="<?php get_my_title_tag(); ?>">
 <meta property="og:description" content="<?php get_my_meta_description(); ?>">
 <meta property="og:url" content="<?php the_permalink(); ?>">
-<meta property="og:image" content="<?php bloginfo('template_directory'); ?>/images/ico-flame.ico">
+<meta property="og:image" content="<?php get_opengraph_image(); ?>">
 <meta property="og:type" content="">
 <meta property="og:site_name" content="<?php bloginfo('name'); ?>">
 <!-- End Open Graph Meta -->
@@ -51,7 +51,7 @@ Author URI: http://www.premiumdw.com/
 
 <!-- Begin Grid -->
 <div id="grid">
-    <div id="homelink"><a href="http://www.premiumdw.com/" target="_blank" title="Premium Design Works Home"><img src="<?php bloginfo('template_directory'); ?>/images/thumbnail-flame.png" height="40" width="40" alt="Premium Design Works Home" /></a></div>
+    <div id="homelink"><a href="http://www.premiumdw.com/" target="_blank" title="Premium Design Works Home"><img src="<?php bloginfo('template_directory'); ?>/images/thumbnail-default.png" height="40" width="40" alt="Premium Design Works Home" /></a></div>
     <script src="<?php bloginfo('template_directory'); ?>/scripts/columns.js"></script>
 </div>
 <!-- End Grid -->

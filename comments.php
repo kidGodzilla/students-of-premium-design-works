@@ -26,7 +26,7 @@ $oddcomment = 'alt';
 <div id="comments-box">
 <?php if ( have_comments() ) : ?>
 	<h2 id="comments-head"><a name="comments"><?php comments_number('0 Comments:', '1 Comment:', '% Comments:' );?></a></h2>
-	<ol class="commentlist">
+	<ol id="comment-items">
 	<?php wp_list_comments('type=comment'); ?>
 	</ol>
 	<div class="navigation">
@@ -46,7 +46,7 @@ $oddcomment = 'alt';
     <?php if ( have_comments() ) : ?>
 	<div id="trackbacks">
         <h4>Trackbacks:</h4>
-        <ul class="trackbacklist">
+        <ul id="trackback-items">
         <?php wp_list_comments('type=pings'); ?>
         </ul>
 	</div>
@@ -67,13 +67,15 @@ $oddcomment = 'alt';
 		<p>Logged in as <a href="<?php echo get_option('siteurl'); ?>/wp-admin/profile.php"><?php echo $user_identity; ?></a>. <a href="<?php echo wp_logout_url(get_permalink()); ?>" title="Log out of this account">Log out &raquo;</a></p>
 	<?php else : ?>
     	<p>Don't forget to get your <a href="http://en.gravatar.com/" target="_blank">Globally Recognized Avatar</a>.</p>
+        <label for="author">Name <small><?php if ($req) echo "(required)"; ?></small></label>
     	<input type="text" name="author" id="author" value="<?php echo $comment_author; ?>" size="22" tabindex="1" <?php if ($req) echo "aria-required='true'"; ?> />
-    	<label for="author">Name <?php if ($req) echo "(required)"; ?></label>
+    	<label for="email">Mail <small><?php if ($req) echo "(required)"; ?></small></label>
     	<input type="text" name="email" id="email" value="<?php echo $comment_author_email; ?>" size="22" tabindex="2" <?php if ($req) echo "aria-required='true'"; ?> />
-    	<label for="email">Mail<?php if ($req) echo "(required)"; ?></label>
-    	<p><input type="text" name="url" id="url" value="<?php echo $comment_author_url; ?>" size="22" tabindex="3" />
-    	<label for="url">Website</small></label>
+    	<label for="url">Website</label>
+    	<input type="text" name="url" id="url" value="<?php echo $comment_author_url; ?>" size="22" tabindex="3" />
+    	
 	<?php endif; ?>
+    <label for="comment">Comment</label>
 	<textarea name="comment" class="comment" cols="50" rows="10" tabindex="4"></textarea>
 	<input name="submit" type="submit" class="submit" tabindex="5" value="Submit Comment" /><?php comment_id_fields(); ?>
 	<?php do_action('comment_form', $post->ID); ?>

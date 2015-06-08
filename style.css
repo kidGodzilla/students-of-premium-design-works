@@ -6,7 +6,7 @@ Author: Premium Design Works
 Author URI: http://www.premiumdw.com/
 */
 
-* { border: 0; margin: 0; padding: 0; }
+* { margin: 0; padding: 0; }
 
 @font-face {
     font-family: 'FeltTipRomanRegular';
@@ -19,6 +19,8 @@ Author URI: http://www.premiumdw.com/
     font-style: normal;
 
 }
+
+html { -webkit-text-size-adjust: none; }
 
 body {
 	font-family: Arial, Helvetica, sans-serif;
@@ -37,7 +39,7 @@ a:hover {
 	text-decoration: none; 
 	}
 	
-h1, h2, h3, h4 {
+h1, h2, h3, h4, label {
 	font-family: "FeltTipRomanRegular", sans-serif;
 	font-weight: normal;
 	line-height: 125% !important;
@@ -50,55 +52,63 @@ p, li, dd {
 img, iframe {
 	box-sizing: border-box;
 }
-	
-input, select, textarea {
+
+input[type="text"], 
+input[type="email"],
+input[type="submit"],
+input[type="password"],	 
+textarea {
 	box-sizing: border-box;
 	font-size: 1em;
 	border: 2px solid #DDD;
 	padding: 4px;
 	border-radius: 4px;
-	 	}
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none; 
+}
 	
-	input.submit, 
-	input.wpcf7-submit, 
-	input#searchsubmit, 
-	input[type="submit"] {
-		cursor: pointer;
-		width: auto !important;
-		padding: 4px;
-		border-radius: 4px;
-		background-color: #fff;
-		background: linear-gradient(#fff, #ddd);
-	}
-	
-	input.submit:hover, 
-	input.wpcf7-submit:hover, 
-	input#searchsubmit:hover, 
-	input[type="submit"]:hover {
-		color:#fff;
-		border: 2px solid #000;
-		background-color: #000;
-		background: linear-gradient(#000, #000);
-	}
+input.submit, 
+input.wpcf7-submit, 
+input#searchsubmit, 
+input[type="submit"] {
+	cursor: pointer;
+	width: auto /*!important*/;
+	padding: 4px;
+	border-radius: 4px;
+	background-color: #fff;
+	background: linear-gradient(#fff, #ddd);
+}
+
+input.submit:hover, 
+input.wpcf7-submit:hover, 
+input#searchsubmit:hover, 
+input[type="submit"]:hover {
+	color:#fff;
+	border: 2px solid #000;
+	background-color: #000;
+	background: linear-gradient(#000, #000);
+}
 
 th, td {
 	padding: 4px !important;
 	line-height: 150%;
 	}
 
-/* ----- Grid ----- */
+/* ----- The Grid ;-) ----- */
 #grid {
 	position: relative;
 	max-width: 984px;
-	margin: 20px auto 10px auto;
+	margin: 10px auto 10px auto;
 }
 
 #line {
 	position: relative;
 	text-align: center;
 	max-width: 980px;
-	margin: 10px auto -10px auto;
+	margin: 0 auto;
 	border-top: 2px solid #ddd;
+	margin-bottom: -25px;
 }
 
 	#line:before {
@@ -128,17 +138,18 @@ th, td {
 	color: #ddd;
 	padding: 0 10px; 
 	background-color: #fff;
-	position: absolute;
+	position: relative;
 	top: -10px;
 }
 
 #grid ul#columns {
+	position: relative;
 	max-width: 940px;
-	height: 25px;
+	height: 20px;
 	margin: 0 auto;
 	border-left: 2px solid #ddd;	
 	border-right: 2px solid #ddd;
-	padding: 25px 20px 0 20px;
+	padding: 20px 20px 0 20px;
 	overflow: hidden;
 }
 
@@ -171,6 +182,7 @@ th, td {
 	right: 0;
 	overflow: hidden;
 	text-align: center;
+	z-index: 2;
 	}
 	
 	#homelink img {
@@ -184,7 +196,7 @@ th, td {
 		
 	}
 	
-/* ----- Header ----- */
+/* ----- Header Section ----- */
 #header {
 	max-width: 940px;
 	padding: 10px 20px;
@@ -243,7 +255,7 @@ th, td {
 		width: 49%;
 		}
 	
-/* NAVIGATION */
+/* ----- Navigation Section ----- */
 #nav {
 	max-width: 960px;
 	margin: 10px auto;
@@ -331,8 +343,7 @@ th, td {
 			font-size: 16px;
 		}
 		
-
-/* ----- MIDDLE ----- */
+/* ----- Middle Section ----- */
 #middle {
 	max-width: 940px;
 	margin: 0 auto;
@@ -340,8 +351,434 @@ th, td {
 	overflow: hidden;
 	border: 2px dashed #ddd;
 	}
+				
+	/* ----- Content Section ----- */
+	#content {
+		float: left;
+		width: 620px;
+		}
+		
+	#content a {
+		border-bottom: 2px dotted #DDD;
+		color: #000;
+		}
+		
+	#content a:hover {
+		border-bottom: 2px dotted #FFF;
+		color: #000;
+		}
+			
+	#content h2	{
+		clear: both;
+		color: #000;
+		font-size: 36px;
+		margin: 0 0px 20px 0;
+		}
+		
+		#content h2 a {
+			margin-right: 3px;
+			border-bottom: none;
+			color: #000;
+			}
+			
+		#content h2 a:hover {
+			margin-right: 3px;
+			color: #000;
+			}
+			
+	#content h3	{
+		clear: both;
+		color: #000;
+		font-size: 32px;
+		font-weight: 400;
+		margin-bottom: 6px;
+		padding-top: 8px;
+		}
+		
+		#content h3 a {
+			border-bottom: none;
+			color: #000;
+			}
+		
+		#content h3 a:hover {
+			color: #000;
+			}		
+			
+	#content h4 {
+		font-size: 24px;
+		font-weight: 400;
+		padding-top: 8px;
+		margin-bottom: 6px;
+		}
+		
+		#content h4 a {
+			border-bottom: none;
+			color: #000;
+			}
+		
+		#content h4 a:hover {
+			color: #000;
+			}
+			
+	#content p {
+			color: #000;
+			margin: 0 0 12px 0;
+			}
+			
+		#content p.wp-caption-text  {
+				text-align: center;
+				margin-top: 5px;
+				font-family: "FeltTipRomanRegular", sans-serif;
+				}
+	
+	#content th {
+			color: #000;
+			font-size: 14px;
+			margin: 0 0 10px 0;
+			font-weight: bold;
+			text-align: right;
+			padding-right: 10px;
+			}
+	
+	#content ul {
+		color: #000;
+		margin-bottom: 10px;
+		}
+		
+	#content ul li	{
+		list-style: none;
+		padding-left: 20px;
+		text-indent: -10px;
+		}
+		
+	#content ul li:before {
+		font-family: 'FeltTipRomanRegular', sans-serif;
+		font-size: 1.5em;
+		color: #DDD;
+		content: "+";
+		position: relative;
+		top: 2px;
+		left: -8px;
+		}
+			
+	#content ol {
+		color: #000;
+		margin-bottom: 10px;
+		padding-left: 24px;
+		}
+		
+	#content ol li	{
+		text-indent: 0;
+		}
+		
+	#content ol li.final {
+		margin: 0 0px 10px 10px;
+		}
 
-	/* ----- SIDEBAR ----- */
+	#content blockquote {
+		padding: 0px 20px;
+		border-left: 3px solid #DDD;
+		margin: 0 0 10px 0px;
+		overflow:auto;
+		}
+		
+		#content blockquote p, 
+		#content blockquote li {
+			font-style: italic;
+		}
+		
+		#content blockquote h3 {
+			color:#000;
+			}
+			
+	#content pre {
+		width: 100%;
+		}
+		
+	/* ----- Content Forms ----- */
+	#content label	{
+		font-size: 21px;
+		margin-bottom: 4px;
+		}
+		
+	#content input[type="text"], 
+	#content input[type="email"],
+	#content textarea {
+		width: 100%;
+		margin-bottom: 10px;
+		}	
+		
+	#content input.submit,
+	#content input.wpcf7-submit {
+		width: auto;
+	}
+	
+	/*  Content Images & Iframes ----- */
+	#content iframe  {
+		max-width: 100%;
+		box-sizing: border-box;
+		border: 2px solid #DDD;
+		padding: 5px;
+		background: #FFF;
+		}
+	
+	#content img  {
+		max-width: 100%;
+		height: auto;
+		box-sizing: border-box;
+		border: 2px solid #DDD;
+		padding: 5px;
+		background: #FFF;
+		}
+		
+	#content img.size-medium {
+		padding: 10px;
+		}
+		
+	#content img.avatar,
+	#content img.myface,
+	#content img.size-thumbnail,
+	#content img.attachment-thumbnail {
+		padding: 4px;
+		float: left;
+		margin-right: 20px;
+		margin-bottom: 10px;
+		}
+		
+	#content a img {
+			background: #FFF;
+			padding: 4px;
+			border: 2px solid #DDD;
+			}
+			
+	#content a:hover img {
+			background: #DDD;
+			}
+			
+	/* ----- Content Attachements -----*/
+	#content img.wp-post-image {}
+	
+	#content img.attachment-thumbnail {}
+	
+	#content img.attachment-medium {}
+	
+	#content img.attachment-large {}
+	
+	#content img.attachment-full {}
+		
+	/* ----- Content Align ----------- */
+	#content .alignnone,
+	#content a img.alignnone,
+	#content .wp-caption.alignnone {
+		margin-bottom: 10px;
+	}
+	
+	#content .aligncenter,
+	#content div.aligncenter,
+	#content a img.aligncenter {
+		display: block;
+		margin: 0 auto 10px auto;
+	}
+	
+	#content .alignright,
+	#content a img.alignright,
+	#content .wp-caption.alignright {
+		float: right;
+		margin: 0 0 10px 20px;
+	}
+	
+	#content .alignleft,
+	#content a img.alignleft,
+	#content .wp-caption.alignleft  {
+		float: left;
+		margin: 0 20px 10px 0;
+	}
+	
+	#content .wp-caption {}
+	
+	#content .wp-caption img {}
+	
+	#content .wp-caption p.wp-caption-text {}
+	
+	#content .wp-caption a {
+		border-bottom: none;
+		}
+		
+	#previous_image a, #next_image a {
+			border-bottom: none; 
+			}	
+			
+	#content div.twocolumns {
+		width: 250px;
+		float: left;
+		}
+	
+	#pwbox-156 {
+		margin-bottom: 10px;
+		}
+		
+	/* ----- Post Divs ----- */
+	#content div.post-box,
+	#content div.navigation {
+		overflow: hidden;
+		margin-bottom: 10px;
+		}
+		
+	#content div.wp-pagenavi {
+	  text-align: right;
+	  font-size: .875em;
+	  margin: 0 auto;
+	  padding: 20px 0;
+	  border-bottom: none;
+	  color: #CCC;
+	}
+	
+	/* ----- GALLERY ITEMS ----- */
+	#gallery-box {
+			margin-bottom: 25px;
+			}
+			
+	.gallery {
+		margin: auto;
+		}
+		
+	.gallery-item {
+		float: left;
+		margin: 5px 3px 5px 0;
+		text-align: center;
+		}
+		
+		#content p.smallattachment a, #content dl.gallery-item a {
+			border-bottom: none;
+			}
+		
+	.gallery img {
+		}
+		
+	.gallery-caption {
+		margin-left: 0;
+		}	
+	
+				
+	/* ----- Comment Section ----- */
+	#dedication {
+		clear: both;
+		padding-top: 10px;
+		border-top: 2px solid #DDD;
+		border-bottom: 2px solid #DDD;
+		overflow: hidden;
+		}
+		
+		#dedication img {
+			position: relative;
+			top: 4px;
+		}
+		
+		#dedication p {
+			font-size: 14px;
+		}
+		
+		#author p {
+			margin-bottom: 0px;
+			}
+		
+	#comments-box {
+		clear: both;
+		}
+		
+	#comments-box ol,
+	#comments-box ul {
+		padding: 0;
+		}
+		
+	#comments-box ul li:before {
+		float: left;
+		margin-right: 6px;
+		top: 0;
+	}
+	
+	#comments-box ol li {
+		list-style-type: none;
+		background: none;
+		}
+	#comments-box ol li.depth-1 {
+		padding: 10px 0;
+		}
+		
+	#comments-box ol li ul li:before {
+		content: none;
+	}
+		
+	#comments-box ul li.depth-2 {
+		padding-top: 10px;
+		}
+		
+	#comments-box ul li.depth-3, 
+	#comments-box ul li.depth-4, 
+	#comments-box ul li.depth-5 {
+		padding: 10px 0;
+		margin: 0;
+		}
+		
+	#comments-box cite {
+		}
+		
+	.comment-author {
+		margin-bottom: 2px;
+		}
+		
+	.comment p {
+		clear:both
+		}
+		
+	.nocomments {	
+		display: none
+		}
+	
+	.reply, 
+	.comment-meta {
+		font-size: 10px;
+		}
+		
+	.avatar {
+		float: left;
+		margin: 0 10px 10px 0;
+		width: 60px;		
+		}
+		
+	#trackback-items span.says, 
+	#trackback-items div.comment-meta, 
+	#trackback-items p, 
+	#trackback-items div.reply {
+		display: none;
+	}
+			
+	/* ---- Contact Form 7 ---- */
+	.wpcf7-list-item-label {
+		margin: 0 10px 0 0;
+		}
+		
+	.wpcf7-response-output {
+		color: #000;
+		font: 16px "Arial", sans-serif;
+		font-weight: 400;
+		margin-bottom: 4px;
+		}
+	
+	.wpcf7-not-valid-tip-no-ajax {
+		color: #000;
+		font: 10px "Arial", sans-serif;
+		font-weight: 400;
+		margin-left: 10px;
+		}
+		
+	.wpcf7-list-item {
+			display: block;
+			margin-bottom: 10px;
+			}
+		
+
+/* ----- SIDEBAR ----- */
 	#sidebar {
 		float: right;
 		width: 300px;
@@ -370,7 +807,7 @@ th, td {
 	
 	#sidebar li {
 		list-style: none;
-		padding-left: 10px;
+		padding-left: 20px;
 		text-indent: -10px;
 		}
 		
@@ -388,6 +825,8 @@ th, td {
 		font-family: 'FeltTipRomanRegular', sans-serif;
 		list-style-type: none;
 		font-size: 18px !important;
+		text-indent: 0;
+		padding-left: 0;
 	}
 	
 	#sidebar ul > li.pagenav ul {
@@ -405,36 +844,22 @@ th, td {
 		}
 		
 	#sidebar li a:hover {
-		border-bottom: none;
+		border-bottom: 2px dotted #DDD;
 		color: #000;
 		}
-		
-	#sidebar li a:after  {
-			font-family: 'FeltTipRomanRegular', Helvetica, sans-serif;
-			font-size: 1.25em;
-			color: #FFF;
-			content: "<—";
-			margin-left: 4px;
-			position: relative;
-			}
-			
-		#sidebar li a:hover:after, #sidebar li.current_page_item a:after, #sidebar li.current_page_parent a:after, #sidebar li.current-cat a:after {
-			color: #DDD;
-			}
 					
 	#sidebar li.current_page_item a, #sidebar li.current-cat a {
 		color: #000;
 		font-weight: bold;
 		}
 			
-			
-	/*#sidebar li.current_page_item a:hover, #sidebar li.current-cat a:hover {
+	#sidebar li.current_page_item a:hover, #sidebar li.current-cat a:hover {
 		color: #000;
 		border-bottom: 2px dotted #DDD;
 		font-weight: bold;
-		}*/
+		}
 	
-	#sidebar div.widgets {
+	#sidebar div.widget {
 		padding-bottom: 6px;
 		border-bottom: 2px solid #ddd;
 		margin-bottom: 14px;
@@ -443,11 +868,6 @@ th, td {
 	#sidebar div.widget {
 		overflow: hidden;
 	}
-	
-	#sidebar div.widget li,
-	#sidebar div#social-icons li {
-		text-indent: 0px;
-		}
 		
 	#sidebar li.cat-item {
 		color: #ddd;
@@ -495,6 +915,30 @@ th, td {
 		text-align: left;
 		}
 		
+	/* --- Sidebar Forms ---*/	
+	#sidebar div.search p {
+		overflow: hidden;
+	}
+	
+	#sidebar div.search label, #sidebar div.search br {
+		display: none;
+	}
+	
+	#sidebar input#s2email {
+		width: 100%;
+	}
+	
+	[name = subscribe] {
+		width: 49% !important;
+		float: left;
+	}
+	
+	[name = unsubscribe] {
+		width: 49% !important;
+		float: right;
+	}
+	
+	/* ----- TubePress --- */
 	#sidebar div.tubepress-thumb, 
 	#content div.tubepress-thumb {
 		margin-right: 20px !important;  
@@ -529,473 +973,6 @@ th, td {
 	#sidebar div.widget_categories ul li {
 		/*background-color: yellow;	*/
 	}
-				
-	/* ----- CONTENT ----- */
-	#content {
-		float: left;
-		width: 620px;
-		}
-			
-	#content h2	{
-		clear: both;
-		color: #000;
-		font-size: 36px;
-		margin: 0 0px 20px 0;
-		}
-		
-		#content h2 a {
-			margin-right: 3px;
-			border-bottom: none;
-			color: #000;
-			}
-			
-		#content h2 a:hover {
-			margin-right: 3px;
-			color: #000;
-			}
-			
-		.breadcrumb a {
-			margin-right: 10px;
-			}
-			
-		.clear {
-			clear: both;
-		}
-			
-	#content h3	{
-		clear: both;
-		color: #000;
-		font-size: 32px;
-		font-weight: 400;
-		margin-bottom: 6px;
-		padding-top: 8px;
-		}
-		
-		#content h3 a {
-			border-bottom: none;
-			color: #000;
-			}
-		
-		#content h3 a:hover {
-			color: #000;
-			}		
-			
-	#content h4 {
-		font-size: 24px;
-		font-weight: 400;
-		padding-top: 8px;
-		margin-bottom: 6px;
-		}
-		
-		#content h4 a {
-			border-bottom: none;
-			color: #000;
-			}
-		
-		#content h4 a:hover {
-			color: #000;
-			}
-			
-	#content p {
-			color: #000;
-			margin: 0 0 12px 0;
-			}
-			
-	#content td {
-			 
-			}
-				
-		#content p a {
-			border-bottom: 2px dotted #DDD;
-			color: #000;
-			}
-		
-	#content img {
-		max-width: 100%;
-		height: auto;
-	}
-		
-		#content p a img {
-			/*border-bottom: none;*/
-			}
-		
-		#content p a:hover {
-			color: #000;
-			border-bottom: 2px dotted #FFF;
-			}			
-			
-		#content p.wp-caption-text  {
-				text-align: center;
-				margin-top: 5px;
-				font-family: "FeltTipRomanRegular", sans-serif;
-				}
-	
-	#content th {
-			color: #000;
-			font-size: 14px;
-			margin: 0 0 10px 0;
-			font-weight: bold;
-			text-align: right;
-			padding-right: 10px;
-			}
-	
-	#content ul, #content ol {
-		color: #000;
-		margin: 0 0 10px 0;
-		}
-		
-	#content ul li	{
-		list-style: none;
-		padding-left: 10px;
-		text-indent: -10px;
-		}
-		
-	#content ul li:before {
-		font-family: 'FeltTipRomanRegular', sans-serif;
-		font-size: 1.5em;
-		color: #DDD;
-		content: "+";
-		position: relative;
-		top: 2px;
-		left: -8px;
-		}
-				
-		#content ul li a {
-			border-bottom: 2px dotted #DDD;
-			color: #000;
-			}
-			
-		#content ul li a:hover {
-			border-bottom: 2px dotted #FFF;
-			color: #000;
-			}
-			
-	#content ol {
-		color: #000;
-		margin: 0 0 10px 0;
-		padding: 0 15px;
-		}
-		
-	#content ol li	{
-		margin: 0 0px 2px 10px;
-		}
-		
-	#content ol li.final {
-		margin: 0 0px 10px 10px;
-		}
-				
-		#content ol li a {
-			border-bottom: 2px dotted #DDD;
-			color: #000;
-			}
-			
-		#content ol li a:hover {
-			border-bottom: 2px dotted #FFF;
-			color: #000;
-			}
-
-	#content blockquote {
-		padding: 0px 20px;
-		border-left: 3px solid #DDD;
-		margin: 0 0 10px 0px;
-		overflow:auto;
-		}
-		
-		#content blockquote p, 
-		#content blockquote li {
-			font-style: italic;
-		}
-		
-		#content blockquote h3 {
-			color:#000;
-			}
-			
-	#content pre {
-		/*border: 1px solid #DDD;
-		border-left: 2px solid #DDD;
-		font-size: 14px;
-		line-height: 14px;
-		padding: 10px 40px;
-		background:url(images/bg-pre.png) no-repeat top left;
-		max-height: 500px;
-		margin: 0px 0px 10px 0px;
-		overflow:auto;*/
-		width: 100%;
-		}
-		
-	#content label	{
-		font-size: 21px;
-		}
-		
-	#content input, 
-	#content select, 
-	#content textarea {
-		width: 100%;
-		margin-bottom: 10px;
-		}
-	
-	#content img, #content iframe  {
-		box-sizing: border-box;
-		border: 2px solid #DDD;
-		padding: 5px;
-		background: #FFF;
-		}
-		
-	#content img.size-medium {
-		padding: 10px;
-		}
-		
-	#content img.avatar,
-	#content img.myface,
-	#content img.size-thumbnail,
-	#content img.attachment-thumbnail {
-			padding: 4px;
-			}
-			
-	#content img.myface {
-			float: left;
-			margin-right: 10px;
-			margin-bottom: 20px;
-			}
-			
-	#content a img {
-			background: #FFF;
-			}
-			
-	#content a:hover img {
-			background: #DDD;
-			}
-			
-			
-	/* ----- WP Align -----*/		
-	.alignnone {
-		margin-bottom: 10px; 
-		}
-		
-	.alignleft {
-		float: left;
-		margin: 0 20px 10px 0 ; 
-		}
-					
-	.alignright {
-		float: right;
-		margin: 0 0 10px 20px; 
-		}
-			
-			
-	#previous_image a, #next_image a {
-			border-bottom: none; 
-			}	
-			
-	#content div.twocolumns {
-		width: 250px;
-		float: left;
-		}
-	
-	#pwbox-156 {
-		margin-bottom: 10px;
-		}
-		
-		
-	/* ----- Page Navi ----- */
-	#content div.wp-pagenavi {
-	  text-align: right;
-	  font-size: .875em;
-	  margin: 0 auto;
-	  padding: 20px 0;
-	  border-bottom: none;
-	  color: #CCC;
-	}
-
-	
-						
-	/* POST ITEMS */
-	.post-box {
-		/*border-bottom: 2px solid #DDD;*/
-		margin-bottom: 10px;
-		}
-	
-	
-	/* GALLERY ITEMS */
-	#gallery-box {
-			margin-bottom: 25px;
-			}
-			
-	.gallery {
-		margin: auto;
-		}
-		
-	.gallery-item {
-		float: left;
-		margin: 5px 3px 5px 0;
-		text-align: center;
-		}
-		
-		#content p.smallattachment a, #content dl.gallery-item a {
-			border-bottom: none;
-			}
-		
-	.gallery img {
-		}
-		
-	.gallery-caption {
-		margin-left: 0;
-		}
-		
-		
-	/* CAPTIONS */		
-	.wp-caption a {
-		border-bottom: none;
-		}
-		
-	a img {
-		border-bottom: none;
-		}
-	
-				
-	/* COMMENTS */
-	#dedication {
-		clear: both;
-		padding-top: 10px;
-		border-top: 2px solid #DDD;
-		border-bottom: 2px solid #DDD;
-		overflow: hidden;
-		}
-		
-		#dedication img {
-			position: relative;
-			top: 4px;
-		}
-		
-		#dedication p {
-			font-size: 14px;
-		}
-		
-		#author p {
-			margin-bottom: 0px;
-			}
-		
-	#comments-box {
-		clear: both;
-		}
-		
-	#comments-box ol {
-		padding: 0;
-		}
-		
-	#comments-box ul li:before {
-		content: none;
-	}
-	
-	#comments-box ol li.depth-1 {
-		list-style-type:none;
-		background: none;
-		padding: 10px 0;
-		
-		}
-		
-	#comments-box ul li.depth-2 {
-		list-style-type:none;
-		padding-top: 10px;
-		background: none;
-		}
-		
-	#comments-box ul li.depth-3, #comments-box ul li.depth-4, #comments-box ul li.depth-5 {
-		list-style-type:none;
-		padding: 10px 0;
-		margin: 0;
-		background: none;
-		}
-		
-	#comments-box cite {
-		font-weight:bold;
-		font-size:14px;
-		}
-		
-	.comment-author {
-		margin-bottom: 2px;
-		}
-		
-	.comment p {
-		clear:both
-		}
-		
-	.nocomments {	
-		display: none
-		}
-	
-	.reply {
-		font-size:10px;
-		}
-		
-	.comment-meta {
-		/*display:none;*/
-		font-size:10px;
-		}
-		
-	.avatar {
-		float: left;
-		margin: 0 10px 10px 0;
-		width: 60px;		
-		}
-		
-	ul.trackbacklist span.says, ul.trackbacklist div.comment-meta, ul.trackbacklist p, ul.trackbacklist div.reply {
-		display: none;
-		
-	}
-			
-/* CONTACT 7 */
-	
-.wpcf7-list-item-label {
-	margin: 0 10px 0 0;
-	}
-	
-.wpcf7-response-output {
-	color: #000;
-	font: 16px "Arial", sans-serif;
-	font-weight: 400;
-	margin-bottom: 4px;
-	}
-
-.wpcf7-not-valid-tip-no-ajax {
-	color: #000;
-	font: 10px "Arial", sans-serif;
-	font-weight: 400;
-	margin-left: 10px;
-	}
-	
-	
-	.wpcf7-list-item {
-		display: block;
-		margin-bottom: 10px;
-		}
-		
-#post-102 div.left {
-	width: 48%;
-	float: left;
-}
-
-#post-102 div.right {
-	width: 48%;
-	float: right;
-}
-		
-
-
-
-
-
-#footer-menu {
-	width: 882px;
-	margin: 0 auto;
-	padding: 35px 20px 0px 20px;
-	color: #000;
-	overflow: hidden;
-}
-
-#footer-menu-items li.main {
-	
-}
 	
 /* FOOTER */
 #footer {
@@ -1011,7 +988,7 @@ th, td {
 		}
 		
 	#footer p span {
-		float: right
+		float: right;
 		}
 	
 	#footer p a {
@@ -1043,6 +1020,32 @@ th, td {
 	#content {
 		width: 65.957446808511%; /* 620px / 940px */
 		}
+		
+	#content div.tubepress-thumb {
+		width: calc(25% - 20px); /* 160px / 640px */
+	}
+	
+	#content div.tubepress-youtube-thumbnail,
+	#content div.tubepress-youtube-thumbnail img,
+	#content dl.tubepress-meta-group,
+	#sidebar div.tubepress-thumb img,
+	#sidebar dl.tubepress-meta-group,
+	#sidebar div.affiliates iframe table {
+		width: 100% !important;
+		height: auto !important;
+	}
+	
+	 
+	#sidebar div.tubepress-thumb,
+	#sidebar div.affiliates img,
+	#sidebar div.affiliates iframe {
+		width: calc(50% - 20px); /* 160px / 320px */
+	}
+	
+	#sidebar div.affiliates img,
+	#sidebar div.affiliates iframe {
+		height: auto !important;
+	}
 		
 	#sidebar {
 		width: 31.914893617021%; /* 300px / 940px */
@@ -1156,6 +1159,7 @@ th, td {
 	#content {
 		float: none;
 		width: 100%;
+		padding-bottom: 20px;
 		border-bottom: 2px solid #ddd;
 		}
 		
@@ -1168,6 +1172,12 @@ th, td {
 	#sidebar div#sub-nav {
 		display: none;
 	}
+	
+	#sidebar div.tubepress-thumb,
+	#sidebar div.affiliates img,
+	#sidebar div.affiliates iframe {
+		width: calc(25% - 20px); /* 160px / 320px */
+	}
 		
 	#sidebar div.widget_categories ul, 
 	#sidebar div.widget_links ul,
@@ -1176,6 +1186,15 @@ th, td {
 		-moz-column-count: 4; /* Firefox */
 		column-count: 4;	
 	}
+	
+	#footer p {
+		text-align: center;
+	}
+	
+	#footer p span {
+		float: none;
+		display: block;
+		}
 	
 }
 
@@ -1192,6 +1211,17 @@ th, td {
 	
 	#logo {
 		font-size: 2.5em;
+	}
+	
+	#content div.tubepress-thumb {
+		width: calc(33% - 20px); 
+		/*background-color: yellow;*/
+	}
+	
+	#sidebar div.tubepress-thumb,
+	#sidebar div.affiliates img,
+	#sidebar div.affiliates iframe {
+		width: calc(33% - 20px); /* 160px / 320px */
 	}
 	
 	#sidebar div.widget_categories ul, 
@@ -1217,6 +1247,13 @@ th, td {
 	
 	#logo {
 		font-size: 2em;
+	}
+	
+	#content div.tubepress-thumb,
+	#sidebar div.tubepress-thumb,
+	#sidebar div.affiliates img,
+	#sidebar div.affiliates iframe {
+		width: calc(50% - 20px); 
 	}
 	
 	#sidebar div.widget_categories ul, 

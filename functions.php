@@ -13,7 +13,7 @@ add_editor_style( 'admin.css' );
 //
 
 // Begin Register Sidebars
-register_sidebars(3, array(
+register_sidebars(2, array(
 	'before_widget' => '<div id="%1$s" class="widget %2$s">',
 	'after_widget' => '</div>',
 	'before_title' => '<h2>',
@@ -181,7 +181,7 @@ function get_my_sub_menu() {
 
 	if ($main_page || $child_of_main_page) {
 			
-		echo '<div id="sub-nav" class="widgets">';
+		echo '<div id="sub-nav" class="widget">';
 		echo '<ul id="sub-nav-items">';	
 		
 		if ($post->post_parent) { // if the page has a parent...
@@ -249,6 +249,12 @@ function show_avatar($comment, $size) {
 			
 }
 //	
+
+function get_opengraph_image() {
+		
+	echo bloginfo('template_directory').'/images/thumbnail-default.png';
+	
+}
 	
 // Dedication Thingy
 function get_dedication() {
