@@ -157,8 +157,7 @@ th, td {
 	box-sizing: border-box;
 	font-family: "FeltTipRomanRegular", sans-serif;
 	font-size: 14px;
-	line-height: 200% !important;
-	font-weight: normal;
+ 	font-weight: normal;
 	color: #ddd;
 	list-style-type: none;
 	float: left;
@@ -207,7 +206,7 @@ th, td {
 
 	#logo {
 		float: left;
-		margin-top: 25px;
+		margin-top: 20px;
 		text-align: left;
 		font-size: 3em;
 		width: 49%;

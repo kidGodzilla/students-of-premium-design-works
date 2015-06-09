@@ -96,7 +96,7 @@ function get_my_meta_description() {
 function get_my_main_menu() {
 	
 	echo '<div id="nav">';
-	echo '<h4 id="nav-title">Menu<span class="glyph">&#8801</span></h4>';
+	echo '<h4 id="nav-title">Menu<span class="glyph">&#8801;</span></h4>';
 	echo '<ul id="nav-items">';
 	
 	$main_pages = get_pages(array('meta_key' => 'navigation', 'meta_value' => 'main', ));
