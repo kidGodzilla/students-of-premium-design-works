@@ -58,6 +58,7 @@ function get_my_title_tag() {
 		echo get_the_title($post->post_parent);  // retrieve the parent page title
 		
 	}
+	
 	echo ' | '; // separator with spaces
 	bloginfo('name'); // retrieve the site name
 	echo ' | '; // separator with spaces
@@ -70,22 +71,21 @@ function get_my_title_tag() {
 function get_my_meta_description() {
 	
 	global $post;
-
-	if ( is_home() ) {  // for the site’s Front Page
 	
-		echo strip_tags(get_the_author_meta('description', 6 )); // retrieve my description
+	if ( is_page() || is_single() ) { // for pages or postings...
 	
-	} 
-	
-	elseif ( is_page() || is_single() ) { // for the site’s Pages or Postings
-	
-		echo get_the_excerpt($post->ID);  // retrieve the page or posting excerpt 
-	
-	} 
-	
-	else { // for everything else
+		while (have_posts()) { 
+		the_post();
+		echo get_the_excerpt($post->ID); // get the excerpt from the excerpt filed or the first 150 words of the page or posting
+		}
 		
-		echo strip_tags(get_the_author_meta('description', 6)); // retrieve my description
+		wp_reset_query();
+			
+	} 
+	
+	else { // for everything else...
+		
+		echo strip_tags(get_the_author_meta('description', 6)); // retrieve my author description
 		
 	}
 	
@@ -281,12 +281,7 @@ function fixed_img_caption_shortcode($attr, $content = null) {
 	if ( $output != '' )
 		return $output;
 
-	extract(shortcode_atts(array(
-		'id'	=> '',
-		'align'	=> 'alignnone',
-		'width'	=> '',
-		'caption' => ''
-	), $attr));
+	extract(shortcode_atts(array('id' => '', 'align'	=> 'alignnone', 'width'	=> '', 'caption' => ''), $attr));
 
 	if ( 1 > (int) $width || empty($caption) )
 		return $content;
