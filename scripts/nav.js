@@ -35,20 +35,12 @@ $(window).load(function() { // when the window loads...
 			if ($(window).width() < 801) { // if width is less than 801px...
 			
 				$('#nav-items').css('display' , 'none'); // hide the navigation items
-				$("#nav-items > li.main > a").click(function() {
-			
-					$(this).next("#nav-items li > ul.sub-menu").slideToggle(); // toggle sub menu
-					preventDefault(); // disable href on-click for desktop computers
-					
-				});
 				
-			}
-			
-			if ($(window).width() > 800) { // else if width is greater than 800px...
+			} else if ($(window).width() > 800) { // else if width is greater than 800px...
 			
 				$("#nav-items").css('display' , 'block'); // show the navigation items
 				$("#nav-items > li.main > a").unbind('click'); // unbind disable href on-click
-				$("#nav-items li > ul.sub-menu").css('display', 'none') // close sub-menu
+				$("#nav-items li > ul.sub-menu").css('display', 'none');// close sub-menu
 				
 			}
 			
