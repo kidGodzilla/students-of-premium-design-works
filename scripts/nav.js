@@ -21,8 +21,8 @@ $(window).load(function() { // when the window loads...
 			
 		$("#nav-items > li.main > a").click(function() {
 			
-			$(this).next("#nav-items li > ul.sub-menu").slideToggle(); // toggle sub menu
-			preventDefault(); // disable href
+			$(this).next("#nav-items li > ul.sub-menu").slideToggle(); // toggle sub-menu
+			preventDefault(); // disable href on main menu item
 			
 		});	
 	
@@ -30,7 +30,7 @@ $(window).load(function() { // when the window loads...
 	
 	$(window).resize(function() { // when the window is resized...
 			
-		if ( loadWidth != $(window).width() ) { // disable verticle resize
+		if ( loadWidth != $(window).width() ) { // disable vertical resize
 			
 			if ($(window).width() < 801) { // if width is less than 801px...
 			
@@ -50,12 +50,8 @@ $(window).load(function() { // when the window loads...
 				
 			}
 			
-		}
+		} // end disable verticle resize
 		
-	});
+	}); // end window resize
 		
-});
-
-
-	
-	
+}); // end winow load
