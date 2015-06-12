@@ -54,4 +54,4 @@ $(window).load(function() { // when the window loads...
 		
 	}); // end window resize
 		
-}); // end winow load
+}); // end window load
