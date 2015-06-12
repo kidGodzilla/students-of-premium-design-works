@@ -1,8 +1,15 @@
-// JavaScript Document
+/*  
+Theme Name: Students of Premium Design Works
+Description: This is a theme your mom would finally respond to.
+Version: 3
+Author: Premium Design Works
+Author URI: http://www.premiumdw.com/
+*/
 
-$(document).ready(function() {
+$(window).load(function() { // when the window loads...
 	
 	var $ = jQuery;
+	var loadWidth = $(window).width();
 		
 	$("#nav-title").click(function() { 
 	
@@ -10,15 +17,45 @@ $(document).ready(function() {
 		
 	});
 			
-	if ($(window).width() < 801) {
+	if ( $(window).width() < 801 ) { // if width is less than 801px...
 			
 		$("#nav-items > li.main > a").click(function() {
 			
-			$(this).next("#nav-items li > ul.sub-menu").slideToggle(); // toggle sub menu (of parent menu item only)
-			return false; // disable anchor
+			$(this).next("#nav-items li > ul.sub-menu").slideToggle(); // toggle sub menu
+			preventDefault(); // disable href
 			
 		});	
 	
-	}
+	} 
+	
+	$(window).resize(function() { // when the window is resized...
+			
+		if ( loadWidth != $(window).width() ) { // disable verticle resize
+			
+			if ($(window).width() < 801) { // if width is less than 801px...
+			
+				$('#nav-items').css('display' , 'none'); // hide the navigation items
+				$("#nav-items > li.main > a").click(function() {
+			
+					$(this).next("#nav-items li > ul.sub-menu").slideToggle(); // toggle sub menu
+					preventDefault(); // disable href
+					
+				});
+				
+			} else if ($(window).width() > 800) { // else if width is greater than 80px...
+			
+				$("#nav-items").css('display' , 'block'); // show the navigation items
+				$("#nav-items > li.main > a").unbind('click'); // unbind disable href
+				$("#nav-items li > ul.sub-menu").css('display', 'none') // close sub-menu
+				
+			}
+			
+		}
+		
+	});
 		
 });
+
+
+	
+	

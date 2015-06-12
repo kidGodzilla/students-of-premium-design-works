@@ -278,8 +278,15 @@ th, td {
 		text-align: center;
 		margin: 0px auto;
 		position: relative;
-		list-style: none
+		list-style: none;
+		/*display: block !important;*/
 		}
+		
+/*@media screen and (min-width: 800px) {
+#nav-items {
+		display: block !important;
+		}	
+}*/
 	
 	#nav-items > li.main {
 		font-family: 'FeltTipRomanRegular', sans-serif;
