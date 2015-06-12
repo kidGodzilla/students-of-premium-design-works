@@ -38,14 +38,14 @@ $(window).load(function() { // when the window loads...
 				$("#nav-items > li.main > a").click(function() {
 			
 					$(this).next("#nav-items li > ul.sub-menu").slideToggle(); // toggle sub menu
-					preventDefault(); // disable href
+					preventDefault(); // disable href on-click
 					
 				});
 				
 			} else if ($(window).width() > 800) { // else if width is greater than 80px...
 			
 				$("#nav-items").css('display' , 'block'); // show the navigation items
-				$("#nav-items > li.main > a").unbind('click'); // unbind disable href
+				$("#nav-items > li.main > a").unbind('click'); // unbind disable href on-click
 				$("#nav-items li > ul.sub-menu").css('display', 'none') // close sub-menu
 				
 			}
