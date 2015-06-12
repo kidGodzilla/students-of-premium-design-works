@@ -22,7 +22,7 @@ $(window).load(function() { // when the window loads...
 		$("#nav-items > li.main > a").click(function() {
 			
 			$(this).next("#nav-items li > ul.sub-menu").slideToggle(); // toggle sub-menu
-			preventDefault(); // disable href on main menu item
+			return false; // disable href on main menu item for mobile devices
 			
 		});	
 	
@@ -38,11 +38,13 @@ $(window).load(function() { // when the window loads...
 				$("#nav-items > li.main > a").click(function() {
 			
 					$(this).next("#nav-items li > ul.sub-menu").slideToggle(); // toggle sub menu
-					preventDefault(); // disable href on-click
+					preventDefault(); // disable href on-click for desktop computers
 					
 				});
 				
-			} else if ($(window).width() > 800) { // else if width is greater than 800px...
+			}
+			
+			if ($(window).width() > 800) { // else if width is greater than 800px...
 			
 				$("#nav-items").css('display' , 'block'); // show the navigation items
 				$("#nav-items > li.main > a").unbind('click'); // unbind disable href on-click
