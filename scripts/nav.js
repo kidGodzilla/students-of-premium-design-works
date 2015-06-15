@@ -16,17 +16,19 @@ $(window).load(function() { // when the window loads...
 		$("#nav-items").slideToggle(); // toggle main menu
 		
 	});
-			
-	if ( $(window).width() < 801 ) { // if width is less than 801px...
-			
-		$("#nav-items > li.main > a").click(function() {
-			
-			$(this).next("#nav-items li > ul.sub-menu").slideToggle(); // toggle sub-menu
-			return false; // disable href on main menu item for mobile devices
-			
-		});	
 	
-	} 
+	/*$("#nav-items > li").addClass("closed");*/
+	
+	if ($(window).width() < 801) {
+		
+		$("#nav-items > li.main > a").click(function() {
+				
+			$(this).next("#nav-items li > ul.sub-menu").slideToggle(); // toggle sub-menu
+			return false; // disable href on main menu item
+				
+		});
+
+	}		
 	
 	$(window).resize(function() { // when the window is resized...
 			
@@ -34,13 +36,15 @@ $(window).load(function() { // when the window loads...
 			
 			if ($(window).width() < 801) { // if width is less than 801px...
 			
-				$('#nav-items').css('display' , 'none'); // hide the navigation items
-				
+				$("#nav-items").hide(); // hide the navigation items
+				$("#nav-items li.current-page-item ul.sub-menu").show(); // show current sub-menu
+				$("#nav-items li.current-page-parent ul.sub-menu").show(); // show current sub-menu
+									
 			} else if ($(window).width() > 800) { // else if width is greater than 800px...
 			
-				$("#nav-items").css('display' , 'block'); // show the navigation items
-				$("#nav-items > li.main > a").unbind('click'); // unbind disable href on-click
-				$("#nav-items li > ul.sub-menu").css('display', 'none');// close sub-menu
+				$("#nav-items").show(); // show the navigation items
+				$("#nav-items > li.main > a").unbind('click'); // unbind disable on main menu item
+				$("#nav-items li > ul.sub-menu").hide();// close sub-menu
 				
 			}
 			
