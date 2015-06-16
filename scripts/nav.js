@@ -10,23 +10,29 @@ $(window).load(function() { // when the window loads...
 	
 	var $ = jQuery;
 	var loadWidth = $(window).width();
-		
-	$("#nav-title").click(function() { 
 	
+	var mainToggle = function() {
+		
 		$("#nav-items").slideToggle(); // toggle main menu
-		
-	});
+
+	}
 	
-	/*$("#nav-items > li").addClass("closed");*/
+	$("#nav-title").on("click", mainToggle); 
+	
+	var subToggle = function() {
+		
+		$(this).next("#nav-items li > ul.sub-menu").slideToggle(); // toggle sub-menu
+		return false; // disable href on main menu item
+		
+	}
 	
 	if ($(window).width() < 801) {
 		
-		$("#nav-items > li.main > a").click(function() {
-				
-			$(this).next("#nav-items li > ul.sub-menu").slideToggle(); // toggle sub-menu
-			return false; // disable href on main menu item
-				
-		});
+		$("#nav-items li.main > a").on("click", subToggle);
+	
+	} else if ($(window).width() > 800) {
+		
+		$("#nav-items li.main > a").unbind( "click", subToggle);
 
 	}		
 	
@@ -39,12 +45,13 @@ $(window).load(function() { // when the window loads...
 				$("#nav-items").hide(); // hide the navigation items
 				$("#nav-items li.current-page-item ul.sub-menu").show(); // show current sub-menu
 				$("#nav-items li.current-page-parent ul.sub-menu").show(); // show current sub-menu
+				$("#nav-items li.main > a").bind( "click", subToggle); // why does this do push-ups on my mac?!	
 									
 			} else if ($(window).width() > 800) { // else if width is greater than 800px...
 			
 				$("#nav-items").show(); // show the navigation items
-				$("#nav-items > li.main > a").unbind('click'); // unbind disable on main menu item
 				$("#nav-items li > ul.sub-menu").hide();// close sub-menu
+				$("#nav-items li.main > a").unbind( "click", subToggle);
 				
 			}
 			
