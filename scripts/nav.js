@@ -43,6 +43,7 @@ $(window).load(function() { // when the window loads...
 				$("#nav-items li.current-page-parent ul.sub-menu").show(); // show current sub-menu
 				
 				if ($("#nav-items li.main > a").unbind( "click", subToggle)) { // if click has been previously unbound...
+				
 					$("#nav-items li.main > a").bind( "click", subToggle); // ... bind it again once and only once
 						
 				}
