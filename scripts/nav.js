@@ -30,11 +30,7 @@ $(window).load(function() { // when the window loads...
 		
 		$("#nav-items li.main > a").on("click", subToggle);
 	
-	} else if ($(window).width() > 800) {
-		
-		$("#nav-items li.main > a").unbind( "click", subToggle);
-
-	}		
+	}	
 	
 	$(window).resize(function() { // when the window is resized...
 			
