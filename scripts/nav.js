@@ -15,7 +15,7 @@ $(window).load(function() { // when the window loads...
 		
 		$("#nav-items").slideToggle(); // toggle main menu
 
-	}
+	};
 	
 	$("#nav-title").on("click", mainToggle); 
 	
@@ -24,7 +24,7 @@ $(window).load(function() { // when the window loads...
 		$(this).next("#nav-items li > ul.sub-menu").slideToggle(); // toggle sub-menu
 		return false; // disable href on main menu item
 		
-	}
+	};
 	
 	if ($(window).width() < 801) {
 		
