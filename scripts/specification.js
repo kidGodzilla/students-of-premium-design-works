@@ -5,11 +5,15 @@ Author URI: http://www.premiumdw.com/
 */
 		
 
-if (window.innerWidth < 980) { // if the window is less than 980px...
+window.onload = function() { // when the window loads...
+ 
+	if (window.innerWidth < 980) { // if the window is less than 980px...
+	
+		document.getElementById("specification").innerHTML = window.innerWidth + "px"; // list window width in pixels
+				
+	} 
 
-	document.getElementById("specification").innerHTML = window.innerWidth + "px"; // list window width in pixels
-			
-} 
+};
 		
 window.onresize = function() { // if the widow gets resized...
 	
