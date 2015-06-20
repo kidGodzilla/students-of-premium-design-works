@@ -140,7 +140,7 @@ function get_my_main_menu() {
 			
 			if (is_page($main->ID)) { // if is the current parent page
 				
-				echo '<li class="current-page-item"><a href="'.get_permalink($main->ID).'">Syllabus</a></li>'; // add link to syllabus with class of current page item
+				echo '<li class="current_page_item"><a href="'.get_permalink($main->ID).'">Syllabus</a></li>'; // add link to syllabus with class of current page item
 				
 			} else { // not current parent page
 				

@@ -38,6 +38,7 @@ Author URI: http://www.premiumdw.com/
 
 <!-- Start Scripts -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+<script src="<?php bloginfo('template_directory'); ?>/scripts/specification.js"></script>
 <script src="<?php bloginfo('template_directory'); ?>/scripts/nav.js"></script>
 <!-- End Scripts -->
   
@@ -51,8 +52,23 @@ Author URI: http://www.premiumdw.com/
 
 <!-- Begin Grid -->
 <div id="grid">
+
+	<!-- Begin Home Link -->
     <div id="homelink"><a href="http://www.premiumdw.com/" target="_blank" title="Premium Design Works Home"><img src="<?php bloginfo('template_directory'); ?>/images/thumbnail-default.png" height="40" width="40" alt="Premium Design Works Home" /></a></div>
-    <script src="<?php bloginfo('template_directory'); ?>/scripts/columns.js"></script>
+    <!-- End Home Link -->
+    
+    <!-- Begin Specification Line -->    
+	<div id="line">
+	<span id="specification">980px</span>
+	</div>
+    <!-- End Specification Line -->
+     
+    <!-- Begin Columns -->
+	<ul id="columns">
+    <script src="<?php bloginfo('template_directory'); ?>/scripts/columns.js"></script>        
+    </ul>
+    <!-- End Columns --> 
+   
 </div>
 <!-- End Grid -->
 
