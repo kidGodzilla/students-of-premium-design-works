@@ -26,15 +26,27 @@ $(window).load(function() { // when the window loads...
 		
 	};
 	
+	var classToggle = function () {
+		
+		$(this).toggleClass("opened");
+		
+	};
+	
 	if ($(window).width() < 801) { // if width is less than 801px...
 		
-		$("#nav-items li.main > a").on("click", subToggle); // trigger sub-menu toggle 
+		$("#nav-items li.main > a").on("click", subToggle); // trigger sub-menu toggle
+		$("#nav-items li.main > a").on("click", classToggle); // trigger sub-menu icon toggle
 	
 	}	
 	
+	$("#nav-items li.main > a").append("<span>");
+	$("#nav-items li.current-page-item > a").addClass("opened");
+	$("#nav-items li.current-page-parent > a").addClass("opened");
+	
+	
 	$(window).resize(function() { // when the window is resized...
 			
-		if ( loadWidth != $(window).width() ) { // disable vertical resize!
+		if ( loadWidth !== $(window).width() ) { // disable vertical resize!
 			
 			if ($(window).width() < 801) { // if width is less than 801px...
 			

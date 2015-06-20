@@ -294,6 +294,10 @@ th, td {
 			padding: 0 8px;
 			}
 			
+		#nav-items li > a span {
+			display: none;	
+		}
+			
 		/*#nav-items > li.open:after { 
 			content: 'ˆ';
 			float: right;
@@ -1192,6 +1196,27 @@ th, td {
 		border-top: 2px solid #ddd;
 		padding: 4px 0;
 		}
+		
+	#nav-items li > a {
+		position: relative;
+	}
+		
+	#nav-items li > a span {
+			display: block;	
+			position: absolute;
+			right: 14px;
+			top: 0;
+		}
+		
+		#nav-items > li a span:after { 
+			content: 'ˇ';
+			}
+			
+		#nav-items > li a.opened span:after { 
+			content: 'ˆ';
+			}
+			
+		
 		
 	#nav-items li.main:last-child {
 		padding-bottom: 0;
