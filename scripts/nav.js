@@ -69,7 +69,7 @@ $(window).load(function() { // when the window loads...
 				
 			}
 			
-		} // end disable verticle resize
+		} // end only horizontally
 		
 	}); // end window resize
 		
