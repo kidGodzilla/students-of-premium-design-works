@@ -53,7 +53,9 @@ $(window).load(function() { // when the window loads...
 			
 				$("#nav-items").hide(); // hide the navigation items
 				$("#nav-items li.current-page-item ul.sub-menu").show(); // show current page item sub-menu
+				$("#nav-items li.current-page-item > a").addClass("opened"); // open toggle icon on current page
 				$("#nav-items li.current-page-parent ul.sub-menu").show(); // show current page parent sub-menu
+				$("#nav-items li.current-page-parent > a").addClass("opened"); // open toggle icon on current page parent
 				
 				if ($("#nav-items li.main > a").unbind( "click", subToggle)) { // if sub-menu toggle trigger click has been previously unbound...
 				
