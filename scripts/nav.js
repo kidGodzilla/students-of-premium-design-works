@@ -42,7 +42,6 @@ $(window).load(function() { // when the window loads...
 	$("#nav-items li.main > a").on("click", classToggle); // trigger sub-menu icon toggle
 	$("#nav-items li.current-page-item > a").addClass("opened"); // open toggle icon on current page
 	$("#nav-items li.current-page-parent > a").addClass("opened"); // open toggle icon on current page parent
-
 	
 	var loadWidth = $(window).width(); // save window load width as a variable
 
