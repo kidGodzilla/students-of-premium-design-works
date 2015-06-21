@@ -46,13 +46,15 @@ $(window).load(function() { // when the window loads...
 
 	$(window).resize(function() { // when the window is resized...
 			
-		if ( loadWidth !== $(window).width() ) { // disable vertical resize!
+		if ( loadWidth !== $(window).width() ) { // trigger for width only...
 			
 			if ($(window).width() < 801) { // if width is less than 801px...
 			
 				$("#nav-items").hide(); // hide the navigation items
 				$("#nav-items li.current-page-item ul.sub-menu").show(); // show current page item sub-menu
+				$("#nav-items li.current-page-item > a").addClass("opened"); // open toggle icon on current page
 				$("#nav-items li.current-page-parent ul.sub-menu").show(); // show current page parent sub-menu
+				$("#nav-items li.current-page-parent > a").addClass("opened"); // open toggle icon on current page parent
 				
 				if ($("#nav-items li.main > a").unbind( "click", subToggle)) { // if sub-menu toggle trigger click has been previously unbound...
 				
@@ -60,7 +62,7 @@ $(window).load(function() { // when the window loads...
 						
 				}
 									
-			} else if ($(window).width() > 800) { // else if width is greater than 800px...
+			} else { // else ...
 			
 				$("#nav-items").show(); // show the navigation items
 				$("#nav-items li > ul.sub-menu").hide();// close sub-menu
@@ -68,7 +70,7 @@ $(window).load(function() { // when the window loads...
 				
 			}
 			
-		} // end disable verticle resize
+		} // end trigger for width only
 		
 	}); // end window resize
 		
