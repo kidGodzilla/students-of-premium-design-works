@@ -65,7 +65,7 @@ Author URI: http://www.premiumdw.com/
      
     <!-- Begin Columns -->
 	<ul id="columns">
-    <script src="<?php bloginfo('template_directory'); ?>/scripts/columns.js"></script>        
+    <?php for ( $i = 1; $i <= 12; $i++) { echo '<li>' . $i . '</li>'; } ?>       
     </ul>
     <!-- End Columns --> 
    
