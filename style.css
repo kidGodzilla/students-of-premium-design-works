@@ -265,11 +265,11 @@ th, td {
 		cursor: pointer;
 	}
 	
-	#nav-title span.glyph {
+	#nav-glyph {
 		float: right;
 		font-size: 1.5em;
 	}
-	
+		
 	#nav-items {
 		text-align: center;
 		margin: 0px auto;
@@ -1159,6 +1159,18 @@ th, td {
 		/*margin-bottom: 4px;*/
 	}
 	
+	#nav-glyph:before {
+		content: "≡";
+	}
+	
+	#nav-glyph.opened:before {
+		content: "x";
+		position: relative;
+		left: -4px;
+		top: -3px;
+		font-size: .75em;
+	}
+	
 	#nav-items {
 		text-align: left;
 		display: none;
@@ -1201,7 +1213,10 @@ th, td {
 		}
 		
 		#nav-items > li a span:after { 
+			position: relative;
 			content: 'ˇ';
+			left: -1px;
+			
 			}
 			
 		#nav-items > li a.opened span:after { 

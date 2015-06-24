@@ -11,33 +11,28 @@ $(window).load(function() { // when the window loads...
 	var mainToggle = function() {
 		
 		$("#nav-items").slideToggle(); // enable main-menu toggle
+		$("#nav-glyph").toggleClass("opened"); // enable main-menu glyph toggle
 
 	};
 	
-	$("#nav-title").on("click", mainToggle); // trigger main-menu toggle
+	$("#nav-title").on("click", mainToggle); // trigger main-menu with glyph toggle
 	
 	var subToggle = function(e) {
 		
 		$(this).next("#nav-items li > ul.sub-menu").slideToggle(); // enable sub-menu toggle
+		$(this).toggleClass("opened"); // enable sub-menu icon toggle
 		e.preventDefault(); // disable href on main-menu item
 		
 	};
 	
 	if ($(window).width() < 801) { // if width is less than 801px...
 		
-		$("#nav-items li.main > a").on("click", subToggle); // trigger sub-menu toggle
+		$("#nav-items li.main > a").on("click", subToggle); // trigger sub-menu with icon toggle
 	
 	}	
 	
 	$("#nav-items li.main > a").append("<span>"); // create span tag to attach toggle icon to (asshole!)
 	
-	var classToggle = function () {
-		
-		$(this).toggleClass("opened"); // enable sub-menu icon toggle
-		
-	};
-	
-	$("#nav-items li.main > a").on("click", classToggle); // trigger sub-menu icon toggle
 	$("#nav-items li.current-page-item > a").addClass("opened"); // open toggle icon on current page
 	$("#nav-items li.current-page-parent > a").addClass("opened"); // open toggle icon on current page parent
 	
@@ -50,6 +45,7 @@ $(window).load(function() { // when the window loads...
 			if ($(window).width() < 801) { // if width is less than 801px...
 			
 				$("#nav-items").hide(); // hide the navigation items
+				$("#nav-glyph").removeClass("opened"); // remove opened class on glyph
 				$("#nav-items li.current-page-item ul.sub-menu").show(); // show current page item sub-menu
 				$("#nav-items li.current-page-item > a").addClass("opened"); // open toggle icon on current page
 				$("#nav-items li.current-page-parent ul.sub-menu").show(); // show current page parent sub-menu
