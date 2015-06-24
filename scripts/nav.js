@@ -25,13 +25,13 @@ $(window).load(function() { // when the window loads...
 		
 	};
 	
+	$("#nav-items li.main > a").append("<span>"); // create span tag to attach toggle icon to (asshole!)
+	
 	if ($(window).width() < 801) { // if width is less than 801px...
 		
 		$("#nav-items li.main > a").on("click", subToggle); // trigger sub-menu with icon toggle
 	
 	}	
-	
-	$("#nav-items li.main > a").append("<span>"); // create span tag to attach toggle icon to (asshole!)
 	
 	$("#nav-items li.current-page-item > a").addClass("opened"); // open toggle icon on current page
 	$("#nav-items li.current-page-parent > a").addClass("opened"); // open toggle icon on current page parent

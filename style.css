@@ -1166,9 +1166,9 @@ th, td {
 	#nav-glyph.opened:before {
 		content: "x";
 		position: relative;
-		left: -4px;
-		top: -3px;
-		font-size: .75em;
+		left: -3px;
+		top: -4px;
+		font-size: .875em;
 	}
 	
 	#nav-items {
