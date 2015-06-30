@@ -4,7 +4,7 @@ Author: Premium Design Works
 Author URI: http://www.premiumdw.com/
 */
 
-window.onload = function() { // when the window loads...
+$(window).load(function() { // when the window loads...
 	
 	var $ = jQuery.noConflict(); // prevent jQuery conflicts
 	
@@ -38,7 +38,7 @@ window.onload = function() { // when the window loads...
 	
 	var loadWidth = window.innerWidth; // save window load width as a variable
 	
-	$(window).resize( function() { // when the window is resized...
+	$(window).resize(function() { // when the window is resized...
 			
 		if ( loadWidth !== window.innerWidth ) { // trigger for width only...
 			
@@ -69,4 +69,4 @@ window.onload = function() { // when the window loads...
 		
 	}); // end window resize
 		
-}; // end window load
+}); // end window load
