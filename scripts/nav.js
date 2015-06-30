@@ -6,7 +6,7 @@ Author URI: http://www.premiumdw.com/
 
 window.onload = function() { // when the window loads...
 	
-	var $ = jQuery; // prevent jQuery conflicts
+	var $ = jQuery.noConflict(); // prevent jQuery conflicts
 	
 	var mainToggle = function() {
 		
@@ -37,8 +37,8 @@ window.onload = function() { // when the window loads...
 	$("#nav-items li.current-page-parent > a").addClass("opened"); // open toggle icon on current page parent
 	
 	var loadWidth = window.innerWidth; // save window load width as a variable
-
-	window.onresize = function() { // when the window is resized...
+	
+	$(window).resize( function() { // when the window is resized...
 			
 		if ( loadWidth !== window.innerWidth ) { // trigger for width only...
 			
@@ -67,6 +67,6 @@ window.onload = function() { // when the window loads...
 			
 		} // end trigger for width only
 		
-	}; // end window resize
+	}); // end window resize
 		
 }; // end window load
