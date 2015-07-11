@@ -6,6 +6,14 @@ Author: Premium Design Works
 Author URI: http://www.premiumdw.com/
 */
 
+
+/* Color Pallete 
+
+Black (#000): http://slayeroffice.com/tools/color_palette/?hex=000000
+Grey (#DDD): http://slayeroffice.com/tools/color_palette/?hex=DDDDDD
+
+*/
+
 * { margin: 0; padding: 0; }
 
 @font-face {
@@ -51,6 +59,15 @@ p, li, dd {
 	
 img, iframe {
 	box-sizing: border-box;
+}
+
+blink {
+	text-decoration: blink;
+	font-weight: bold;
+}
+
+fieldset {
+	border: 0;
 }
 
 input[type="text"], 
@@ -242,6 +259,7 @@ th, td {
 	}
 		
 	#date {
+		clear: both;
 		float: right;
 		font-family: "FeltTipRomanRegular", sans-serif;
 		font-size: 18px;
@@ -267,7 +285,7 @@ th, td {
 	
 	#nav-glyph {
 		float: right;
-		font-size: 1.5em;
+		font-size: 2em;
 	}
 		
 	#nav-items {
@@ -355,6 +373,7 @@ th, td {
 	#content {
 		float: left;
 		width: 620px;
+		overflow: hidden;
 		}
 			
 	#content h2	{
@@ -431,24 +450,24 @@ th, td {
 		font-family: "FeltTipRomanRegular", sans-serif;
 		}
 	
-	#content th {
+	/*#content th {
 		color: #000;
 		font-size: 14px;
 		margin: 0 0 10px 0;
 		font-weight: bold;
 		text-align: right;
 		padding-right: 10px;
-		}
+		}*/
 		
-	#content td a {
+	/*#content td a {
 		border-bottom: 2px dotted #DDD;
 		color: #000;
-		}
+		}*/
 		
-	#content td a:hover {
+	/*#content td a:hover {
 		border-bottom: 2px dotted #FFF;
 		color: #000;
-		}
+		}*/
 	
 	#content ul {
 		color: #000;
@@ -484,11 +503,12 @@ th, td {
 	#content ol {
 		color: #000;
 		margin-bottom: 10px;
-		padding-left: 24px;
+		padding-left: 30px;
 		}
 		
 	#content ol li	{
 		text-indent: 0;
+		/*list-style-type: decimal-leading-zero;*/
 		}
 		
 		
@@ -713,6 +733,39 @@ th, td {
 	.gallery-caption {
 		margin-left: 0;
 		}	
+		
+	/* ----- Pagination -----*/
+	div.wp-pagenavi span.pages {
+		display: none;
+	}
+	
+	div.wp-pagenavi span.pages,
+	div.wp-pagenavi span.extend {
+		border: 0 !important;
+	}
+	
+	div.wp-pagenavi a.page,
+	div.wp-pagenavi a.previouspostslink,
+	div.wp-pagenavi a.nextpostslink,
+	div.wp-pagenavi a.first,
+	div.wp-pagenavi a.last {
+		color: #ddd !important;
+		background: linear-gradient(#fff, #ddd);
+		border: 1px solid #ddd !important;
+		border-radius: 2px !important;
+	}
+	
+	div.wp-pagenavi a:hover.page,
+	div.wp-pagenavi a:hover.previouspostslink,
+	div.wp-pagenavi a:hover.nextpostslink,
+	div.wp-pagenavi a:hover.first,
+	div.wp-pagenavi a:hover.last,
+	div.wp-pagenavi span.current {
+		color: #FFF !important;
+		background: #000;
+		border: 1px solid #000 !important;
+		border-radius: 2px !important;
+	}
 	
 				
 	/* ----- Comment Section ----- */
@@ -831,7 +884,81 @@ th, td {
 			display: block;
 			margin-bottom: 10px;
 			}
+			
+	/* ----- Calendar -----*/
+	.ai1ec-today {
+		/*border: 1px solid #000 !important;*/
+	}
+	
+	.ai1ec-agenda-buttons,
+	.ai1ec-event-toggle {
+		display: none;
+	}
+	
+	/* ----- FlexSlider Overwrites -----*/
+	.flexslider {
+		border: 0 !important;
+		box-shadow: none !important;
+	}
+	
+	.flexslider li {
+		padding-left: 0 !important; 
+		text-indent: 0 !important;
+	}
+	
+	.flexslider li:before {
+		content: none !important;
+		top: 0 !important;
+		left: 0 !important;
+	}
 		
+	.flex-direction-nav .flex-prev {
+		left: 20px !important;
+	}
+	
+	.flex-direction-nav .flex-next {
+		right: 20px !important;
+	}
+		
+	.flexslider:hover .flex-direction-nav .flex-prev {
+		opacity: 1 !important;
+		left: 20px !important;
+	}
+	.flexslider:hover .flex-direction-nav .flex-prev:hover {
+		opacity: 1 !important;
+	}
+	.flexslider:hover .flex-direction-nav .flex-next {
+		opacity: 1 !important;
+		right: 20px !important;
+	}
+	.flexslider:hover .flex-direction-nav .flex-next:hover {
+		opacity: 1 !important;
+	}
+
+	.flex-direction-nav a {
+		color: #DDD !important;
+		opacity: 1 !important;
+		border-bottom: none !important;
+	}
+
+	.flex-direction-nav a:before {
+		font-family: "FeltTipRomanRegular", sans-serif !important;
+		font-size: 4em !important;
+		color: #DDD !important;
+		text-shadow: 1px 1px 0 #FFF !important;
+		}
+		
+	.flex-direction-nav a:hover:before {
+		color: #000 !important;
+	}
+		
+	.flex-direction-nav a.flex-prev:before {
+		 content: '‹' !important;
+	}
+	
+	.flex-direction-nav a.flex-next:before {
+		 content: '›' !important;
+	}
 
 /* ----- SIDEBAR ----- */
 	#sidebar {
@@ -936,7 +1063,7 @@ th, td {
 	#sidebar p a:hover {
 		color: #000;
 		border-bottom: 2px dotted #FFF;
-		}
+		}		
 		
 	#sidebar img, #sidebar iframe {
 		padding: 5px;
@@ -1047,6 +1174,27 @@ th, td {
 	
 	#sidebar div.widget_categories ul li {
 		/*background-color: yellow;	*/
+	}
+	
+	/* ----- Calendar Widget ----*/
+	#sidebar div.widget_ai1ec_agenda_widget p a {
+		border: 1px solid #DDD;
+		background: linear-gradient(#fff, #ddd);
+	}
+	
+	#sidebar div.widget_ai1ec_agenda_widget p a:hover {
+		border: 1px solid #000;
+		background: #000;
+		color: #fff;
+	}
+	
+	#sidebar div.ai1ec-date.ai1ec-today {
+		border-top: 1px solid #ddd;
+		background: linear-gradient(#ddd, #fff);
+	}
+	
+	#sidebar div.ai1ec-month {
+		/*background: #525252;*/
 	}
 	
 /* FOOTER */
@@ -1160,14 +1308,16 @@ th, td {
 	}
 	
 	#nav-glyph:before {
+		position: relative;
 		content: "≡";
+		top: -2px;
 	}
 	
 	#nav-glyph.opened:before {
 		content: "x";
 		position: relative;
 		left: -3px;
-		top: -3px;
+		top: -5px;
 		font-size: .875em;
 	}
 	
@@ -1183,6 +1333,11 @@ th, td {
 		padding: 4px 0;
 		}
 		
+	#nav-items li.main:first-child {
+		margin-top: 3px;
+		
+	}
+	
 	#nav-items li > a {
 		position: relative;
 	}
@@ -1208,14 +1363,16 @@ th, td {
 	#nav-items li > a span {
 			display: block;	
 			position: absolute;
-			right: 14px;
+			right: 16px;
 			top: 0;
 		}
 		
 		#nav-items > li a span:after { 
+			font-size: 1.25em;
 			position: relative;
 			content: 'ˇ';
-			left: -1px;
+			top: 5px;
+			left: 0;
 			
 			}
 			

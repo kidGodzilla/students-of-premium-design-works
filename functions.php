@@ -74,16 +74,9 @@ function get_my_meta_description() {
 	
 	if ( is_page() || is_single() ) { // for pages or postings...
 	
-		while (have_posts()) { 
-		the_post();
-		echo get_the_excerpt($post->ID); // get the excerpt from the excerpt filed or the first 150 words of the page or posting
-		}
+		echo strip_tags(get_the_excerpt()); // get the excerpt from the excerpt filed or the first 150 words of the page or posting
 		
-		wp_reset_query();
-			
-	} 
-	
-	else { // for everything else...
+	} else { // for everything else...
 		
 		echo strip_tags(get_the_author_meta('description', 6)); // retrieve my author description
 		
@@ -186,7 +179,7 @@ function get_my_sub_menu() {
 		
 		if ($post->post_parent) { // if the page has a parent...
 							
-			echo '<li class="pagenav" >'.get_the_title($post->post_parent).' » Class'; // list "Class" sub-pages
+			echo '<li class="pagenav" >'.get_the_title($post->post_parent).' » Class:'; // list "Class" sub-pages
 			echo '<ul>';
 			echo '<li><a href="'.get_permalink($post->post_parent).'">Syllabus</a></li>'; // stick in the link to syllabus with no class
 			wp_list_pages(array('child_of' => $post->post_parent, 'title_li' => '', 'meta_key' => 'navigation', 'meta_value' => 'class',)); 
@@ -199,7 +192,7 @@ function get_my_sub_menu() {
 				
 		} else { // if the page does not have a parent...
 						
-			echo '<li class="pagenav">'.get_the_title($post->ID).' » Class';
+			echo '<li class="pagenav">'.get_the_title($post->ID).' » Class:';
 			echo '<ul>';
 			
 			if (is_page($post->ID)) { // stick in the link to syllabus with class
@@ -229,6 +222,38 @@ function get_my_sub_menu() {
 	
 }
 //
+
+// Add a Flexslider Gallery	Using Shortcode
+function add_flexslider() {
+						
+	global $post; // don't forget to make this a global variable inside your function or it won't f'ing work
+	
+	$attachments = get_children(array('post_parent' => $post->ID, 'order' => 'ASC', 'orderby' => 'menu_order',  'post_type' => 'attachment', 'post_mime_type' => 'image', ));
+	
+	if ($attachments) { // check for images attached to posting
+	
+		$open; // opening markup
+		$slides; // slide markup
+		$close; // closing markup
+		
+		$open .= '<div class="flexslider"><ul class="slides">'; // create opening markup
+			 
+		foreach ( $attachments as $attachment ) { // create the list items with images (slides)
+		
+			$slides .= '<li id="slide-' . $attachment->ID . '">' . wp_get_attachment_image($attachment->ID, 'large') . '</li>'; // create slides with large size image
+		
+		}
+		
+		$close .= '</ul></div>'; // create closing markup
+		
+	} // end check for images
+		
+	return $open . $slides . $close; // return the whole thing
+		
+} // end function
+
+add_shortcode( 'flexslider', 'add_flexslider' ); // add shortcode
+// 
 
 // Begin Show Gravatars
 function show_avatar($comment, $size) {		

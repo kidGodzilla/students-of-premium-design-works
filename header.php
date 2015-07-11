@@ -33,6 +33,7 @@ Author URI: http://www.premiumdw.com/
 <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="all" />
 <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/calendar.css" type="text/css" media="all" />
 <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/flaticon.css" type="text/css" media="all" />
+<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/flexslider.css" type="text/css" media="all" />
 <link rel="shortcut icon" href="<?php bloginfo('template_directory'); ?>/images/ico-flame.ico" />
 <!-- End Links -->
 
@@ -40,7 +41,23 @@ Author URI: http://www.premiumdw.com/
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
 <script src="<?php bloginfo('template_directory'); ?>/scripts/specification.js"></script>
 <script src="<?php bloginfo('template_directory'); ?>/scripts/nav.js"></script>
+<script src="<?php bloginfo('template_directory'); ?>/scripts/calendar.js"></script>
+<script src="<?php bloginfo('template_directory'); ?>/scripts/flexslider.js"></script>
 <!-- End Scripts -->
+
+<!-- Begin Flex Slider -->
+<script type="text/javascript">
+    
+$(window).load(function(){
+  $('.flexslider').flexslider({
+	animation: "fade",
+	slideshow: false,
+	smoothHeight: true,
+  });
+});
+	
+</script>
+<!-- End Flex Slider -->
   
 <!-- Begin WP Head -->  
 <?php wp_head(); ?>  
