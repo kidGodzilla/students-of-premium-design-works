@@ -223,18 +223,14 @@ function get_my_sub_menu() {
 }
 //
 
-// Add a Flexslider Gallery	Using Shortcode
+// Add a Flexslider Gallery Using Shortcode
 function add_flexslider() {
 						
 	global $post; // don't forget to make this a global variable inside your function or it won't f'ing work
 	
-	$attachments = get_children(array('post_parent' => $post->ID, 'order' => 'ASC', 'orderby' => 'menu_order',  'post_type' => 'attachment', 'post_mime_type' => 'image', ));
+	$attachments = get_children(array('post_parent' => $post->ID, 'order' => 'ASC', 'orderby' => 'menu_order',  'post_type' => 'attachment', 'post_mime_type' => 'image', )); // get and order the attachments
 	
 	if ($attachments) { // check for images attached to posting
-	
-		$open; // opening markup
-		$slides; // slide markup
-		$close; // closing markup
 		
 		$open .= '<div class="flexslider"><ul class="slides">'; // create opening markup
 			 
