@@ -1,0 +1,208 @@
+@charset "UTF-8";
+/* CSS Document */
+
+	.hide {
+		display: none;
+		}
+	
+	.calnk a:hover {
+		background-position:0 0;
+		text-decoration:none;  
+		color:#000;
+		border-bottom:1px dotted #DDD;
+		}
+		
+	.calnk a:visited {
+		text-decoration:none;
+		color:#000;
+		border-bottom:1px dotted #DDD;
+		}
+		
+	.calnk a {
+		text-decoration:none; 
+		color:#000; 
+		border-bottom:1px dotted #DDD;
+		}
+		
+	.calnk a span { 
+		display:none; 
+		}
+		
+	.calnk a:hover span {
+		color:#333333;
+		border: 2px dotted #DDD;
+		background:#FFF; 
+		display:block;
+		position:absolute; 
+		margin-top:1px; 
+		padding:5px; 
+		width:150px; 
+		z-index:100;
+		}	
+		
+	.calendar-table {
+		border:none;
+		width:100%;
+		}
+		
+	#content td.calendar-heading {
+		font-family: "FeltTipRomanRegular", sans-serif;
+		height:25px;
+		text-align:center;
+		border:1px solid #DDD;
+		background-color:#DDD;
+		}
+		
+	#content td.calendar-next {
+		width:25%;
+		text-align:center;
+		font-family: "FeltTipRomanRegular", sans-serif;
+		}
+		
+	#content td.calendar-prev {
+		width:25%;
+		text-align:center;
+		font-family: "FeltTipRomanRegular", sans-serif;
+		}
+		
+	#content td.calendar-month {
+		width:50%;
+		text-align:center;
+		font-family: "FeltTipRomanRegular", sans-serif;
+		font-size: 21px;
+		}
+		
+	#content td.normal-day-heading {
+		text-align:center;
+		width:25px;
+		height:25px;
+		font-size:0.8em;
+		border:1px solid #DDD;
+		background-color:#DDD;
+		font-family: "FeltTipRomanRegular", sans-serif;
+		}
+		
+	#content td.weekend-heading {
+		text-align:center;
+		width:25px;
+		height:25px;
+		font-size:0.8em;
+		border:1px solid #DDD;
+		background-color:#DDD;
+		color:#FFF;
+		font-family: "FeltTipRomanRegular", sans-serif;
+		}
+		
+	.day-with-date {
+		vertical-align:text-top;
+		text-align:left;
+		width:60px;
+		height:60px;
+		border:1px solid #DDD;
+		}
+		
+	span.number {
+		font-family: "FeltTipRomanRegular", sans-serif;
+		}
+		
+	.no-events {
+	
+		}
+	.day-without-date {
+		width:60px;
+		height:60px;
+		border:1px solid #DDD;
+		}
+		
+	span.weekend {
+		color:#DDD;
+		font-family: "FeltTipRomanRegular", sans-serif;
+		}
+		
+	.current-day {
+		vertical-align:text-top;
+		text-align:left;
+		width:60px;
+		height:60px;
+		border:1px solid #000;		
+		}
+		
+	span.event {
+		font-size:0.75em;
+		line-height: 150%;
+		}
+		
+	span.event-box {
+
+		}
+		
+	.kjo-link {
+		padding: 10px;
+		font-size:0.75em;
+		text-align:center;
+		}
+		
+	#content span.event-title, #sidebar span.event-title {
+		display: block;width:142px;
+		text-align:center;
+		font-weight:bold;
+		font-size:1em;
+		border: none;
+		border-bottom: 1px solid black;
+		background-color: none;
+		padding: 0 4px;
+		}
+		
+	#content span.event-time, #sidebar span.event-time {
+		display: block;
+		width:142px;
+		font-size:1em;
+		border: none;
+		background-color: none;
+		padding: 0 4px;
+		}
+		
+	#content span.event-title-break, #sidebar span.event-title-break {
+		width:80%;
+		margin: 0;
+		padding: 0;
+		text-align:center;
+		height:0px;
+		border: none;
+		background-color: none;
+		}
+	#content span.event-content-break, #sidebar span.event-content-break {
+		width:80%;
+		margin: 0;
+		padding: 0;
+		text-align:center;
+		height:0px;
+		border: none;
+		background-color: none;
+		}
+		
+	.calendar-date-switcher {
+		height:25px;
+		text-align:center;
+		border:1px solid #DDD;
+		background-color:#DDD;
+		}
+	.calendar-date-switcher form {
+		margin:0;
+		padding:0;
+		}
+		
+	.calendar-date-switcher input {
+		border:1px #D6DED5 solid;
+		}
+		
+	.calendar-date-switcher select {
+		border:1px #D6DED5 solid;
+		}
+		
+	.cat-key {
+		width:100%;
+		margin-top:10px;
+		padding:5px;
+		border:1px solid #DDD;
+		}

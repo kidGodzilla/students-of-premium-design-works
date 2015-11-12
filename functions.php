@@ -197,7 +197,7 @@ function get_my_sub_menu() {
 			
 			if (is_page($post->ID)) { // stick in the link to syllabus with class
 				
-				echo '<li class="current-page-item"><a href="'.get_permalink($post->post_parent).'">Syllabus</a></li>';
+				echo '<li class="current_page_item"><a href="'.get_permalink($post->post_parent).'">Syllabus</a></li>';
 				
 			} else {
 				
@@ -236,7 +236,7 @@ function add_flexslider() {
 			 
 		foreach ( $attachments as $attachment ) { // create the list items with images (slides)
 		
-			$slides .= '<li id="slide-' . $attachment->ID . '">' . wp_get_attachment_image($attachment->ID, 'large') . '</li>'; // create slides with large size image
+			$slides .= '<li id="slide-' . $attachment->ID . '">' . wp_get_attachment_image($attachment->ID, 'large') . '</li>'; // create slides with large size image markup
 		
 		}
 		
@@ -244,7 +244,7 @@ function add_flexslider() {
 		
 	} // end check for images
 		
-	return $open . $slides . $close; // return the whole thing
+	return $open . $slides . $close; // create the whole slider
 		
 } // end function
 

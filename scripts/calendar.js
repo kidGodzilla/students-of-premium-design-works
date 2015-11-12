@@ -15,6 +15,7 @@ $(window).load(function() { // when the window loads...
 		
 	};
 		
-	$("a.ai1ec-popup-trigger").on("click", calLink); // trigger sub-menu with icon toggle
+	$("a.ai1ec-popup-trigger").on("click", calLink); // 
+	$("a.ai1ec-load-event").on("click", calLink); // 
 	
 }); // end window load

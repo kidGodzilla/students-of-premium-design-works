@@ -535,7 +535,7 @@ th, td {
 		
 		#content blockquote p, 
 		#content blockquote li {
-			font-style: italic;
+			/*font-style: italic;*/
 		}
 		
 		#content blockquote h3 {
@@ -547,6 +547,10 @@ th, td {
 		}
 		
 	/* ----- Content Forms ----- */
+	#content form {
+		/*margin-bottom: 20px;*/
+	}
+	
 	#content label	{
 		font-size: 21px;
 		margin-bottom: 4px;
@@ -587,9 +591,7 @@ th, td {
 		}
 		
 	#content img.avatar,
-	#content img.myface,
-	#content img.size-thumbnail,
-	#content img.attachment-thumbnail {
+	#content img.myface {
 		padding: 4px;
 		float: left;
 		margin-right: 20px;
@@ -734,7 +736,7 @@ th, td {
 		margin-left: 0;
 		}	
 		
-	/* ----- Pagination -----*/
+	/* ----- Blog Pagination -----*/
 	div.wp-pagenavi span.pages {
 		display: none;
 	}
@@ -749,7 +751,7 @@ th, td {
 	div.wp-pagenavi a.nextpostslink,
 	div.wp-pagenavi a.first,
 	div.wp-pagenavi a.last {
-		color: #ddd !important;
+		color: #000 !important;
 		background: linear-gradient(#fff, #ddd);
 		border: 1px solid #ddd !important;
 		border-radius: 2px !important;
@@ -792,6 +794,7 @@ th, td {
 		
 	#comments-box {
 		clear: both;
+		padding-top: 10px;
 		}
 		
 	#comments-box ol,
@@ -895,7 +898,11 @@ th, td {
 		display: none;
 	}
 	
-	/* ----- FlexSlider Overwrites -----*/
+	.ai1ec-agenda-widget-view {
+	  max-width: 800px !important;
+	}
+	
+	/* ----- FlexSlider -----*/
 	.flexslider {
 		border: 0 !important;
 		box-shadow: none !important;
@@ -939,11 +946,12 @@ th, td {
 		color: #DDD !important;
 		opacity: 1 !important;
 		border-bottom: none !important;
+		height: 30px !important;
 	}
 
 	.flex-direction-nav a:before {
 		font-family: "FeltTipRomanRegular", sans-serif !important;
-		font-size: 4em !important;
+		font-size: 3em !important;
 		color: #DDD !important;
 		text-shadow: 1px 1px 0 #FFF !important;
 		}
@@ -1044,13 +1052,10 @@ th, td {
 	#sidebar div.widget {
 		padding-bottom: 6px;
 		border-bottom: 2px solid #ddd;
-		margin-bottom: 14px;
-	}
-		
-	#sidebar div.widget {
+		margin-bottom: 20px !important;
 		overflow: hidden;
 	}
-		
+			
 	#sidebar li.cat-item {
 		color: #ddd;
 	}
@@ -1065,33 +1070,33 @@ th, td {
 		border-bottom: 2px dotted #FFF;
 		}		
 		
-	#sidebar img, #sidebar iframe {
+	#sidebar img {
 		padding: 5px;
 		border: 2px solid #ddd;
 		background: #fff;
 		}
 		
-		#sidebar a img, #sidebar iframe {
+		#sidebar a img  {
 			background: #fff;
 		}
 		
-		#sidebar a:hover img, #sidebar iframe:hover {
+		#sidebar a:hover img  {
 			background: #ddd;
 		}
 		
-	#sidebar div.affiliates {
-		margin: 10px 0;	
+	#sidebar div#affiliates-items,
+	#sidebar div#groups-items {
+		/*margin: 10px 0;	*/
 		margin-right: -20px;	
 		}
 		
-		#sidebar div.affiliates img, 
-		#sidebar div.affiliates iframe {
+		#sidebar div#affiliates img,
+		#sidebar div#groups img {
 			box-sizing: border-box;
 			width: 140px;
 			margin: 0 20px 20px 0;
 			float: left;
 			}
-			
 	
 	#sidebar img {
 		text-align: left;
@@ -1099,8 +1104,9 @@ th, td {
 		}
 	
 	/* ----- Flickr Widget -----*/	
-	#sidebar div.widget_quick-flickr-widget {
+	#sidebar div.quick-flickr-items {
 		margin-right: -20px;
+		overflow: hidden;
 	}
 		
 	#sidebar div.quick-flickr-item {
@@ -1190,7 +1196,7 @@ th, td {
 	
 	#sidebar div.ai1ec-date.ai1ec-today {
 		border-top: 1px solid #ddd;
-		background: linear-gradient(#ddd, #fff);
+		/*background: linear-gradient(#ddd, #fff);*/
 	}
 	
 	#sidebar div.ai1ec-month {
@@ -1257,12 +1263,13 @@ th, td {
 	 
 	#sidebar div.tubepress-thumb,
 	#sidebar div.quick-flickr-item,
-	#sidebar div.affiliates img,
-	#sidebar div.affiliates iframe {
+	#sidebar div#affiliates img,
+	#sidebar div#groups img {
 		width: calc(50% - 20px); /* 160px / 320px */
 	}
 	
-	#sidebar div.affiliates img {
+	#sidebar div#affiliates img,
+	#sidebar div#groups img {
 		height: auto;
 	}
 	
@@ -1453,8 +1460,8 @@ th, td {
 	
 	#sidebar div.tubepress-thumb,
 	#sidebar div.quick-flickr-item,
-	#sidebar div.affiliates img,
-	#sidebar div.affiliates iframe {
+	#sidebar div#affiliates img,
+	#sidebar div#groups img {
 		width: calc(25% - 20px); /* 160px / 320px */
 	}
 		
@@ -1496,8 +1503,8 @@ th, td {
 	
 	#sidebar div.tubepress-thumb,
 	#sidebar div.quick-flickr-item,
-	#sidebar div.affiliates img,
-	#sidebar div.affiliates iframe {
+	#sidebar div#affiliates img,
+	#sidebar div#groups img {
 		width: calc(33% - 20px); /* 160px / 320px */
 	}
 	
@@ -1526,8 +1533,8 @@ th, td {
 	#content div.flickr-thumb,
 	#sidebar div.tubepress-thumb,
 	#sidebar div.quick-flickr-item,
-	#sidebar div.affiliates img,
-	#sidebar div.affiliates iframe {
+	#sidebar div#affiliates img,
+	#sidebar div#groups img {
 		width: calc(50% - 20px); 
 	}
 	
@@ -1544,17 +1551,14 @@ th, td {
 /* Print Styles  */
 @media print {
 	
-	body {
-		background: none !important;
-		}
-	
-	#homelink, #header, #nav, #sidebar, #comments-box {
+	#grid, #header, #nav, #sidebar, #comments-box {
 		display: none !important;
 		}
-	
+		
 	#middle {
-		padding: 20px 0;
+		padding: 0 20px;
 		margin: 0;
+		border: none;
 	}
 	
 	#content {
@@ -1593,8 +1597,7 @@ th, td {
 	#content ul li	{
 		background: none;
 		list-style: disc;
-		margin-left: 25px;
-		
+		margin-left: 25px;		
 		} 
 		
 	#content p, #content td, #content li {
@@ -1608,8 +1611,9 @@ th, td {
 		}
 		
 	#footer {
+		padding: 20px;
 		margin: 0;
-		padding: 0;
+		border: none;
 	}
 	
 	#footer p {
