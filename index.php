@@ -15,6 +15,6 @@
     <?php endwhile; endif; ?>
     <?php if(function_exists('wp_pagenavi')) { wp_pagenavi(); } ?>  
 </div>
-<!-- End Content -->
+<!-- End Content Test -->
 
 <?php get_footer(); ?>
