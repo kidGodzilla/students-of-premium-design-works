@@ -8,9 +8,11 @@ Author: Premium Design Works
 Author URI: http://www.premiumdw.com/
 */
 
+
 // Add Editor Styles
 add_editor_style( 'admin.css' );
 //
+
 
 // Begin Register Sidebars
 register_sidebars(2, array(
@@ -20,14 +22,17 @@ register_sidebars(2, array(
 	'after_title' => '</h2>',
 ));
 //
-	
+
+
 // Create Page Excerpts
 add_post_type_support( 'page', 'excerpt' );
 //
 
+
 // Enable Post Thumbnails (Featured Image)
 add_theme_support( 'post-thumbnails' ); 
 //
+
 
 // Get My Title Tag
 function get_my_title_tag() {
@@ -67,6 +72,7 @@ function get_my_title_tag() {
 }
 //
 
+
 // Get My Meta Description 
 function get_my_meta_description() {
 	
@@ -84,6 +90,7 @@ function get_my_meta_description() {
 	
 }
 //
+
 
 // Get My Main Menu
 function get_my_main_menu() {
@@ -164,6 +171,7 @@ function get_my_main_menu() {
 }
 //
 
+
 // Get My Sub Menu
 function get_my_sub_menu() {
 	
@@ -223,6 +231,7 @@ function get_my_sub_menu() {
 }
 //
 
+
 // Add a Flexslider Gallery Using Shortcode
 function add_flexslider() {
 						
@@ -251,6 +260,7 @@ function add_flexslider() {
 add_shortcode( 'flexslider', 'add_flexslider' ); // add shortcode
 // 
 
+
 // Begin Show Gravatars
 function show_avatar($comment, $size) {		
 		
@@ -271,12 +281,16 @@ function show_avatar($comment, $size) {
 }
 //	
 
+
+// Begin Open Graph Image
 function get_opengraph_image() {
 		
 	echo bloginfo('template_directory').'/images/thumbnail-default.png';
 	
 }
-	
+//
+
+
 // Dedication Thingy
 function get_dedication() {
 	
@@ -284,6 +298,7 @@ function get_dedication() {
 	
 }
 //
+
 
 // Remove Inline Styles from Captions
 add_shortcode('wp_caption', 'fixed_img_caption_shortcode');
