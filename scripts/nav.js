@@ -8,7 +8,7 @@ $(window).load(function() { // when the window loads...
 	
 	var $ = jQuery.noConflict(); // prevent jQuery conflicts
 	
-	var mainToggle = function() {
+	var mainToggle = function() { // create main-menu toggle function
 		
 		$("#nav-items").slideToggle(); // enable main-menu toggle
 		$("#nav-glyph").toggleClass("opened"); // enable main-menu glyph toggle
@@ -17,7 +17,7 @@ $(window).load(function() { // when the window loads...
 	
 	$("#nav-title").on("click", mainToggle); // trigger main-menu with glyph toggle
 	
-	var subToggle = function(e) {
+	var subToggle = function(e) { // create sub-menu toggle function
 		
 		$(this).next("#nav-items li > ul.sub-menu").slideToggle(); // enable sub-menu toggle
 		$(this).toggleClass("opened"); // enable sub-menu icon toggle
