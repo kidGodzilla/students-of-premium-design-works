@@ -864,6 +864,11 @@ th, td {
 	#trackback-items div.reply {
 		display: none;
 	}
+
+    #trackbacks ul li	{
+        padding-left: 10px;
+		text-indent: 0px;
+		}
 			
 	/* ---- Contact Form 7 ---- */
 	.wpcf7-list-item-label {
