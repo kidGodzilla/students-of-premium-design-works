@@ -14,7 +14,7 @@ add_editor_style( 'admin.css' );
 //
 
 
-// Begin Register Sidebars
+// Register Sidebars
 register_sidebars(2, array(
 	'before_widget' => '<div id="%1$s" class="widget %2$s">',
 	'after_widget' => '</div>',
@@ -261,7 +261,7 @@ add_shortcode( 'flexslider', 'add_flexslider' ); // add shortcode
 // 
 
 
-// Begin Show Gravatars
+// Show Gravatars
 function show_avatar($comment, $size) {		
 		
 	$email=strtolower(trim($comment->comment_author_email));
@@ -282,7 +282,7 @@ function show_avatar($comment, $size) {
 //	
 
 
-// Begin Open Graph Image
+// Open Graph Image
 function get_opengraph_image() {
 		
 	echo bloginfo('template_directory').'/images/thumbnail-default.png';
