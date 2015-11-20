@@ -1,5 +1,6 @@
 /*  
 Theme Name: Students of Premium Design Works
+Script Description: Specification Dimension for the Grid.
 Author: Premium Design Works
 Author URI: http://www.premiumdw.com/
 */	
