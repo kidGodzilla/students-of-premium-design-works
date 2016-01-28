@@ -570,6 +570,18 @@ th, td {
 	#content input.wpcf7-submit {
 		width: auto;
 	}
+
+    #content div.wpcf7-recaptcha div {
+        width: 100% !important;
+        height: auto !important;
+    } 
+
+    #content div.wpcf7-recaptcha iframe {
+        width: 316px !important;
+        height:  90px !important;
+        border-radius: 4px !important;
+        margin-bottom: 20px !important;
+        }
 	
 	/*  Content Images & Iframes ----- */
 	#content iframe  {
