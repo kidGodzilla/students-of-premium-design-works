@@ -780,6 +780,7 @@ th, td {
 		border-top: 2px solid #DDD;
 		border-bottom: 2px solid #DDD;
 		overflow: hidden;
+        margin-bottom: 10px;
 		}
 		
 		#dedication img {
@@ -903,7 +904,7 @@ th, td {
 
    .wpcf7-form-control-wrap {
         margin-bottom: 20px;
-    }
+        }
 
     /* #content div.rc-anchor-light {
         background-color: #000 !important;
