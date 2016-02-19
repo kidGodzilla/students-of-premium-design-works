@@ -299,6 +299,7 @@ function get_dedication() {
 }
 //
 
+/* ---- Begin Functions from Other Authors ----- */
 
 // Remove Inline Styles from Captions
 add_shortcode('wp_caption', 'fixed_img_caption_shortcode');
@@ -328,5 +329,9 @@ function fixed_img_caption_shortcode($attr, $content = null) {
 	. do_shortcode( $content ) . '<p class="wp-caption-text">' . $caption . '</p></div>';
 }
 //
+
+// Remove Emojis
+remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+remove_action( 'wp_print_styles', 'print_emoji_styles' ); 
 	
 ?>
