@@ -8,7 +8,6 @@ Author: Premium Design Works
 Author URI: http://www.premiumdw.com/
 */
 
-
 // Add Editor Styles
 add_editor_style( 'admin.css' );
 //

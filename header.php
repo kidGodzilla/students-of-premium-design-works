@@ -36,12 +36,16 @@ Author URI: http://www.premiumdw.com/
 <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/flexslider.css" type="text/css" media="all" />
 <link rel="shortcut icon" href="<?php bloginfo('template_directory'); ?>/images/ico-flame.ico" />
 <!-- End Links -->
-
+  
+<!-- Begin WP Head --> 
+<?php wp_head(); ?>  
+<!-- End WP Head -->
+    
 <!-- Start Scripts -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 <script src="<?php bloginfo('template_directory'); ?>/scripts/specification.js"></script>
 <script src="<?php bloginfo('template_directory'); ?>/scripts/nav.js"></script>
-<script src="<?php bloginfo('template_directory'); ?>/scripts/calendar.js"></script>
+<!-- <script src="<?php bloginfo('template_directory'); ?>/scripts/calendar.js"></script> -->
 <script src="<?php bloginfo('template_directory'); ?>/scripts/flexslider.js"></script>
 <!-- End Scripts -->
 
@@ -58,10 +62,6 @@ $(window).load(function(){
 	
 </script>
 <!-- End Flex Slider -->
-  
-<!-- Begin WP Head -->  
-<?php wp_head(); ?>  
-<!-- End WP Head -->   
 
 </head>
 
