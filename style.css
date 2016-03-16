@@ -933,6 +933,14 @@ th, td {
 		/*border: 1px solid #000 !important;*/
 	}
 	
+    .ai1ec-calendar-toolbar {
+        border:  none !important;
+    }
+
+    .ai1ec-btn-group {
+        margin-left: 0 !important;
+    }
+
 	.ai1ec-agenda-buttons,
 	.ai1ec-event-toggle {
 		display: none;
