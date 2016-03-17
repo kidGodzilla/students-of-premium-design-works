@@ -5,7 +5,7 @@
 
 <!--   
 Theme Name: Students of Premium Design Works
-Description: This is a theme your mom would finally respond to.
+Description: This is a theme your mom and sister would finally respond to.
 Version: 3
 Author: Premium Design Works
 Author URI: http://www.premiumdw.com/
