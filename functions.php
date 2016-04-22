@@ -259,6 +259,32 @@ function add_flexslider() {
 add_shortcode( 'flexslider', 'add_flexslider' ); // add shortcode
 // 
 
+// Open Graph Image
+function get_opengraph_image() {    
+    
+    if(has_post_thumbnail()){ // if there is a featured image
+        
+        echo wp_get_attachment_image_src(get_post_thumbnail_id(), 'large', true)[0]; // get the featured image
+                
+    } else { 
+    
+        echo bloginfo('template_directory').'/images/thumbnail-default.png'; // get the default image
+    
+    }
+	
+}
+//
+
+
+// Dedication Thingy
+function get_dedication() {
+	
+	echo 'Empty. :-(';
+	
+}
+//
+
+/* ---- Begin Functions from Other Authors ----- */
 
 // Show Gravatars
 function show_avatar($comment, $size) {		
@@ -279,26 +305,6 @@ function show_avatar($comment, $size) {
 			
 }
 //	
-
-
-// Open Graph Image
-function get_opengraph_image() {
-		
-	echo bloginfo('template_directory').'/images/thumbnail-default.png';
-	
-}
-//
-
-
-// Dedication Thingy
-function get_dedication() {
-	
-	echo 'Empty. :-(';
-	
-}
-//
-
-/* ---- Begin Functions from Other Authors ----- */
 
 // Remove Inline Styles from Captions
 add_shortcode('wp_caption', 'fixed_img_caption_shortcode');
