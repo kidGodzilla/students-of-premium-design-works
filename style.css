@@ -739,38 +739,84 @@ th, td {
 		margin-left: 0;
 		}	
 		
-	/* ----- Blog Pagination -----*/
+	/* ----- Pagination -----*/
 	div.wp-pagenavi span.pages {
 		display: none;
 	}
+
+    div.tubepress-pagination {
+        margin: 0 0 20px 0;
+        padding-top: 20px;
+        font-size: .875em !important;
+        overflow: hidden;
+    }
+
+    .tubepress-pagination ul {
+        display: block !important;
+        float: right;
+        -webkit-border-radius: 0 !important;
+        -moz-border-radius: 0 !important;
+        border-radius: 0 !important;
+        -webkit-box-shadow: none !important;
+        -moz-box-shadow: none !important;
+        box-shadow: none !important;
+    }
+    
+    .tubepress-pagination li:before {
+        content: none !important;
+    }
 	
 	div.wp-pagenavi span.pages,
 	div.wp-pagenavi span.extend {
 		border: 0 !important;
 	}
+
+    div.tubepress-pagination li {
+        padding: 0 !important;
+        text-indent: 0 !important;
+        display: inline-block !important;
+    }
+
+    .tubepress-pagination a, 
+    .tubepress-pagination span {
+        float: none;
+        line-height: 100% !important;
+        padding: 5px !important;
+        border: 1px solid #ddd;
+        border-left-width: 0;
+    }
 	
 	div.wp-pagenavi a.page,
 	div.wp-pagenavi a.previouspostslink,
 	div.wp-pagenavi a.nextpostslink,
 	div.wp-pagenavi a.first,
-	div.wp-pagenavi a.last {
+	div.wp-pagenavi a.last,
+    li.tubepress-pagination-item span,
+    li.tubepress-pagination-item a {
 		color: #000 !important;
 		background: linear-gradient(#fff, #ddd);
 		border: 1px solid #ddd !important;
 		border-radius: 2px !important;
 	}
+
+     
 	
 	div.wp-pagenavi a:hover.page,
 	div.wp-pagenavi a:hover.previouspostslink,
 	div.wp-pagenavi a:hover.nextpostslink,
 	div.wp-pagenavi a:hover.first,
 	div.wp-pagenavi a:hover.last,
-	div.wp-pagenavi span.current {
+	div.wp-pagenavi span.current,
+    li.tubepress-pagination-item a:hover,
+    div.tubepress-pagination li.active span{
 		color: #FFF !important;
 		background: #000;
 		border: 1px solid #000 !important;
 		border-radius: 2px !important;
+        text-decoration: none;
 	}
+
+    
 	
 				
 	/* ----- Comment Section ----- */
