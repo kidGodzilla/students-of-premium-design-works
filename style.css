@@ -110,6 +110,7 @@ input[type="submit"]:hover {
 }
 
 th, td {
+    text-align: left;
 	padding: 4px !important;
 	line-height: 150%;
 	}
