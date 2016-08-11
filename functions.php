@@ -264,15 +264,15 @@ function get_opengraph_image() {
     
     if ( has_post_thumbnail() ) { // if there is a featured image
         
-		$get_my_featured_image = wp_get_attachment_image_src( get_post_thumbnail_id(), 'large', true); // set the featured image
+		$get_my_featured_image = wp_get_attachment_image_src( get_post_thumbnail_id(), 'large', true ); // set the featured image
 		
-        echo $get_my_featured_image[0]; // get the featured image
+		echo $get_my_featured_image[0]; // get the featured image
                 
     } else { 
 	
 		$get_my_default_image = bloginfo('template_directory').'/images/thumbnail-default.png'; // set the default image
-    
-        echo $get_my_default_image; // get the default image
+		
+		echo $get_my_default_image; // get the default image
     
     }
 	
