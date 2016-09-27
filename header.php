@@ -36,33 +36,32 @@ Author URI: http://www.premiumdw.com/
 <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/flexslider.css" type="text/css" media="all" />
 <link rel="shortcut icon" href="<?php bloginfo('template_directory'); ?>/images/ico-flame.ico" />
 <!-- End Links -->
-  
-<!-- Begin WP Head --> 
-<?php wp_head(); ?>  
-<!-- End WP Head -->
     
 <!-- Start Scripts -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 <script src="<?php bloginfo('template_directory'); ?>/scripts/specification.js"></script>
 <script src="<?php bloginfo('template_directory'); ?>/scripts/nav.js"></script>
-<!-- <script src="<?php bloginfo('template_directory'); ?>/scripts/calendar.js"></script> -->
 <script src="<?php bloginfo('template_directory'); ?>/scripts/flexslider.js"></script>
 <!-- End Scripts -->
 
 <!-- Begin Flex Slider -->
 <script type="text/javascript">
     
-$(window).load(function(){
-  $('.flexslider').flexslider({
+$(window).load(function() { // when the window loads...
+  $('.flexslider').flexslider({ // call flexslider
 	animation: "fade",
 	slideshow: false,
 	smoothHeight: true,
   });
-});
+}); // end window load
 	
 </script>
 <!-- End Flex Slider -->
 
+<!-- Begin WP Head --> 
+<?php wp_head(); ?>  
+<!-- End WP Head -->
+    
 </head>
 
 <body <?php body_class(); ?>>

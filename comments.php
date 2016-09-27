@@ -11,8 +11,6 @@
 		}
      }
 
-/* This variable is for alternating comment background */
-$oddcomment = 'alt';
 ?>
 
 <!-- Begin Dedication -->
@@ -24,7 +22,7 @@ $oddcomment = 'alt';
 
 <!-- Begin Comment's Box -->
 <div id="comments-box">
-<?php if ( have_comments() ) : ?>
+<?php if (have_comments()) : ?>
 	<h2 id="comments-head"><a name="comments"><?php comments_number('0 Comments:', '1 Comment:', '% Comments:' );?></a></h2>
 	<ol id="comment-items">
 	<?php wp_list_comments('type=comment'); ?>
@@ -34,16 +32,14 @@ $oddcomment = 'alt';
         <p class="alignright"><?php next_comments_link() ?></p>
     </div>
 <?php else : // this is displayed if there are no comments so far ?>
-	<?php if ('open' == $post->comment_status) : ?>
-		<!-- If comments are open, but there are no comments. -->
-	 <?php else : // comments are closed ?>
-		<!-- If comments are closed. -->
-		<p class="nocomments">Comments are closed.</p>
-	<?php endif; ?>
+    <?php if ('open' == $post->comment_status) : ?>
+    <?php else : // comments are closed ?>
+    <p class="nocomments">Comments are closed.</p>
+    <?php endif; ?>
 <?php endif; // end if comments ?>
 
 	<!-- Begin Trackbacks -->
-    <?php if ( have_comments() ) : ?>
+    <?php if (have_comments()) : ?>
 	<div id="trackbacks">
         <h4>Trackbacks:</h4>
         <ul id="trackback-items">
