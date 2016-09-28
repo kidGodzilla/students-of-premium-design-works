@@ -62,6 +62,8 @@ $(window).load(function() { // when the window loads...
 <?php wp_head(); ?>  
 <!-- End WP Head -->
     
+<!-- Demo in Class -->
+    
 </head>
 
 <body <?php body_class(); ?>>
