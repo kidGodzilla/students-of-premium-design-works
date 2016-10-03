@@ -1621,7 +1621,9 @@ th, td {
 	}
 	
 	#content div.tubepress-thumb,
-	#content div.flickr-thumb {
+	#content div.flickr-thumb,
+    #content ul li.my-thumb
+    {
 		width: calc(33% - 20px); 
 		/*background-color: yellow;*/
 	}
@@ -1656,6 +1658,7 @@ th, td {
 	
 	#content div.tubepress-thumb,
 	#content div.flickr-thumb,
+    #content ul li.my-thumb,
 	#sidebar div.tubepress-thumb,
 	#sidebar div.quick-flickr-item,
 	#sidebar div#affiliates img,
