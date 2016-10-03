@@ -715,8 +715,34 @@ th, td {
 		max-width: 100%;
 		height: auto;
 	}
+
+    /* ----- MY GALLERY ITEMS ----- */
+
+    #content div.my-thumb-gallery {
+        margin-right: -20px;    
+    }
+
+    #content ul li.my-thumb  {
+        float: left;
+        list-style: none; 
+        padding-left: 0px !important;
+        text-indent: 0px !important;
+        margin-right: 20px;
+        margin-bottom: 20px;
+    }
+
+    #content ul li.my-thumb a {
+        border-bottom: none !important;
+    }
+
+
+    #content ul li.my-thumb:before {
+        content: "" !important;
+        top: 0px !important;
+        left: 0px !important;
+    }
 	
-	/* ----- GALLERY ITEMS ----- */
+	/* ----- WP GALLERY ITEMS ----- */
 	#gallery-box {
 			margin-bottom: 25px;
 			}
@@ -1344,13 +1370,15 @@ th, td {
 		}
 		
 	#content div.tubepress-thumb,
-	#content div.flickr-thumb {
+	#content div.flickr-thumb,
+    #content ul li.my-thumb {
 		width: calc(25% - 20px); /* 160px / 640px */
 	}
 	
 	#content div.tubepress-youtube-thumbnail,
 	#content div.tubepress-youtube-thumbnail img,
 	#content dl.tubepress-meta-group,
+    #content ul li.my-thumb img,
 	#sidebar div.tubepress-thumb img,
 	#sidebar dl.tubepress-meta-group {
 		width: 100% !important;

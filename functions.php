@@ -259,6 +259,35 @@ function add_flexslider() {
 add_shortcode( 'flexslider', 'add_flexslider' ); // add shortcode
 // 
 
+
+// Add my Thumbnail Gallery Using Shortcode
+function my_thumbnail_gallery() {
+						
+	global $post; // don't forget to make this a global variable inside your function or it won't f'ing work
+	
+	$attachments = get_children(array('post_parent' => $post->ID, 'order' => 'ASC', 'orderby' => 'menu_order',  'post_type' => 'attachment', 'post_mime_type' => 'image', )); // get and order the attachments
+	
+	if ($attachments) { // check for images attached to posting
+		
+		$open .= '<div class="my-thumb-gallery"><ul class="my-thumbs">'; // create opening markup
+			 
+		foreach ( $attachments as $attachment ) { // create the list items with images and links
+		
+			$slides .= '<li id="my-thumb-' . $attachment->ID . '" class="my-thumb">'.wp_get_attachment_link($attachment->ID).'</li>'; // creates thumbnail size images with link
+		
+		}
+		
+		$close .= '</ul></div>'; // create closing markup
+		
+	} // end check for images
+		
+	return $open . $slides . $close; // create the whole gallery
+		
+} // end function
+
+add_shortcode( 'mythumbgallery', 'my_thumbnail_gallery' ); // add shortcode
+// 
+
 // Open Graph Image
 function get_opengraph_image() {    
     
