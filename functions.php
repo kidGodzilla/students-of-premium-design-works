@@ -273,7 +273,7 @@ function my_thumbnail_gallery() {
 			 
 		foreach ( $attachments as $attachment ) { // create the list items with images and links
 		
-			$slides .= '<li id="my-thumb-' . $attachment->ID . '" class="my-thumb">'.wp_get_attachment_link($attachment->ID).'</li>'; // creates thumbnail size images with link
+			$thumbs .= '<li id="my-thumb-' . $attachment->ID . '" class="my-thumb">' . wp_get_attachment_link($attachment->ID) . '</li>'; // create a thumbnail size image with link
 		
 		}
 		
@@ -281,7 +281,7 @@ function my_thumbnail_gallery() {
 		
 	} // end check for images
 		
-	return $open . $slides . $close; // create the whole gallery
+	return $open . $thumbs . $close; // create the whole gallery
 		
 } // end function
 
