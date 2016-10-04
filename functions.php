@@ -265,7 +265,7 @@ function my_thumbnail_gallery() {
 						
 	global $post; // don't forget to make this a global variable inside your function or it won't f'ing work
 	
-	$attachments = get_children(array('post_parent' => $post->ID, 'order' => 'ASC', 'orderby' => 'date',  'post_type' => 'attachment', 'post_mime_type' => 'image', )); // get and order the attachments
+	$attachments = get_children(array('post_parent' => $post->ID, 'order' => 'ASC', 'orderby' => 'rand',  'post_type' => 'attachment', 'post_mime_type' => 'image', )); // get and order the attachments
 	
 	if ($attachments) { // check for images attached to posting
 		
