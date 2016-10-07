@@ -288,6 +288,18 @@ function my_thumbnail_gallery() {
 add_shortcode( 'mythumbgallery', 'my_thumbnail_gallery' ); // add shortcode
 // 
 
+
+// Get My Photo Ablbums from Flickr
+function get_my_flickr_album() {
+    
+    echo '<script type="text/javascript" src="http://www.flickr.com/badge_code_v2.gne?count=0&amp;display=latest&amp;size=s&amp;source=user_set&amp;set=72157651013775823"></script>';
+    
+} // end function
+
+add_shortcode( 'myflickralbum','get_my_flickr_album'); // add shortcode 
+//
+
+
 // Open Graph Image
 function get_opengraph_image() {    
     
