@@ -291,9 +291,39 @@ add_shortcode( 'mythumbgallery', 'my_thumbnail_gallery' ); // add shortcode
 
 // Get My Photo Ablbums from Flickr
 function get_my_flickr_album() {
+	
+	echo '<p>This function is working.</p>';
     
-    echo '<script type="text/javascript" src="http://www.flickr.com/badge_code_v2.gne?count=0&amp;display=latest&amp;size=s&amp;source=user_set&amp;set=72157651013775823"></script>';
+    $key = 'd5be097973bb28233b387d3396c8edaa'; // my flicker API Key 
+	$username = 'premiumdw'; // my flicker username 
+	
+	// inclue the core file
+	include_once dirname(__FILE__) . '/includes/phpFlickr.php';
+	
+	// Fire up the main phpFlickr class 
+	$f = new phpFlickr($key);
+	/*$f->enableCache("fs", "cache");*/
+	$result = $f->people_findByUsername($username);
+	
+	// grab our unique user id from the $result array
+	$nsid = $result["id"];
+	
+	$photos = $f->people_getPublicPhotos($nsid, NULL, NULL, 50, $page);
+	
+	// loop through each photo
+	foreach ($photos['photos']['photo'] as $photo) {
+	   
+		echo '<a href="' . $f->buildPhotoURL($photo, "large") .  '" title="'.$photo[title].'">';
+		
+		echo '<img src="' . $f->buildPhotoURL($photo, "square") .  '" alt="'.$photo[title].'" />';
+		
+		echo '</a>';
+	 
+	
+	 } // end loop
+
     
+	
 } // end function
 
 add_shortcode( 'myflickralbum','get_my_flickr_album'); // add shortcode 
