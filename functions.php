@@ -289,44 +289,29 @@ add_shortcode( 'mythumbgallery', 'my_thumbnail_gallery' ); // add shortcode
 // 
 
 
-// Get My Photo Ablbums from Flickr
-function get_my_flickr_album() {
-	
-	echo '<p>This function is working.</p>';
-    
-    $key = 'd5be097973bb28233b387d3396c8edaa'; // my flicker API Key 
-	$username = 'premiumdw'; // my flicker username 
-	
-	// inclue the core file
-	include_once dirname(__FILE__) . '/includes/phpFlickr.php';
-	
-	// Fire up the main phpFlickr class 
-	$f = new phpFlickr($key);
-	/*$f->enableCache("fs", "cache");*/
-	$result = $f->people_findByUsername($username);
-	
-	// grab our unique user id from the $result array
-	$nsid = $result["id"];
-	
-	$photos = $f->people_getPublicPhotos($nsid, NULL, NULL, 50, $page);
-	
-	// loop through each photo
-	foreach ($photos['photos']['photo'] as $photo) {
-	   
-		echo '<a href="' . $f->buildPhotoURL($photo, "large") .  '" title="'.$photo[title].'">';
-		
-		echo '<img src="' . $f->buildPhotoURL($photo, "square") .  '" alt="'.$photo[title].'" />';
-		
-		echo '</a>';
-	 
-	
-	 } // end loop
+// Get My Photo Sets from Flickr
+function get_my_flickr_set() {
 
-    
+    require_once dirname(__FILE__) . '/includes/phpFlickr.php'; // inclue the core API file Written by Dan Coulter
+
+    $api_key = 'd5be097973bb28233b387d3396c8edaa'; // my flicker API Key 
+    $set_id = '72157651013775823'; // my Flickr set ID
+    $f = new phpFlickr($api_key); // create the phpFlickr class 
+    $photos_by_set = $f->photosets_getPhotos($set_id, 3,'', 0, 1); // get Photo Sets 
+
+    echo '<div class="my-flickr-set">'; // begin markup division tag
+
+    foreach ( array_reverse($photos_by_set['photoset']['photo']) as $photo ) {
+
+        echo '<li class="my-flickr-thumb"><a href="' . $f->buildPhotoURL($photo, "large") .  '"><img src="' . $f->buildPhotoURL($photo, "square_150") .  '" /></a></li>'; // create the list item(s) with a square thumbnail that links to the large size image
+
+    }  // end loop
+
+    echo '</div>';  // end markup division tag    
 	
 } // end function
 
-add_shortcode( 'myflickralbum','get_my_flickr_album'); // add shortcode 
+add_shortcode( 'myflickrset','get_my_flickr_set'); // add shortcode 
 //
 
 
