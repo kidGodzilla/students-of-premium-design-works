@@ -17,9 +17,6 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
-
-echo '<p>phpFlickr.php has loaded</p>';
-
 if ( !class_exists('phpFlickr') ) {
 	if (session_id() == "") {
 		@session_start();
