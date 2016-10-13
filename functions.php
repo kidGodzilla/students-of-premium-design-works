@@ -297,7 +297,10 @@ function get_my_flickr_set() {
     $api_key = 'd5be097973bb28233b387d3396c8edaa'; // my flicker API Key 
     $api_secret = '915713157a2c486c'; // my flicker API Secret
     $set_id = '72157651013775823'; // my Flickr set ID
-    $f = new phpFlickr($api_key, $api_secret); // create the phpFlickr class 
+    $f = new phpFlickr($api_key, $api_secret); // create the phpFlickr class
+    $f->auth();
+    $f->setToken("1234-567890abcdef1234");
+    $f->setProxy("localhost", "8888");
     $photos_by_set = $f->photosets_getPhotos($set_id, 3,'', 0, 1); // get Photo Sets 
 
     echo '<div class="my-flickr-set">'; // begin markup 
