@@ -14,7 +14,7 @@
  */
 
 require_once("phpFlickr.php");
-$f = new phpFlickr("d5be097973bb28233b387d3396c8edaa");
+$f = new phpFlickr("51deab88b25b39f3f49fe73891c05f32");
 
 $recent = $f->photos_getRecent();
 
