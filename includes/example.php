@@ -18,7 +18,7 @@
 
     $recent = $f->photos_getRecent();
 
-    foreach ($recent['photo'] as $photo) {
+    foreach ($recent['photos']['photo'] as $photo) {
         $owner = $f->people_getInfo($photo['owner']);
         echo "<a href='http://www.flickr.com/photos/" . $photo['owner'] . "/" . $photo['id'] . "/'>";
         echo $photo['title'];

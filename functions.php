@@ -292,26 +292,55 @@ add_shortcode( 'mythumbgallery', 'my_thumbnail_gallery' ); // add shortcode
 // Get My Photo Sets from Flickr
 function get_my_flickr_set() {
 
-    require_once dirname(__FILE__) . '/includes/phpFlickr.php'; // inclue the core API file <https://github.com/dan-coulter/phpflickr> by Dan Coulter 
+    // build the API URL to call, call the API and decode the response
 
-    $api_key = '51deab88b25b39f3f49fe73891c05f32'; // my flicker API Key 
-    $api_secret = 'e02a97e62109b5dd'; // my flicker API Secret
-    $set_id = '72157651013775823'; // my Flickr set ID
-    $f = new phpFlickr($api_key, $api_secret); // create the phpFlickr class
-    $f->auth();
-    $f->setToken('');
-    $f->setProxy('localhost', '8888');
-    $photos_by_set = $f->photosets_getPhotos($set_id, 3,'', 0, 1); // get Photo Sets 
+    $params = array(
+        'api_key'	=> '51deab88b25b39f3f49fe73891c05f32',
+        'method'	=> 'flickr.photosets.getPhotos',
+        'photoset_id'	=> '72157653322441232', // web210
+        'user_id' => '132730337@N04',
+        'format'	=> 'php_serial',
+    );
 
-    echo '<div class="my-flickr-set">'; // begin markup 
+    $encoded_params = array();
 
-    foreach ( array_reverse($photos_by_set['photoset']['photo']) as $photo ) { // begin loop
+    foreach ($params as $k => $v){
 
-        echo '<li class="my-flickr-thumb"><a href="' . $f->buildPhotoURL($photo, "large") .  '"><img src="' . $f->buildPhotoURL($photo, "square_150") .  '" /></a></li>'; // create the list item(s) with a square thumbnail that links to the large size image
+        $encoded_params[] = urlencode($k).'='.urlencode($v);
+    }
 
-    }  // end loop
+    $url = "https://api.flickr.com/services/rest/?".implode('&', $encoded_params);
 
-    echo '</div>';  // end markup   
+    $rsp = file_get_contents($url);
+
+    $rsp_obj = unserialize($rsp);
+
+
+    // display the  (or an error if it failed)
+
+    if ($rsp_obj['stat'] == 'ok'){
+
+        echo 'The Photoset is: ' . $params['photoset_id'] . ', bitch.';
+        
+        $photos = $params['photoset_id']['photo']; // get photos from a photoset
+
+        echo '<div class="my-flickr-gallery">'; // begin markup division tag
+
+
+        foreach( $photos as $photo) {
+
+            echo '<li class="my-flickr-thumb"><a href="https://farm1.staticflickr.com/' . $photo .  '_b.jpg"><img src="https://farm1.staticflickr.com/' . $photo .  '_q.jpg" /></a></li>'; // create the list item(s) with a square thumbnail that links to the large size image
+
+        }  // end loop
+
+        echo '</div>';  // end markup division tag
+
+
+    } else {
+
+        echo "Call failed!";
+
+    }
 	
 } // end function
 
