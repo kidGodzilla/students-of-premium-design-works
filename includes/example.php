@@ -13,18 +13,26 @@
  * by Flickr: http://www.flickr.com/services/api/key.gne
  */
 
-require_once("phpFlickr.php");
-$f = new phpFlickr("51deab88b25b39f3f49fe73891c05f32");
+    require_once("phpFlickr.php");
+    $f = new phpFlickr('d5be097973bb28233b387d3396c8edaa');
 
-$recent = $f->photos_getRecent();
+    $recent = $f->photos_getRecent();
 
-foreach ($recent['photo'] as $photo) {
-    $owner = $f->people_getInfo($photo['owner']);
-    echo "<a href='http://www.flickr.com/photos/" . $photo['owner'] . "/" . $photo['id'] . "/'>";
-    echo $photo['title'];
-    echo "</a> Owner: ";
-    echo "<a href='http://www.flickr.com/people/" . $photo['owner'] . "/'>";
-    echo $owner['username'];
-    echo "</a><br>";
-}
+    foreach ($recent['photo'] as $photo) {
+        $owner = $f->people_getInfo($photo['owner']);
+        echo "<a href='http://www.flickr.com/photos/" . $photo['owner'] . "/" . $photo['id'] . "/'>";
+        echo $photo['title'];
+        echo "</a> Owner: ";
+        echo "<a href='http://www.flickr.com/people/" . $photo['owner'] . "/'>";
+        echo $owner['username'];
+        echo "</a><br>";
+    } 
+
+    foreach ( array_reverse($photos_by_set['photoset']['photo']) as $photo ) { // begin loop
+
+        echo '<li class="my-flickr-thumb"><a href="' . $f->buildPhotoURL($photo, "large") .  '"><img src="' . $f->buildPhotoURL($photo, "square_150") .  '" /></a></li>'; // create the list item(s) with a square thumbnail that links to the large size image
+
+    }  // end loop
+
+
 ?>

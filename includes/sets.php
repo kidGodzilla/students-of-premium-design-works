@@ -11,10 +11,13 @@
 
     require_once('phpFlickr.php');  // inclue the core API file <https://github.com/dan-coulter/phpflickr> by Dan Coulter
 
-    $api_key = '51deab88b25b39f3f49fe73891c05f32'; // my Flicker API Key 
-    $api_secret = 'e02a97e62109b5dd'; // my Flickr API Secret
+    $api_key = '51deab88b25b39f3f49fe73891c05f32'; // my flicker API Key 
+    $api_secret = 'e02a97e62109b5dd'; // my flicker API Secret
     $set_id = '72157651013775823'; // my Flickr set ID
     $f = new phpFlickr($api_key, $api_secret); // create the phpFlickr class
+    // $f->auth();
+    // $f->setToken('');
+    // $f->setProxy('localhost', '8888');
     $photos_by_set = $f->photosets_getPhotos($set_id, 3,'', 0, 1); // get Photo Sets 
 
     echo '<div class="my-flickr-gallery">'; // begin markup division tag

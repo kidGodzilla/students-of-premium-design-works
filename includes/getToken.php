@@ -12,7 +12,7 @@
     $f = new phpFlickr('51deab88b25b39f3f49fe73891c05f32', 'e02a97e62109b5dd');
     
     //change this to the permissions you will need
-    $f->auth("read");
+    $f->auth();
     
     echo "Copy this token into your code: " . $_SESSION['phpFlickr_auth_token'];
     
