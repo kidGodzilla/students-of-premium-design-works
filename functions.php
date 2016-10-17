@@ -292,31 +292,57 @@ add_shortcode( 'mythumbgallery', 'my_thumbnail_gallery' ); // add shortcode
 // Get My Photo Sets from Flickr
 function get_my_flickr_set() {
     
-    $api_key = '51deab88b25b39f3f49fe73891c05f32'; 
-    $user_id = '132730337@N04';
-    $perPage = 4;
-    $url = 'https://api.flickr.com/services/rest/?method=flickr.people.getPhotos'; // https://www.flickr.com/services/api/explore/flickr.people.getPhotos
-    $url.= '&api_key='.$api_key;
-    $url.= '&user_id='.$user_id;
-    $url.= '&per_page='.$perPage;
-    $url.= '&format=json';
-    $url.= '&nojsoncallback=1';
+    $url = 'https://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key=0fd6ca094319451728cb7efa4eb6479a&photoset_id=72157651013775823&user_id=132730337%40N04&format=json&nojsoncallback=1'; // https://www.flickr.com/services/api/explore/flickr.photosets.getPhotos
+    
     $response = json_decode(file_get_contents($url));
-    $photos = $response->photos->photo;
+    $photos = $response->photoset->photo; // photosets
 
-    echo '<div class="my-flickr-gallery">'; // begin markup division tag
+    $output = '<div class="my-flickr-gallery">'; // begin markup
 
-    foreach( $photos as $photo ) {
+    foreach( array_reverse($photos) as $photo ) { // begin loop
 
-        echo '<li class="my-flickr-thumb"><a href="http://farm'.$photo->farm.'.staticflickr.com/'.$photo->server.'/'. $photo->id .'_'.$photo->secret.'_b.jpg"><img src="http://farm'.$photo->farm.'.staticflickr.com/'.$photo->server.'/'.$photo->id.'_'.$photo->secret.'_q.jpg" /></a></li>'; // create the list item(s) with a square thumbnail that links to the large size image
+        $output .= '<li class="my-flickr-thumb"><a href="http://farm'.$photo->farm.'.staticflickr.com/'.$photo->server.'/'. $photo->id .'_'.$photo->secret.'_b.jpg"><img src="http://farm'.$photo->farm.'.staticflickr.com/'.$photo->server.'/'.$photo->id.'_'.$photo->secret.'_q.jpg" /></a></li>'; // create the list item(s) with a square thumbnail that links to the large size image
 
     }  // end loop
 
-    echo '</div>';  // end markup division tag
+    $output .= '</div>';  // end markup
+    
+    return $output;
 	
 } // end function
 
-add_shortcode( 'myflickrset','get_my_flickr_set'); // add shortcode 
+add_shortcode( 'myflickrset','get_my_flickr_set'); // add shortcode
+//
+
+
+// Get My Latest Photos from Flickr
+function get_my_flickr_latest() {
+    
+    $url = 'https://api.flickr.com/services/rest/?method=flickr.people.getPhotos&api_key=0fd6ca094319451728cb7efa4eb6479a&user_id=132730337%40N04&per_page=4&format=json&nojsoncallback=1'; // https://www.flickr.com/services/api/explore/flickr.people.getPhotos
+    
+    $response = json_decode(file_get_contents($url));
+    $photos = $response->photos->photo; // photos
+
+    $output = '<div class="my-flickr-latest">'; // begin markup
+
+    foreach( $photos as $photo ) { // begin loop
+
+        $output .= '<li class="my-flickr-thumb"><a href="https://www.flickr.com/photos/132730337@N04/'. $photo->id .'" target="_blank"><img src="http://farm'.$photo->farm.'.staticflickr.com/'.$photo->server.'/'.$photo->id.'_'.$photo->secret.'_q.jpg" /></a></li>'; // create the list item(s) with a square thumbnail that links to the photo on Flickr
+
+    }  // end loop
+
+    $output .= '</div>';  // end markup
+    
+    return $output;
+	
+} // end function
+
+add_shortcode( 'myflickrlatest','get_my_flickr_latest'); // add shortcode 
+//
+
+
+// Enable shortcodes in text widgets
+add_filter('widget_text','do_shortcode');
 //
 
 
@@ -349,7 +375,6 @@ function get_dedication() {
 }
 //
 
-/* ---- Begin Functions from Other Authors ----- */
 
 // Show Gravatars
 function show_avatar($comment, $size) {		
@@ -370,6 +395,7 @@ function show_avatar($comment, $size) {
 			
 }
 //	
+
 
 // Remove Inline Styles from Captions
 add_shortcode('wp_caption', 'fixed_img_caption_shortcode');
@@ -400,8 +426,11 @@ function fixed_img_caption_shortcode($attr, $content = null) {
 }
 //
 
+
 // Remove Emojis
 remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
-remove_action( 'wp_print_styles', 'print_emoji_styles' ); 
+remove_action( 'wp_print_styles', 'print_emoji_styles' );
+//
+
 	
 ?>
