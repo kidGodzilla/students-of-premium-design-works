@@ -304,13 +304,13 @@ function get_my_flickr_set($atts) {
 
     foreach( array_reverse($photos) as $photo ) { // begin loop
 
-        $output .= '<li class="my-flickr-thumb"><a href="https://www.flickr.com/photos/132730337@N04/'. $photo->id .'" target="_blank"><img src="http://farm'.$photo->farm.'.staticflickr.com/'.$photo->server.'/'.$photo->id.'_'.$photo->secret.'_q.jpg" /></a></li>'; // create the list item(s) with a square thumbnail that links to the large size image
+        $output .= '<li class="my-flickr-thumb"><a href="https://www.flickr.com/photos/132730337@N04/'. $photo->id .'" target="_blank"><img src="http://farm'.$photo->farm.'.staticflickr.com/'.$photo->server.'/'.$photo->id.'_'.$photo->secret.'_q.jpg" /></a></li>'; // create the list item(s) with a square thumbnail that links to the photo on Flickr
 
     }  // end loop
 
     $output .= '</div>';  // end markup
     
-    return $output;
+    return $output; // return it, bitch.
 	
 } // end function
 
@@ -323,8 +323,9 @@ function get_my_flickr_latest() {
     
     $url = 'https://api.flickr.com/services/rest/?method=flickr.people.getPhotos&api_key=0fd6ca094319451728cb7efa4eb6479a&user_id=132730337%40N04&per_page=4&format=json&nojsoncallback=1'; // https://www.flickr.com/services/api/explore/flickr.people.getPhotos
     
-    $response = json_decode(file_get_contents($url));
-    $photos = $response->photos->photo; // photos
+    $response = json_decode(file_get_contents($url)); // get url via json
+    
+    $photos = $response->photos->photo; // response for photos
 
     $output = '<div class="my-flickr-latest">'; // begin markup
 
@@ -336,7 +337,7 @@ function get_my_flickr_latest() {
 
     $output .= '</div>';  // end markup
     
-    return $output;
+    return $output; // return it, bitch.
 	
 } // end function
 
