@@ -290,9 +290,11 @@ add_shortcode( 'mythumbgallery', 'my_thumbnail_gallery' ); // add shortcode
 
 
 // Get My Photo Sets from Flickr
-function get_my_flickr_set() {
+function get_my_flickr_set($atts) {
     
-    $url = 'https://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key=0fd6ca094319451728cb7efa4eb6479a&photoset_id=72157651013775823&user_id=132730337%40N04&format=json&nojsoncallback=1'; // https://www.flickr.com/services/api/explore/flickr.photosets.getPhotos
+    $photoset_id = intval($atts['id']); // sets the id to pass 72157651013775823
+    
+    $url = 'https://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key=0fd6ca094319451728cb7efa4eb6479a&photoset_id='.$photoset_id.'&user_id=132730337%40N04&format=json&nojsoncallback=1'; // https://www.flickr.com/services/api/explore/flickr.photosets.getPhotos
     
     $response = json_decode(file_get_contents($url));
     $photos = $response->photoset->photo; // photosets
