@@ -292,18 +292,18 @@ add_shortcode( 'mythumbgallery', 'my_thumbnail_gallery' ); // add shortcode
 // Get My Photo Sets from Flickr
 function get_my_flickr_set($atts) {
     
-    $photoset_id = intval($atts['id']); // sets the id to pass 72157651013775823
+    $photoset_id = intval($atts['id']); // sets the id to pass
     
     $url = 'https://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key=0fd6ca094319451728cb7efa4eb6479a&photoset_id='.$photoset_id.'&user_id=132730337%40N04&format=json&nojsoncallback=1'; // https://www.flickr.com/services/api/explore/flickr.photosets.getPhotos
     
     $response = json_decode(file_get_contents($url));
-    $photos = $response->photoset->photo; // photosets
+    $photos = $response->photoset->photo; // for photosets
 
-    $output = '<div class="my-flickr-gallery">'; // begin markup
+    $output = '<div class="my-flickr-set">'; // begin markup
 
     foreach( array_reverse($photos) as $photo ) { // begin loop
 
-        $output .= '<li class="my-flickr-thumb"><a href="http://farm'.$photo->farm.'.staticflickr.com/'.$photo->server.'/'. $photo->id .'_'.$photo->secret.'_b.jpg"><img src="http://farm'.$photo->farm.'.staticflickr.com/'.$photo->server.'/'.$photo->id.'_'.$photo->secret.'_q.jpg" /></a></li>'; // create the list item(s) with a square thumbnail that links to the large size image
+        $output .= '<li class="my-flickr-thumb"><a href="https://www.flickr.com/photos/132730337@N04/'. $photo->id .'" target="_blank"><img src="http://farm'.$photo->farm.'.staticflickr.com/'.$photo->server.'/'.$photo->id.'_'.$photo->secret.'_q.jpg" /></a></li>'; // create the list item(s) with a square thumbnail that links to the large size image
 
     }  // end loop
 
