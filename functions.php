@@ -296,8 +296,9 @@ function get_my_flickr_set($atts) {
     
     $url = 'https://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key=0fd6ca094319451728cb7efa4eb6479a&photoset_id='.$photoset_id.'&user_id=132730337%40N04&format=json&nojsoncallback=1'; // https://www.flickr.com/services/api/explore/flickr.photosets.getPhotos
     
-    $response = json_decode(file_get_contents($url));
-    $photos = $response->photoset->photo; // for photosets
+    $response = json_decode(file_get_contents($url)); // get url via json
+    
+    $photos = $response->photoset->photo; // response for photosets
 
     $output = '<div class="my-flickr-set">'; // begin markup
 
