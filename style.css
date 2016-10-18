@@ -1269,6 +1269,37 @@ th, td {
 		object-position: center;
 		object-fit: cover;
 	}
+
+    /* ----- My Flickr Latest -----*/	
+	#sidebar div.my-flickr-latest {
+		margin-right: -20px;
+		overflow: hidden;
+	}
+
+    #sidebar div.my-flickr-latest li {
+        padding-left: 0; 
+        text-indent: 0; 
+        }
+
+    #sidebar div.my-flickr-latest li:before {
+        content: none;
+        }
+		
+	#sidebar li.my-flickr-thumb {
+		float: left;
+		width: 140px;
+		margin-right: 20px;
+		margin-bottom: 20px;
+	}
+	
+	#sidebar li.my-flickr-thumb img {
+		width: 100%;
+        height: auto;
+	}
+
+    #sidebar li.my-flickr-thumb a  {
+		border-bottom: none;
+	}
 	
 	/* --- Sidebar Forms ---*/	
 	#sidebar div.search p {
@@ -1413,6 +1444,7 @@ th, td {
 	 
 	#sidebar div.tubepress-thumb,
 	#sidebar div.quick-flickr-item,
+    #sidebar li.my-flickr-thumb,
 	#sidebar div#affiliates img,
 	#sidebar div#groups img {
 		width: calc(50% - 20px); /* 160px / 320px */
@@ -1607,6 +1639,7 @@ th, td {
 	
 	#sidebar div.tubepress-thumb,
 	#sidebar div.quick-flickr-item,
+    #sidebar li.my-flickr-thumb,
 	#sidebar div#affiliates img,
 	#sidebar div#groups img {
 		width: calc(25% - 20px); /* 160px / 320px */
@@ -1653,6 +1686,7 @@ th, td {
 	
 	#sidebar div.tubepress-thumb,
 	#sidebar div.quick-flickr-item,
+    #sidebar li.my-flickr-thumb,
 	#sidebar div#affiliates img,
 	#sidebar div#groups img {
 		width: calc(33% - 20px); /* 160px / 320px */
@@ -1685,6 +1719,7 @@ th, td {
     #content ul li.my-thumb,
 	#sidebar div.tubepress-thumb,
 	#sidebar div.quick-flickr-item,
+    #sidebar li.my-flickr-thumb,
 	#sidebar div#affiliates img,
 	#sidebar div#groups img {
 		width: calc(50% - 20px); 
