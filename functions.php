@@ -294,7 +294,7 @@ function get_my_flickr_set($atts) {
     
     $photoset_id = $atts['id']; // pass the photoset id via shorcode
     
-    $url = 'https://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key=0fd6ca094319451728cb7efa4eb6479a&photoset_id='.$photoset_id.'&user_id=132730337%40N04&format=json&nojsoncallback=1'; // https://www.flickr.com/services/api/explore/flickr.photosets.getPhotos
+    $url = 'https://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key=51deab88b25b39f3f49fe73891c05f32&photoset_id='.$photoset_id.'&user_id=132730337%40N04&format=json&nojsoncallback=1'; // https://www.flickr.com/services/api/explore/flickr.photosets.getPhotos
     
     $response = json_decode(file_get_contents($url)); // get url via json
     
@@ -321,7 +321,7 @@ add_shortcode( 'myflickrset','get_my_flickr_set'); // add shortcode
 // Get My Latest Photos from Flickr
 function get_my_flickr_latest() {
     
-    $url = 'https://api.flickr.com/services/rest/?method=flickr.people.getPhotos&api_key=0fd6ca094319451728cb7efa4eb6479a&user_id=132730337%40N04&per_page=4&format=json&nojsoncallback=1'; // https://www.flickr.com/services/api/explore/flickr.people.getPhotos
+    $url = 'https://api.flickr.com/services/rest/?method=flickr.people.getPhotos&api_key=51deab88b25b39f3f49fe73891c05f32&user_id=132730337%40N04&per_page=4&format=json&nojsoncallback=1'; // https://www.flickr.com/services/api/explore/flickr.people.getPhotos
     
     $response = json_decode(file_get_contents($url)); // get url via json
     
