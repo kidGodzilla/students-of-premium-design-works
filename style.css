@@ -1384,7 +1384,7 @@ th, td {
 	}
 		
 	#sidebar div.widget_categories ul, 
-	#sidebar div.widget_links ul, {
+	#sidebar div.widget_links ul {
 		-webkit-column-count: 2; /* Chrome, Safari, Opera */
 		-moz-column-count: 2; /* Firefox */
 		column-count: 2;	
