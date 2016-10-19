@@ -300,7 +300,7 @@ function get_my_flickr_set($atts) {
     
     $photos = $response->photoset->photo; // response for photosets
 
-    $output = '<div class="my-flickr-set">'; // begin markup
+    $output = '<ul class="my-flickr-set">'; // begin markup
 
     foreach( array_reverse($photos) as $photo ) { // begin loop
 
@@ -308,7 +308,7 @@ function get_my_flickr_set($atts) {
 
     }  // end loop
 
-    $output .= '</div>';  // end markup
+    $output .= '</ul>';  // end markup
     
     return $output; // return it, bitch.
 	
@@ -327,7 +327,7 @@ function get_my_flickr_latest() {
     
     $photos = $response->photos->photo; // response for photos
 
-    $output = '<div class="my-flickr-latest">'; // begin markup
+    $output = '<ul class="my-flickr-latest">'; // begin markup
 
     foreach( $photos as $photo ) { // begin loop
 
@@ -335,7 +335,7 @@ function get_my_flickr_latest() {
 
     }  // end loop
 
-    $output .= '</div>';  // end markup
+    $output .= '</ul>';  // end markup
     
     return $output; // return it, bitch.
 	

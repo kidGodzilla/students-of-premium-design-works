@@ -698,7 +698,7 @@ th, td {
 		border-bottom: none;
 	}
 	
-	/* ----- Flickr Gallery ------ */
+	/* ----- Flickr Gallery ------
 	#content div.flickr-gallery {
 		margin: 0;
 		padding: 0;
@@ -717,9 +717,10 @@ th, td {
 		max-width: 100%;
 		height: auto;
 	}
+    */
 
     /* ----- My Flickr Sets ------ */
-	#content div.my-flickr-set {
+	#content ul.my-flickr-set {
 		margin: 0;
 		padding: 0;
 		margin-right: -20px;	
@@ -728,12 +729,21 @@ th, td {
 	#content li.my-flickr-thumb {
 		float: left;
         list-style: none;
+        text-indent: 0;
         width: 140px;
 		height: auto;
 		border: 0; 
 		margin: 0 20px 20px 0;
 		padding: 0;
 		}
+
+    #content li.my-flickr-thumb:before {
+        content: none;
+    }
+
+    #content li.my-flickr-thumb a {
+        border-bottom: 0;
+    }
 		
 	#content li.my-flickr-thumb img {
 		max-width: 100%;
@@ -1250,7 +1260,7 @@ th, td {
 		box-sizing: border-box;
 		}
 	
-	/* ----- Flickr Widget -----*/	
+	/* ----- Flickr Widget -----
 	#sidebar div.quick-flickr-items {
 		margin-right: -20px;
 		overflow: hidden;
@@ -1268,20 +1278,20 @@ th, td {
 		height: 120px;
 		object-position: center;
 		object-fit: cover;
-	}
+	} */	
 
     /* ----- My Flickr Latest -----*/	
-	#sidebar div.my-flickr-latest {
+	#sidebar ul.my-flickr-latest {
 		margin-right: -20px;
 		overflow: hidden;
 	}
 
-    #sidebar div.my-flickr-latest li {
+    #sidebar ul.my-flickr-latest li {
         padding-left: 0; 
         text-indent: 0; 
         }
 
-    #sidebar div.my-flickr-latest li:before {
+    #sidebar ul.my-flickr-latest li:before {
         content: none;
         }
 		
@@ -1302,6 +1312,10 @@ th, td {
 	}
 
     /* ----- Social Icons ----- */
+    #sidebar ul#social-icons-items {
+		margin-right: -20px;
+		overflow: hidden;
+	}
 
     #sidebar li.social-icon-item {
 		float: left;
@@ -1322,7 +1336,7 @@ th, td {
     }
 
     #sidebar li.social-icon-item a {
-       border-bottom: none;
+       border-bottom:  none;
         }
 	
 	/* --- Sidebar Forms ---*/	
@@ -1370,8 +1384,7 @@ th, td {
 	}
 		
 	#sidebar div.widget_categories ul, 
-	#sidebar div.widget_links ul,
-	#sidebar div#social-icons ul {
+	#sidebar div.widget_links ul, {
 		-webkit-column-count: 2; /* Chrome, Safari, Opera */
 		-moz-column-count: 2; /* Firefox */
 		column-count: 2;	
@@ -1469,6 +1482,7 @@ th, td {
 	#sidebar div.tubepress-thumb,
 	#sidebar div.quick-flickr-item,
     #sidebar li.my-flickr-thumb,
+    #sidebar li.social-icon-item,
 	#sidebar div#affiliates img,
 	#sidebar div#groups img {
 		width: calc(50% - 20px); /* 160px / 320px */
@@ -1664,14 +1678,14 @@ th, td {
 	#sidebar div.tubepress-thumb,
 	#sidebar div.quick-flickr-item,
     #sidebar li.my-flickr-thumb,
+    #sidebar li.social-icon-item,
 	#sidebar div#affiliates img,
 	#sidebar div#groups img {
 		width: calc(25% - 20px); /* 160px / 320px */
 	}
 		
 	#sidebar div.widget_categories ul, 
-	#sidebar div.widget_links ul,
-	#sidebar div#social-icons ul {
+	#sidebar div.widget_links ul {
 		-webkit-column-count: 4; /* Chrome, Safari, Opera */
 		-moz-column-count: 4; /* Firefox */
 		column-count: 4;	
@@ -1711,14 +1725,14 @@ th, td {
 	#sidebar div.tubepress-thumb,
 	#sidebar div.quick-flickr-item,
     #sidebar li.my-flickr-thumb,
+    #sidebar li.social-icon-item,
 	#sidebar div#affiliates img,
 	#sidebar div#groups img {
 		width: calc(33% - 20px); /* 160px / 320px */
 	}
 	
 	#sidebar div.widget_categories ul, 
-	#sidebar div.widget_links ul,
-	#sidebar div#social-icons ul {
+	#sidebar div.widget_links ul {
 		-webkit-column-count: 3; /* Chrome, Safari, Opera */
 		-moz-column-count: 3; /* Firefox */
 		column-count: 3;	
@@ -1744,14 +1758,14 @@ th, td {
 	#sidebar div.tubepress-thumb,
 	#sidebar div.quick-flickr-item,
     #sidebar li.my-flickr-thumb,
+    #sidebar li.social-icon-item,
 	#sidebar div#affiliates img,
 	#sidebar div#groups img {
 		width: calc(50% - 20px); 
 	}
 	
 	#sidebar div.widget_categories ul, 
-	#sidebar div.widget_links ul,
-	#sidebar div#social-icons ul {
+	#sidebar div.widget_links ul {
 		-webkit-column-count: 2; /* Chrome, Safari, Opera */
 		-moz-column-count: 2; /* Firefox */
 		column-count: 2;	
