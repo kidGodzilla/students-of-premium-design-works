@@ -33,6 +33,7 @@ Author URI: http://www.premiumdw.com/
 <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="all" />
 <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/calendar.css" type="text/css" media="all" />
 <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/flaticon.css" type="text/css" media="all" />
+<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/font-awesome.css" type="text/css" media="all" />
 <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/flexslider.css" type="text/css" media="all" />
 <link rel="shortcut icon" href="<?php bloginfo('template_directory'); ?>/images/ico-flame.ico" />
 <!-- End Links -->

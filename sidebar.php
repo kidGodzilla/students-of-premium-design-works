@@ -17,17 +17,15 @@
     <div id="social-icons" class="widget">
     	<h2>Social</h2>
         <ul id="social-icons-items">
-        <li><a href="https://github.com/msinkula" class="flaticon-github12" target="_blank">GitHub</a></li>
-        <li><a href="https://www.facebook.com/premiumdw" class="flaticon-facebook29" target="_blank">Facebook</a></li>
-        <li><a href="https://twitter.com/premiumdw" class="flaticon-twitter2" target="_blank">Twitter</a></li>
-        <li><a href="https://plus.google.com/+PremiumDesignWorksSeattle/" class="flaticon-google2" target="_blank" rel="me">Google+</a></li>
-        <li><a href="https://www.youtube.com/channel/UCJkdeoIJ9lbsDOW0Ctiqsyw/" class="flaticon-video193" target="_blank">YouTube</a></li>
-        <li><a href="https://www.flickr.com/photos/132730337@N04/" class="flaticon-flickr16" target="_blank">Flickr</a></li>
+        <li class="social-icon-item"><a href="https://github.com/msinkula" class="fa fa-github-square" aria-hidden="true" aria-label="GitHub" target="_blank"></a></li>
+        <li class="social-icon-item"><a href="https://www.facebook.com/premiumdw" class="fa fa-facebook-square" aria-hidden="true" target="_blank"></a></li>
+        <li class="social-icon-item"><a href="https://www.youtube.com/channel/UCJkdeoIJ9lbsDOW0Ctiqsyw/" class="fa fa-youtube-square" aria-hidden="true" target="_blank"></a></li>
+        <li class="social-icon-item"><a href="https://www.flickr.com/photos/132730337@N04/" class="fa fa-flickr" target="_blank"></a></li>
         </ul>
     </div>
     <!-- End Social Icons -->
     
-    <!-- Begin Group Badge -->
+    <!-- Begin Group Badges -->
     <div id="groups" class="widget">
     	<h2>Groups</h2>
         <div id="groups-items">
@@ -35,7 +33,7 @@
         <a href="https://www.linkedin.com/grp/home?gid=2642569" target="_blank"><img src="<?php bloginfo('template_directory'); ?>/images/icontexto-user-web20-linkedin.png" alt="Join Our LinkedIn Group"/></a>
         </div>
     </div>
-    <!-- End Feacebook Group Badge -->
+    <!-- End Group Badges -->
     
     <!-- Begin Affiliates -->
     <div id="affiliates">
