@@ -1131,10 +1131,16 @@ th, td {
 		width: 300px;
 		}
 		
-	#sidebar p, #sidebar ol, #sidebar ul {
+	#sidebar p {
 		font-family: Arial, Helvetica, sans-serif;
 		font-size: 12px;
 		margin-bottom: 10px;
+		}
+
+    #sidebar ol, #sidebar ul {
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 12px;
+		margin-bottom: 20px;
 		}
 	
 	#sidebar p.s2_error {
@@ -1207,7 +1213,7 @@ th, td {
 		}
 	
 	#sidebar div.widget {
-		padding-bottom: 6px;
+		/* padding-bottom: 20px; */
 		border-bottom: 2px solid #ddd;
 		margin-bottom: 20px !important;
 		overflow: hidden;
@@ -1283,6 +1289,7 @@ th, td {
     /* ----- My Flickr Latest -----*/	
 	#sidebar ul.my-flickr-latest {
 		margin-right: -20px;
+        margin-bottom: 0;
 		overflow: hidden;
 	}
 
@@ -1314,6 +1321,7 @@ th, td {
     /* ----- Social Icons ----- */
     #sidebar ul#social-icons-items {
 		margin-right: -20px;
+        margin-bottom: 0;
 		overflow: hidden;
 	}
 
@@ -1366,7 +1374,7 @@ th, td {
 	#sidebar div.tubepress-thumb, 
 	#content div.tubepress-thumb {
 		margin-right: 20px !important;  
-		margin-bottom: 10px !important;
+		margin-bottom: 20px !important;
 		
 	}
 	
@@ -1398,6 +1406,10 @@ th, td {
 	}
 	
 	/* ----- Calendar Widget ----*/
+    #sidebar div.ai1ec-agenda-widget-view {
+        margin-bottom: 20px;
+    }
+
 	#sidebar div.widget_ai1ec_agenda_widget p a {
 		border: 1px solid #DDD;
 		background: linear-gradient(#fff, #ddd);
