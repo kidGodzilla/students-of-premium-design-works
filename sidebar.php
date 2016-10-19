@@ -17,7 +17,7 @@
     <div id="social-icons" class="widget">
     	<h2>Social</h2>
         <ul id="social-icons-items">
-        <li class="social-icon-item"><a href="https://github.com/msinkula" target="_blank"><img src="<?php bloginfo('template_directory'); ?>/images/icon-github.svg" alt="My Github"></a></li>
+        <li class="social-icon-item"><a href="https://github.com/msinkula" target="_blank"><img src="<?php bloginfo('template_directory'); ?>/images/icon-github.svg" alt="My Github Repositories"></a></li>
         <li class="social-icon-item"><a href="https://www.facebook.com/msinkula" target="_blank"><img src="<?php bloginfo('template_directory'); ?>/images/icon-facebook.svg" alt="My Facebook Profile"></a></li>
         <li class="social-icon-item"><a href="https://www.youtube.com/channel/UCJkdeoIJ9lbsDOW0Ctiqsyw/"  target="_blank"><img src="<?php bloginfo('template_directory'); ?>/images/icon-youtube.svg" alt="My YouTube Channel"></a></li>
         <li class="social-icon-item"><a href="https://www.flickr.com/photos/132730337@N04/"  target="_blank"><img src="<?php bloginfo('template_directory'); ?>/images/icon-flickr.svg" alt="My Flickr Feed"></a></li>
