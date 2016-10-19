@@ -17,10 +17,10 @@
     <div id="social-icons" class="widget">
     	<h2>Social</h2>
         <ul id="social-icons-items">
-        <li class="social-icon-item"><a href="https://github.com/msinkula" class="fa fa-github-square" aria-hidden="true" aria-label="GitHub" target="_blank"></a></li>
-        <li class="social-icon-item"><a href="https://www.facebook.com/premiumdw" class="fa fa-facebook-square" aria-hidden="true" target="_blank"></a></li>
-        <li class="social-icon-item"><a href="https://www.youtube.com/channel/UCJkdeoIJ9lbsDOW0Ctiqsyw/" class="fa fa-youtube-square" aria-hidden="true" target="_blank"></a></li>
-        <li class="social-icon-item"><a href="https://www.flickr.com/photos/132730337@N04/" class="fa fa-flickr" target="_blank"></a></li>
+        <li class="social-icon-item"><a href="https://github.com/msinkula" target="_blank"><img src="<?php bloginfo('template_directory'); ?>/images/icon-github.svg" alt="My YouTube Channel"></a></li>
+        <li class="social-icon-item"><a href="https://www.facebook.com/msinkula" target="_blank"><img src="<?php bloginfo('template_directory'); ?>/images/icon-facebook.svg" alt="My YouTube Channel"></a></li>
+        <li class="social-icon-item"><a href="https://www.youtube.com/channel/UCJkdeoIJ9lbsDOW0Ctiqsyw/"  target="_blank"><img src="<?php bloginfo('template_directory'); ?>/images/icon-youtube.svg" alt="My YouTube Channel"></a></li>
+        <li class="social-icon-item"><a href="https://www.flickr.com/photos/132730337@N04/"  target="_blank"><img src="<?php bloginfo('template_directory'); ?>/images/icon-flickr.svg" alt="My YouTube Channel"></a></li>
         </ul>
     </div>
     <!-- End Social Icons -->

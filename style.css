@@ -1316,19 +1316,13 @@ th, td {
         content: none;
         }
 
-    #sidebar li.social-icon-item a {
-        display: block;
-        font-size: 10em;
-        text-align: center;
-        color: #000;
-        border: 2px solid #DDD;
-        padding: 5px;
-        }
+    #sidebar li.social-icon-item img {
+        width: 100%;
+        height: auto;
+    }
 
-    #sidebar li.social-icon-item a:hover {
-        display: block;
-        color: #fff;
-        background-color: #DDD;
+    #sidebar li.social-icon-item a {
+       border-bottom: none;
         }
 	
 	/* --- Sidebar Forms ---*/	
