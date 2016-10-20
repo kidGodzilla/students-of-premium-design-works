@@ -1125,13 +1125,19 @@ th, td {
 		 content: '›' !important;
 	}
 
-/* ----- SIDEBAR ----- */
+    /* ----- SIDEBAR ----- */
 	#sidebar {
 		float: right;
 		width: 300px;
 		}
 
-    #sidebar p, #sidebar ol, #sidebar ul {
+    #sidebar p {
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 12px;
+		margin-bottom: 10px;
+		}
+
+    #sidebar ol, #sidebar ul {
 		font-family: Arial, Helvetica, sans-serif;
 		font-size: 12px;
 		margin-bottom: 20px;
@@ -1353,10 +1359,15 @@ th, td {
 	#sidebar input#s2email {
 		width: 100%;
 	}
+
+    #sidebar div.subscribe2 {
+        margin-bottom: 10px;
+        overflow: hidden;
+    }
 	
 	[name = subscribe] {
 		width: 49% !important;
-		float: left;
+		/* float: left; */
 	}
 	
 	[name = unsubscribe] {
