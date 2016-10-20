@@ -1142,6 +1142,10 @@ th, td {
 		font-size: 12px;
 		margin-bottom: 20px;
 		}
+
+    #sidebar ul li.pagenav ul {
+        margin-bottom: 10px;
+        }
 	
 	#sidebar p.s2_error {
 		color: red;
@@ -1364,7 +1368,12 @@ th, td {
         margin-bottom: 10px;
         overflow: hidden;
     }
-	
+
+    #sidebar div.subscribe2 label, #sidebar div.subscribe2 br {
+        display: none;
+        height: 0;
+    }
+
 	[name = subscribe] {
 		width: 49% !important;
 		/* float: left; */
