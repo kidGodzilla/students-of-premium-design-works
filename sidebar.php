@@ -41,7 +41,7 @@
         <div id="affiliates-items">
         <a href="http://www.dreamhost.com/r.cgi?363638" target="_blank" title="Use promo code PREMIUMDW for $25 off!"><img src="<?php bloginfo('template_directory'); ?>/images/ad-dreamhost.png" alt="DreamHost" /></a>
         <a href="https://www.amazon.com/?&tag=predeswormiks-20&camp=0&creative=0&linkCode=ez&adid=1DRTKSR4Z3PKEN66XD41&" target="_blank" title=""><img src="<?php bloginfo('template_directory'); ?>/images/ad-amazon.jpg" alt="Amazon" /></a>
-        <a href="<?php bloginfo('template_directory'); ?>/images/ad-acasupstore.png" target="_blank"><img src="http://www.ftjcfx.com/image-5032313-6944833"  alt="Students and teachers save up to 80% on software!" border="0"/></a>
+        <a href="http://www.jdoqocy.com/click-5032313-6944833" target="_blank"><img src="<?php bloginfo('template_directory'); ?>/images/ad-acasupstore.png"  alt="Students and teachers save up to 80% on software!" border="0"/></a>
         <a href="http://www.istockphoto.com/msinkula" target="_blank"><img src="<?php bloginfo('template_directory'); ?>/images/ad-istock.png" alt="istockphoto.com" /></a>
         </div>
     </div>
