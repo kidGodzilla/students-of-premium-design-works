@@ -1851,6 +1851,10 @@ th, td {
 		list-style: disc;
 		margin-left: 25px;		
 		} 
+    
+    #content ul li:before {
+        display: none;
+    }
 		
 	#content p, #content td, #content li {
 			font: 16px/24px "Arial", sans-serif;
