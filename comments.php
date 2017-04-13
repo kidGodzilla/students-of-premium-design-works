@@ -48,7 +48,7 @@
 	</div>
     <?php endif; // end if comments ?>
     <!-- End Trackbacks -->
-    
+        
 <?php if ('open' == $post->comment_status) : ?>
     <div id="respond">
         <h4><?php comment_form_title( 'Leave a Comment:', 'Leave a Comment to %s' ); ?></h4>

@@ -380,6 +380,7 @@ function get_dedication() {
 //
 
 
+
 // Show Gravatars
 function show_avatar($comment, $size) {		
 		
