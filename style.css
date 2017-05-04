@@ -457,33 +457,18 @@ th, td {
 		font-family: "FeltTipRomanRegular", sans-serif;
 		}
 	
-	/*#content th {
-		color: #000;
-		font-size: 14px;
-		margin: 0 0 10px 0;
-		font-weight: bold;
-		text-align: right;
-		padding-right: 10px;
-		}*/
-		
-	/*#content td a {
-		border-bottom: 2px dotted #DDD;
-		color: #000;
-		}*/
-		
-	/*#content td a:hover {
-		border-bottom: 2px dotted #FFF;
-		color: #000;
-		}*/
-	
 	#content ul {
 		color: #000;
 		margin-bottom: 10px;
         padding: 0 30px;
 		}
+
+    #content ul.slides {
+        padding: 0;
+    }
 		
 	#content ul li	{
-        list-style: disc;
+        /* list-style: disc; */
 		}
 		
 	#content ul li a {
