@@ -549,25 +549,6 @@ th, td {
 		width: 100%;
         max-height: 500px;
 		}
-
-    #content th {		
-         color: #000;		
-         font-size: 14px;		
-         margin: 0 0 10px 0;		
-         font-weight: bold;		
-         text-align: right;		
-         padding-right: 10px;		
-         }	
-     
-    #content td a {		
-         border-bottom: 2px dotted #DDD;		
-         color: #000;		
-         }		
-
-    #content td a:hover {		
-         border-bottom: 2px dotted #FFF;		
-         color: #000;		
-         }
 		
 	/* ----- Content Forms ----- */
 	#content form {
@@ -1060,6 +1041,10 @@ th, td {
 	.ai1ec-today {
 		/*border: 1px solid #000 !important;*/
 	}
+
+    .ai1ec-word-wrap.ai1ec-month-view .ai1ec-event {
+         border-bottom: none !important; 
+    }
 	
     .ai1ec-calendar-toolbar {
         border:  none !important;
