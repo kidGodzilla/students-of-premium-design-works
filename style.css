@@ -463,7 +463,8 @@ th, td {
         padding: 0 30px;
 		}
 
-    #content ul.slides {
+    #content ul.slides,
+    #content ul.my-thumbs {
         padding: 0;
     }
 		
