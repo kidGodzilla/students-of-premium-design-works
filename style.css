@@ -305,6 +305,7 @@ th, td {
 	#nav-items > li.main {
 		font-family: 'FeltTipRomanRegular', sans-serif;
 		font-size: 21px;
+        width: 11%;
 		display: inline-block;
 		text-align: center;
 		}
@@ -312,7 +313,7 @@ th, td {
 		#nav-items li > a {
 			color: #000;
 			display: block;
-			padding: 0 12px;
+			/* padding: 0 12px; */
 			}
 			
 		#nav-items li > a span {
@@ -325,7 +326,7 @@ th, td {
 			content: "{";
 			position: relative;
 			top: -2px;
-			left: -8px;
+			left: -4px;
 		}
 		
 		#nav-items > li > a:after {
@@ -334,7 +335,7 @@ th, td {
 			content: "}";
 			position: relative;
 			top: -2px;
-			right: -8px;	
+			right: -4px;	
 		}
 	
 		#nav-items li > a:hover {
