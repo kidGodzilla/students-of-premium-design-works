@@ -1589,6 +1589,7 @@ th, td {
 	#nav-items li.main {
 		text-align: left;
 		display: block;
+        width: 100%;
 		border-top: 2px solid #ddd;
 		padding: 4px 0;
 		}
@@ -1670,6 +1671,7 @@ th, td {
 		
 	#nav-items li ul.sub-menu li a {
 		display: inline;	
+        padding-left: 4px;
 	}
 			
 	#nav-items li ul.sub-menu > li.pagenav:before {
